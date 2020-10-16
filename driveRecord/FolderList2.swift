@@ -48,7 +48,7 @@ class FolderList2:UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.textLabel!.text = folderList[indexPath.row]
         return cell
      
-        
+     
     }
     
 }
