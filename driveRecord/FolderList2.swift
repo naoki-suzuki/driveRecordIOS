@@ -46,9 +46,11 @@ class FolderList2:UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
         // セルに値を設定する
         cell.textLabel!.text = folderList[indexPath.row]
+        
+        print (cell.textLabel?.text!)
         return cell
      
-        
+     
     }
     
 }
