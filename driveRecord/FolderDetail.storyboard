@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EdB-rz-b0R">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Folder Detail View Controller-->
+        <scene sceneID="vBG-MB-0E9">
+            <objects>
+                <viewController id="lAI-Su-K8F" customClass="folderDetailViewController" customModule="driveRecord" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems>
+                        <barButtonItem systemItem="action" id="NcB-eT-NOK"/>
+                        <barButtonItem title="ホーム" image="house" catalog="system" width="317.5" id="pgu-Vb-2d8">
+                            <connections>
+                                <segue destination="KWx-1r-YGR" kind="show" id="cpd-ki-VXb"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="PtC-fp-k0x"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vdz-zH-U9D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118.840579710145" y="141.96428571428569"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="hh3-4l-Xr1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="KWx-1r-YGR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="p4S-dK-ScR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zgg-ry-Bf9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616" y="161"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xvt-Ac-2Qj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EdB-rz-b0R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IcR-qk-Xyk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lAI-Su-K8F" kind="relationship" relationship="rootViewController" id="DTB-3A-EXN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h1M-si-y28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.69565217391306" y="141.96428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+    </resources>
+</document>
