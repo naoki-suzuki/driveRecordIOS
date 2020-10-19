@@ -41,12 +41,21 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     // ④セルの中身を設定するメソッド（必須）
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
-        // セルに値を設定する
-        cell.textLabel!.text = folderList[indexPath.row]
-        return cell
-     
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath as IndexPath)
         
+        //ラベルオブジェクトを作る
+        //日付のラベル
+        let labelDate = cell.viewWithTag(1) as! UILabel
+        //ラベルに表示する文字列を設定
+        labelDate.text = (date[indexPath.row])
+        
+        //ラベルオブジェクトを作る
+        //タイトルのラベル
+        let labelFolderList = cell.viewWithTag(2) as! UILabel
+        //ラベルに表示する文字列を設定
+        labelFolderList.text = (folderList[indexPath.row])
+
+        return cell
     }
  
 }
