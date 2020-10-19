@@ -17,17 +17,21 @@
 		5B4DD12E2533EB3600B2F5A0 /* driveRecordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DD12D2533EB3600B2F5A0 /* driveRecordUITests.swift */; };
 		5B4DD13F2533F26600B2F5A0 /* Convention ViewControlle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DD13E2533F26600B2F5A0 /* Convention ViewControlle.swift */; };
 		5B4DD1442533F6B400B2F5A0 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DD1432533F6B400B2F5A0 /* SupportViewController.swift */; };
-		5B4DD1492534024200B2F5A0 /* folderCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DD1482534024200B2F5A0 /* folderCreateViewController.swift */; };
 		5B4DD14E2534189C00B2F5A0 /* moneyInsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DD14D2534189C00B2F5A0 /* moneyInsertViewController.swift */; };
 		5B6710052535326F00F6B609 /* folderDetailViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6710042535326F00F6B609 /* folderDetailViewContorller.swift */; };
 		5B67100A25354BDC00F6B609 /* Support.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B67100925354BDC00F6B609 /* Support.storyboard */; };
 		5B67100F253567C100F6B609 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B67100E253567C100F6B609 /* Map.storyboard */; };
-		5B67101425356BE800F6B609 /* FolderCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B67101325356BE800F6B609 /* FolderCreate.storyboard */; };
 		5B6710192535710A00F6B609 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6710182535710A00F6B609 /* MapViewController.swift */; };
 		5B67101E253575CB00F6B609 /* MoneyInsert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B67101D253575CB00F6B609 /* MoneyInsert.storyboard */; };
 		5B67102325357D7F00F6B609 /* FolderDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B67102225357D7F00F6B609 /* FolderDetail.storyboard */; };
 		6246A76625392457009C162B /* folderList2Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6246A76525392457009C162B /* folderList2Storyboard.storyboard */; };
 		6246A76B2539246D009C162B /* FolderList2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246A76A2539246D009C162B /* FolderList2.swift */; };
+		62D8E691253D82D6002AF6C7 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D8E690253D82D6002AF6C7 /* DatabaseHelper.swift */; };
+		62D8E69D253D82E7002AF6C7 /* FolderinfoTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D8E69C253D82E7002AF6C7 /* FolderinfoTable.swift */; };
+		62D8E6A2253D831A002AF6C7 /* FolderCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D8E6A1253D831A002AF6C7 /* FolderCreateViewController.swift */; };
+		62D8E6A7253D8326002AF6C7 /* FolderCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62D8E6A6253D8326002AF6C7 /* FolderCreate.storyboard */; };
+		62D8E6B4253D8A5D002AF6C7 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8E66D253D7E3E002AF6C7 /* GRDB.framework */; };
+		62D8E6B5253D8A5D002AF6C7 /* GRDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8E66D253D7E3E002AF6C7 /* GRDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +49,84 @@
 			remoteGlobalIDString = 5B4DD1072533EB3500B2F5A0;
 			remoteInfo = driveRecord;
 		};
+		62D8E666253D7E3E002AF6C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC3773F319C8CBB3004FCF85;
+			remoteInfo = GRDBOSX;
+		};
+		62D8E668253D7E3E002AF6C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56E5D7F91B4D422D00430942;
+			remoteInfo = GRDBOSXTests;
+		};
+		62D8E66A253D7E3E002AF6C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56553C181C3E906C00522B5C;
+			remoteInfo = GRDBOSXCrashTests;
+		};
+		62D8E66C253D7E3E002AF6C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56E5D7CA1B4D3FED00430942;
+			remoteInfo = GRDBiOS;
+		};
+		62D8E66E253D7E3E002AF6C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56E5D7D31B4D3FEE00430942;
+			remoteInfo = GRDBiOSTests;
+		};
+		62D8E670253D7E3E002AF6C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 565490A01D5A4798005622CB;
+			remoteInfo = GRDBWatchOS;
+		};
+		62D8E672253D7E3E002AF6C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AAA4DCFE230F1E0600C74B15;
+			remoteInfo = GRDBtvOS;
+		};
+		62D8E674253D7E3E002AF6C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AAA4DDD4230F262000C74B15;
+			remoteInfo = GRDBtvOSTests;
+		};
+		62D8E6B1253D8A4B002AF6C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 56E5D7C91B4D3FED00430942;
+			remoteInfo = GRDBiOS;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		62D8E6B6253D8A5D002AF6C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				62D8E6B5253D8A5D002AF6C7 /* GRDB.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5B4DD1082533EB3500B2F5A0 /* driveRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = driveRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,17 +145,20 @@
 		5B4DD12F2533EB3600B2F5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4DD13E2533F26600B2F5A0 /* Convention ViewControlle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Convention ViewControlle.swift"; sourceTree = "<group>"; };
 		5B4DD1432533F6B400B2F5A0 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
-		5B4DD1482534024200B2F5A0 /* folderCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = folderCreateViewController.swift; sourceTree = "<group>"; };
 		5B4DD14D2534189C00B2F5A0 /* moneyInsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moneyInsertViewController.swift; sourceTree = "<group>"; };
 		5B6710042535326F00F6B609 /* folderDetailViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = folderDetailViewContorller.swift; sourceTree = "<group>"; };
 		5B67100925354BDC00F6B609 /* Support.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Support.storyboard; sourceTree = "<group>"; };
 		5B67100E253567C100F6B609 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		5B67101325356BE800F6B609 /* FolderCreate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FolderCreate.storyboard; sourceTree = "<group>"; };
 		5B6710182535710A00F6B609 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5B67101D253575CB00F6B609 /* MoneyInsert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoneyInsert.storyboard; sourceTree = "<group>"; };
 		5B67102225357D7F00F6B609 /* FolderDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FolderDetail.storyboard; sourceTree = "<group>"; };
 		6246A76525392457009C162B /* folderList2Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = folderList2Storyboard.storyboard; sourceTree = "<group>"; };
 		6246A76A2539246D009C162B /* FolderList2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderList2.swift; sourceTree = "<group>"; };
+		62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GRDB.xcodeproj; path = "../../../../Downloads/GRDB.swift-master/GRDB.xcodeproj"; sourceTree = "<group>"; };
+		62D8E690253D82D6002AF6C7 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseHelper.swift; path = ../../../../Downloads/DatabaseHelper.swift; sourceTree = "<group>"; };
+		62D8E69C253D82E7002AF6C7 /* FolderinfoTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FolderinfoTable.swift; path = ../../../../Downloads/FolderinfoTable.swift; sourceTree = "<group>"; };
+		62D8E6A1253D831A002AF6C7 /* FolderCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FolderCreateViewController.swift; path = ../../../../Downloads/FolderCreateViewController.swift; sourceTree = "<group>"; };
+		62D8E6A6253D8326002AF6C7 /* FolderCreate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FolderCreate.storyboard; path = ../../../../Downloads/FolderCreate.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D8E6B4253D8A5D002AF6C7 /* GRDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +194,7 @@
 				5B4DD1212533EB3600B2F5A0 /* driveRecordTests */,
 				5B4DD12C2533EB3600B2F5A0 /* driveRecordUITests */,
 				5B4DD1092533EB3500B2F5A0 /* Products */,
+				62D8E6B3253D8A5D002AF6C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,13 +211,17 @@
 		5B4DD10A2533EB3500B2F5A0 /* driveRecord */ = {
 			isa = PBXGroup;
 			children = (
+				62D8E6A6253D8326002AF6C7 /* FolderCreate.storyboard */,
+				62D8E6A1253D831A002AF6C7 /* FolderCreateViewController.swift */,
+				62D8E69C253D82E7002AF6C7 /* FolderinfoTable.swift */,
+				62D8E690253D82D6002AF6C7 /* DatabaseHelper.swift */,
 				5B4DD10B2533EB3500B2F5A0 /* AppDelegate.swift */,
 				5B4DD10D2533EB3500B2F5A0 /* SceneDelegate.swift */,
 				5B4DD10F2533EB3500B2F5A0 /* ViewController.swift */,
 				5B4DD1112533EB3500B2F5A0 /* Main.storyboard */,
+				62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */,
 				6246A76525392457009C162B /* folderList2Storyboard.storyboard */,
 				6246A76A2539246D009C162B /* FolderList2.swift */,
-				5B67101325356BE800F6B609 /* FolderCreate.storyboard */,
 				5B67101D253575CB00F6B609 /* MoneyInsert.storyboard */,
 				5B67102225357D7F00F6B609 /* FolderDetail.storyboard */,
 				5B67100E253567C100F6B609 /* Map.storyboard */,
@@ -139,7 +229,6 @@
 				5B67100925354BDC00F6B609 /* Support.storyboard */,
 				5B6710042535326F00F6B609 /* folderDetailViewContorller.swift */,
 				5B4DD14D2534189C00B2F5A0 /* moneyInsertViewController.swift */,
-				5B4DD1482534024200B2F5A0 /* folderCreateViewController.swift */,
 				5B4DD1432533F6B400B2F5A0 /* SupportViewController.swift */,
 				5B4DD13E2533F26600B2F5A0 /* Convention ViewControlle.swift */,
 				5B4DD1142533EB3600B2F5A0 /* Assets.xcassets */,
@@ -167,6 +256,28 @@
 			path = driveRecordUITests;
 			sourceTree = "<group>";
 		};
+		62D8E65C253D7E3D002AF6C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62D8E667253D7E3E002AF6C7 /* GRDB.framework */,
+				62D8E669253D7E3E002AF6C7 /* GRDBOSXTests.xctest */,
+				62D8E66B253D7E3E002AF6C7 /* GRDBOSXCrashTests.xctest */,
+				62D8E66D253D7E3E002AF6C7 /* GRDB.framework */,
+				62D8E66F253D7E3E002AF6C7 /* GRDBiOSTests.xctest */,
+				62D8E671253D7E3E002AF6C7 /* GRDB.framework */,
+				62D8E673253D7E3E002AF6C7 /* GRDB.framework */,
+				62D8E675253D7E3E002AF6C7 /* GRDBtvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		62D8E6B3253D8A5D002AF6C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,10 +288,12 @@
 				5B4DD1042533EB3500B2F5A0 /* Sources */,
 				5B4DD1052533EB3500B2F5A0 /* Frameworks */,
 				5B4DD1062533EB3500B2F5A0 /* Resources */,
+				62D8E6B6253D8A5D002AF6C7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				62D8E6B2253D8A4B002AF6C7 /* PBXTargetDependency */,
 			);
 			name = driveRecord;
 			productName = driveRecord;
@@ -256,6 +369,12 @@
 			mainGroup = 5B4DD0FF2533EB3500B2F5A0;
 			productRefGroup = 5B4DD1092533EB3500B2F5A0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 62D8E65C253D7E3D002AF6C7 /* Products */;
+					ProjectRef = 62D8E65B253D7E3D002AF6C7 /* GRDB.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5B4DD1072533EB3500B2F5A0 /* driveRecord */,
@@ -265,16 +384,75 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		62D8E667253D7E3E002AF6C7 /* GRDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GRDB.framework;
+			remoteRef = 62D8E666253D7E3E002AF6C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62D8E669253D7E3E002AF6C7 /* GRDBOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GRDBOSXTests.xctest;
+			remoteRef = 62D8E668253D7E3E002AF6C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62D8E66B253D7E3E002AF6C7 /* GRDBOSXCrashTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GRDBOSXCrashTests.xctest;
+			remoteRef = 62D8E66A253D7E3E002AF6C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62D8E66D253D7E3E002AF6C7 /* GRDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GRDB.framework;
+			remoteRef = 62D8E66C253D7E3E002AF6C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62D8E66F253D7E3E002AF6C7 /* GRDBiOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GRDBiOSTests.xctest;
+			remoteRef = 62D8E66E253D7E3E002AF6C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62D8E671253D7E3E002AF6C7 /* GRDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GRDB.framework;
+			remoteRef = 62D8E670253D7E3E002AF6C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62D8E673253D7E3E002AF6C7 /* GRDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GRDB.framework;
+			remoteRef = 62D8E672253D7E3E002AF6C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62D8E675253D7E3E002AF6C7 /* GRDBtvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GRDBtvOSTests.xctest;
+			remoteRef = 62D8E674253D7E3E002AF6C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		5B4DD1062533EB3500B2F5A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D8E6A7253D8326002AF6C7 /* FolderCreate.storyboard in Resources */,
 				5B4DD1182533EB3600B2F5A0 /* LaunchScreen.storyboard in Resources */,
 				6246A76625392457009C162B /* folderList2Storyboard.storyboard in Resources */,
 				5B4DD1152533EB3600B2F5A0 /* Assets.xcassets in Resources */,
 				5B67101E253575CB00F6B609 /* MoneyInsert.storyboard in Resources */,
-				5B67101425356BE800F6B609 /* FolderCreate.storyboard in Resources */,
 				5B67100F253567C100F6B609 /* Map.storyboard in Resources */,
 				5B67102325357D7F00F6B609 /* FolderDetail.storyboard in Resources */,
 				5B67100A25354BDC00F6B609 /* Support.storyboard in Resources */,
@@ -303,12 +481,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B4DD1492534024200B2F5A0 /* folderCreateViewController.swift in Sources */,
 				5B4DD1102533EB3500B2F5A0 /* ViewController.swift in Sources */,
 				5B6710052535326F00F6B609 /* folderDetailViewContorller.swift in Sources */,
+				62D8E691253D82D6002AF6C7 /* DatabaseHelper.swift in Sources */,
+				62D8E69D253D82E7002AF6C7 /* FolderinfoTable.swift in Sources */,
 				5B4DD13F2533F26600B2F5A0 /* Convention ViewControlle.swift in Sources */,
 				5B6710192535710A00F6B609 /* MapViewController.swift in Sources */,
 				5B4DD10C2533EB3500B2F5A0 /* AppDelegate.swift in Sources */,
+				62D8E6A2253D831A002AF6C7 /* FolderCreateViewController.swift in Sources */,
 				5B4DD1442533F6B400B2F5A0 /* SupportViewController.swift in Sources */,
 				5B4DD14E2534189C00B2F5A0 /* moneyInsertViewController.swift in Sources */,
 				5B4DD10E2533EB3500B2F5A0 /* SceneDelegate.swift in Sources */,
@@ -344,6 +524,11 @@
 			isa = PBXTargetDependency;
 			target = 5B4DD1072533EB3500B2F5A0 /* driveRecord */;
 			targetProxy = 5B4DD12A2533EB3600B2F5A0 /* PBXContainerItemProxy */;
+		};
+		62D8E6B2253D8A4B002AF6C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GRDBiOS;
+			targetProxy = 62D8E6B1253D8A4B002AF6C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
