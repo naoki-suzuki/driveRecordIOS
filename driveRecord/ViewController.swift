@@ -4,35 +4,35 @@
 //  Created by 大越悠司 on 2020/10/12.
 
 import UIKit
+import GRDB
 
 class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var tableView: UITableView!
     
-    // ②テーブルに表示するデータの準備
-    var folderList = ["出張", "ドライブ２", "ドライブ３"]
-    
-    var date = ["2020/8/23", "2020/10/31", "2020/9/3"]
-    
-    //セルの編集許可
-        func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-        {
-            return true
-        }
-
-        //スワイプしたセルを削除
-        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == UITableViewCell.EditingStyle.delete {
-                folderList.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
-            }
-        }
+    var folderList: [String] = []
+    var date: [String] = []
     
     // 元からあるコード
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //データベース接続
+        var result: [Folderinfo] = []
+        let helper = DatabaseHelper()
+        helper.inDatabase{ (db) in
+            result = try Folderinfo.fetchAll(db)
+        }
+        result.forEach{(it) in
+            print("\(String(describing: it.title)) - \(String(describing: it.date))")
+        }
+        
+        for it in result {
+           
+            // ②テーブルに表示するデータの準備
+            folderList.append(it.title)
+            date.append(it.date)
+        }
     }
- 
+    
     // ③テーブルの行数を指定するメソッド（必須）
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return folderList.count
@@ -57,5 +57,26 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
 
         return cell
     }
- 
+    
+
+    @IBOutlet weak var tableView: UITableView!
+    
+
+
+    
+    //セルの編集許可
+        func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+        {
+            return true
+        }
+
+        //スワイプしたセルを削除
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == UITableViewCell.EditingStyle.delete {
+                folderList.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            }
+        }
+    
+
 }
