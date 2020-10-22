@@ -2,7 +2,7 @@
 //  cameraViewController.swift
 //  driveRecord
 //
-//  Created by ともや n on 2020/10/22.
+//  Created by 長阪智哉　on 2020/10/22.
 //
 
 import UIKit
