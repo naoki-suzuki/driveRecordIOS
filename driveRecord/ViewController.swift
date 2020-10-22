@@ -17,7 +17,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         //データベース接続
         var result: [Folderinfo] = []
-        let helper = DatabaseHelper()
+        let helper = Databasehelper()
         helper.inDatabase{ (db) in
             result = try Folderinfo.fetchAll(db)
         }
