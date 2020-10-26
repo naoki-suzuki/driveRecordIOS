@@ -8,6 +8,7 @@ import GRDB
 
 class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var folderid: [Int64?] = []
     var folderList: [String] = []
     var date: [String] = []
     
@@ -17,17 +18,18 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         //データベース接続
         var result: [Folderinfo] = []
-        let helper = Databasehelper()
+        let helper = DatabaseHelper()
         helper.inDatabase{ (db) in
             result = try Folderinfo.fetchAll(db)
         }
         result.forEach{(it) in
-            print("\(String(describing: it.title)) - \(String(describing: it.date))")
+            print("\(Int64(it.folderid!)) - \(String(describing: it.title)) - \(String(describing: it.date))")
         }
         
         for it in result {
            
             // ②テーブルに表示するデータの準備
+            folderid.append(it.folderid)
             folderList.append(it.title)
             date.append(it.date)
         }
@@ -42,7 +44,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath as IndexPath)
-        
+
         //ラベルオブジェクトを作る
         //日付のラベル
         let labelDate = cell.viewWithTag(1) as! UILabel
@@ -54,7 +56,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         let labelFolderList = cell.viewWithTag(2) as! UILabel
         //ラベルに表示する文字列を設定
         labelFolderList.text = (folderList[indexPath.row])
-
+        
         return cell
     }
     
@@ -72,11 +74,25 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
 
         //スワイプしたセルを削除
         func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            
+            //データベース接続し、該当項目のフォルダを削除
+            let helper = DatabaseHelper()
+            
+            let index = folderid[indexPath.row]
+            
+            //フォルダID取得
+            
+            _ = helper.inDatabase { (db) in
+                try Folderinfo.filter(key: index).deleteAll(db)
+            }
+            
+            //フォルダID配列の要素を削除
+            folderid.remove(at: indexPath.row)
+            
             if editingStyle == UITableViewCell.EditingStyle.delete {
                 folderList.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
             }
         }
     
-
 }
