@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lHQ-gQ-a1m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--金額入力-->
         <scene sceneID="6l3-ea-nOJ">
             <objects>
-                <viewController id="YTA-hF-Cgf" customClass="moneyInsertViewController" customModule="driveRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="moneyView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YTA-hF-Cgf" customClass="MoneyInsertViewController" customModule="driveRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bqw-Fu-cr8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +48,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="Button" image="camera.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="cBv-3j-GBe" kind="show" id="WFX-ug-rEJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="負担者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dL-au-lJQ">
                                 <rect key="frame" x="99" y="494" width="70" height="28"/>
@@ -67,6 +70,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="入力完了"/>
+                                <connections>
+                                    <action selector="complete:" destination="YTA-hF-Cgf" eventType="touchUpInside" id="hLF-Cm-6nO"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tWx-ZN-dcU">
                                 <rect key="frame" x="207" y="221" width="97" height="34"/>
@@ -81,11 +87,78 @@
                     <navigationItem key="navigationItem" title="金額入力" id="3kr-fq-VXa"/>
                     <connections>
                         <outlet property="List" destination="tWx-ZN-dcU" id="uIA-G2-Yh8"/>
+                        <outlet property="money" destination="WFs-98-Qn2" id="Ues-LA-c2s"/>
+                        <outlet property="selectRepayer" destination="AtP-oP-rei" id="I5R-cJ-9lP"/>
+                        <segue destination="lH1-rG-3ID" kind="show" identifier="detail" id="fwd-FG-WTe"/>
+                        <segue destination="HwE-kh-WNm" kind="show" identifier="home" id="kmz-69-arw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mA-ar-acE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1271.0144927536232" y="154.6875"/>
+        </scene>
+        <!--FolderDetail-->
+        <scene sceneID="62T-lD-J3c">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="detail" storyboardName="FolderDetail" id="lH1-rG-3ID" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="w1s-Ce-Lsj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcK-wX-sO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="50"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="C3a-BB-ILE">
+            <objects>
+                <viewController id="cBv-3j-GBe" customClass="cameraViewController" customModule="driveRecord" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ds2-Q4-ErD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="107-Fn-G0Z">
+                                <rect key="frame" x="88" y="783" width="57" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="save:" destination="cBv-3j-GBe" eventType="touchUpInside" id="quj-iG-Ebm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIo-I3-ZmC">
+                                <rect key="frame" x="271" y="788" width="61" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="撮影"/>
+                                <connections>
+                                    <action selector="cameraAction:" destination="cBv-3j-GBe" eventType="touchUpInside" id="2FQ-lx-eoh"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPV-6H-ZMg" userLabel="cameraPic">
+                                <rect key="frame" x="0.0" y="88" width="414" height="657"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OfW-TU-YBp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3wK-dL-IfB"/>
+                    <connections>
+                        <outlet property="cameraPic" destination="YPV-6H-ZMg" id="7Bs-l2-DIx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kym-7h-j7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2492.753623188406" y="154.6875"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="t3j-C7-RFj">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="home" storyboardName="Main" id="HwE-kh-WNm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JK0-iE-bnW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FFg-Nj-GcL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cNS-x9-lr2">

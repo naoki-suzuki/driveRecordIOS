@@ -2,27 +2,28 @@
 //  cameraViewController.swift
 //  driveRecord
 //
-//  Created by ともや n on 2020/10/22.
+//  Created by 大越悠司 on 2020/10/26.
 //
 
+import Foundation
 import UIKit
 
 class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
-                            UINavigationControllerDelegate{
+                      UINavigationControllerDelegate{
     
-    
-    
-    
+   
+    @IBOutlet weak var cameraPic: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
     }
     
     // カメラの撮影開始
     @IBAction func cameraAction(_ sender: Any) {
-        
-        let sourceType:UIImagePickerController.SourceType =
+    
+    let sourceType:UIImagePickerController.SourceType =
             UIImagePickerController.SourceType.camera
         // カメラが利用可能かチェック
         if UIImagePickerController.isSourceTypeAvailable(
@@ -35,7 +36,6 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
             
         }
         else{
-            
             
         }
     }
@@ -55,6 +55,7 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
         //閉じる処理
         imagePicker.dismiss(animated: true, completion: nil)
         
+        
     }
     
     // 撮影がキャンセルされた時に呼ばれる
@@ -64,9 +65,8 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     
-    // 写真を保存
-    @IBAction func savePic(_ sender: Any) {
-        
+    @IBAction func save(_ sender: Any) {
+   
         let image:UIImage! = cameraPic.image
         
         if image != nil {
@@ -81,6 +81,7 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         
     }
+   
     
     // 書き込み完了結果の受け取り
     @objc func image(_ image: UIImage,
@@ -96,5 +97,5 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
+    
 }
-
