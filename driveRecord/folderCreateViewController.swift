@@ -9,6 +9,7 @@ import UIKit
 import GRDB
 
 class FolderCreateViewController : UIViewController, UITextFieldDelegate {
+    //テスト
     //日付のTextField
     @IBOutlet weak var dateTravel: UITextField!
     //タイトル名のTextField
