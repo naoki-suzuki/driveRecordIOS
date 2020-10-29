@@ -22,7 +22,7 @@
                                 <state key="normal" title="作成完了"/>
                                 <connections>
                                     <action selector="InsertHome:" destination="Kws-og-tJ9" eventType="touchUpInside" id="9fZ-hb-RHF"/>
-                                    <segue destination="BQa-bK-wXw" kind="show" id="XfC-Sz-MpU"/>
+                                    <segue destination="BQa-bK-wXw" kind="presentation" modalPresentationStyle="fullScreen" id="XfC-Sz-MpU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-pl-h3l">
@@ -31,7 +31,7 @@
                                 <state key="normal" title="金額入力"/>
                                 <connections>
                                     <action selector="Insert:" destination="Kws-og-tJ9" eventType="touchUpInside" id="b6S-Yr-Btc"/>
-                                    <segue destination="SX9-tG-3fQ" kind="show" identifier="moneyView" id="DOV-R0-Zjy"/>
+                                    <segue destination="SX9-tG-3fQ" kind="presentation" identifier="moneyView" modalPresentationStyle="fullScreen" id="DOV-R0-Zjy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hf5-rP-rEW">
@@ -167,7 +167,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4E-bY-7Cv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646" y="108"/>
+            <point key="canvasLocation" x="1825" y="188"/>
         </scene>
         <!--Main-->
         <scene sceneID="ddt-b2-mU0">
@@ -177,7 +177,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srt-hx-Wcy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="205"/>
+            <point key="canvasLocation" x="1791" y="155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c84-dx-IWA">

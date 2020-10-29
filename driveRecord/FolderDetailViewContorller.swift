@@ -7,7 +7,7 @@
 
 import UIKit
 
-class folderDetailViewController : UIViewController {
+class FolderDetailViewController : UIViewController {
     
     @IBAction func showActivityView(_ sender: UIBarButtonItem) {
         
