@@ -4,7 +4,7 @@
 //
 //  Created by 大越悠司 on 2020/10/13.
 //
-
+// コメント追加
 import UIKit
 
 class FolderDetailViewController : UIViewController {
@@ -18,3 +18,4 @@ class FolderDetailViewController : UIViewController {
         super.viewDidLoad()
     }
 }
+//テスト２のコメント
