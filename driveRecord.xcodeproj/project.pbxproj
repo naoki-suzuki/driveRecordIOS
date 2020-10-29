@@ -18,7 +18,7 @@
 		5B4DD13F2533F26600B2F5A0 /* Convention ViewControlle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DD13E2533F26600B2F5A0 /* Convention ViewControlle.swift */; };
 		5B4DD1442533F6B400B2F5A0 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DD1432533F6B400B2F5A0 /* SupportViewController.swift */; };
 		5B4DD14E2534189C00B2F5A0 /* MoneyInsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DD14D2534189C00B2F5A0 /* MoneyInsertViewController.swift */; };
-		5B6710052535326F00F6B609 /* folderDetailViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6710042535326F00F6B609 /* folderDetailViewContorller.swift */; };
+		5B6710052535326F00F6B609 /* FolderDetailViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6710042535326F00F6B609 /* FolderDetailViewContorller.swift */; };
 		5B67100A25354BDC00F6B609 /* Support.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B67100925354BDC00F6B609 /* Support.storyboard */; };
 		5B67100F253567C100F6B609 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B67100E253567C100F6B609 /* Map.storyboard */; };
 		5B6710192535710A00F6B609 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6710182535710A00F6B609 /* MapViewController.swift */; };
@@ -148,7 +148,7 @@
 		5B4DD13E2533F26600B2F5A0 /* Convention ViewControlle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Convention ViewControlle.swift"; sourceTree = "<group>"; };
 		5B4DD1432533F6B400B2F5A0 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		5B4DD14D2534189C00B2F5A0 /* MoneyInsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyInsertViewController.swift; sourceTree = "<group>"; };
-		5B6710042535326F00F6B609 /* folderDetailViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = folderDetailViewContorller.swift; sourceTree = "<group>"; };
+		5B6710042535326F00F6B609 /* FolderDetailViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailViewContorller.swift; sourceTree = "<group>"; };
 		5B67100925354BDC00F6B609 /* Support.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Support.storyboard; sourceTree = "<group>"; };
 		5B67100E253567C100F6B609 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		5B6710182535710A00F6B609 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +220,7 @@
 				62D8E6A6253D8326002AF6C7 /* FolderCreate.storyboard */,
 				62D8E6A1253D831A002AF6C7 /* folderCreateViewController.swift */,
 				62D8E69C253D82E7002AF6C7 /* FolderinfoTable.swift */,
+				62536C4825469BF1007EAA07 /* ParagraphinfoTable.swift */,
 				62D8E690253D82D6002AF6C7 /* DatabaseHelper.swift */,
 				5B4DD10B2533EB3500B2F5A0 /* AppDelegate.swift */,
 				5B4DD10D2533EB3500B2F5A0 /* SceneDelegate.swift */,
@@ -231,12 +232,11 @@
 				5B67101D253575CB00F6B609 /* MoneyInsert.storyboard */,
 				5B4DD14D2534189C00B2F5A0 /* MoneyInsertViewController.swift */,
 				62536C4C25469E51007EAA07 /* cameraViewController.swift */,
-				62536C4825469BF1007EAA07 /* ParagraphinfoTable.swift */,
 				5B67102225357D7F00F6B609 /* FolderDetail.storyboard */,
+				5B6710042535326F00F6B609 /* FolderDetailViewContorller.swift */,
 				5B67100E253567C100F6B609 /* Map.storyboard */,
 				5B6710182535710A00F6B609 /* MapViewController.swift */,
 				5B67100925354BDC00F6B609 /* Support.storyboard */,
-				5B6710042535326F00F6B609 /* folderDetailViewContorller.swift */,
 				5B4DD1432533F6B400B2F5A0 /* SupportViewController.swift */,
 				5B4DD13E2533F26600B2F5A0 /* Convention ViewControlle.swift */,
 				5B4DD1142533EB3600B2F5A0 /* Assets.xcassets */,
@@ -491,7 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4DD1102533EB3500B2F5A0 /* ViewController.swift in Sources */,
-				5B6710052535326F00F6B609 /* folderDetailViewContorller.swift in Sources */,
+				5B6710052535326F00F6B609 /* FolderDetailViewContorller.swift in Sources */,
 				62D8E691253D82D6002AF6C7 /* DatabaseHelper.swift in Sources */,
 				62536C4D25469E51007EAA07 /* cameraViewController.swift in Sources */,
 				62536C4925469BF1007EAA07 /* ParagraphinfoTable.swift in Sources */,

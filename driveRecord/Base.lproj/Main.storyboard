@@ -17,7 +17,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFb-QW-b7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="-64"/>
+            <point key="canvasLocation" x="1381" y="96"/>
+        </scene>
+        <!--FolderDetail-->
+        <scene sceneID="nO3-3l-fmm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FolderDetail" id="NmH-O9-JLO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Rgr-BC-Qig"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLx-dN-l6S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1459" y="60"/>
         </scene>
         <!--Support-->
         <scene sceneID="SnI-Jl-pX7">
@@ -28,7 +38,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5o-7U-QhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="-236"/>
+            <point key="canvasLocation" x="1399" y="30"/>
         </scene>
         <!--FolderCreate-->
         <scene sceneID="qBc-48-kNf">
@@ -39,7 +49,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nV2-Al-foc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1259" y="-137"/>
+            <point key="canvasLocation" x="1420" y="128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SQ6-By-V2O">
@@ -73,7 +83,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Button" image="plus" catalog="system"/>
                                 <connections>
-                                    <segue destination="mnq-GX-YY1" kind="show" id="EfS-yr-SXb"/>
+                                    <segue destination="mnq-GX-YY1" kind="presentation" modalPresentationStyle="fullScreen" id="EfS-yr-SXb"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eMf-jh-WMU">
@@ -104,6 +114,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NmH-O9-JLO" kind="presentation" identifier="showDetailSegue" modalPresentationStyle="fullScreen" id="Qmq-po-9k7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -118,7 +131,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <state key="normal" title="Button" image="map" catalog="system"/>
                                 <connections>
-                                    <segue destination="WtM-n2-c0S" kind="showDetail" animates="NO" id="39x-aZ-cPb"/>
+                                    <segue destination="WtM-n2-c0S" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="39x-aZ-cPb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -129,7 +142,7 @@
                     <navigationItem key="navigationItem" title="ドラログ" id="7yk-YN-o0h">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="Fcc-D1-V2x">
                             <connections>
-                                <segue destination="i3W-XZ-F6R" kind="show" id="2jQ-Z5-erk"/>
+                                <segue destination="i3W-XZ-F6R" kind="presentation" modalPresentationStyle="fullScreen" id="2jQ-Z5-erk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
