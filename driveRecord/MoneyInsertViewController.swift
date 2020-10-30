@@ -3,6 +3,7 @@
 //  driveRecord
 //
 //  Created by 大越悠司 on 2020/10/12.
+//  Update by 大越悠司 on 2020/10/30
 //
 
 import UIKit
@@ -237,18 +238,19 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                 (action: UIAlertAction!) -> Void in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.performSegue(withIdentifier: "detail", sender: nil)
-                    /* storyboardのインスタンス取得
-                     let storyboard1: UIStoryboard = self.storyboard!
-                     
-                     // 遷移先ViewControllerのインスタンス取得
-                     let nextView1 = storyboard1.instantiateViewController(withIdentifier:"detail")
-                     
-                     // 画面遷移
-                     self.present(nextView1, animated: true, completion: nil)
-                     }*/
-                    print("詳細")
+                    // storyboardのインスタンス取得
+                    let storyboard1: UIStoryboard = self.storyboard!
+                    
+                    // 遷移先ViewControllerのインスタンス取得
+                    let nextView1 = storyboard1.instantiateViewController(withIdentifier:"detail")
+                    //コードでフルスクリーン表示を指定
+                    nextView1.modalPresentationStyle = .fullScreen
+                    // 画面遷移
+                    self.present(nextView1, animated: true, completion: nil)
                 }
+                print("詳細")
             }
+            
             )
             // ホームボタン
             let homeAction: UIAlertAction = UIAlertAction(title: "ホーム", style: UIAlertAction.Style.default, handler:{
@@ -260,7 +262,8 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                     
                     // 遷移先ViewControllerのインスタンス取得
                     let nextView2 = storyboard2.instantiateViewController(withIdentifier: "home")
-                    
+                    //コードでフルスクリーン表示を指定
+                    nextView2.modalPresentationStyle = .fullScreen
                     // 画面遷移
                     self.present(nextView2, animated: true, completion: nil)
                 }

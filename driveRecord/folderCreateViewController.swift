@@ -3,6 +3,7 @@
 //  driveRecord
 //
 //  Created by 大越悠司 on 2020/10/12.
+//  Update by 大越悠司　on 2020/10/30
 //
 
 import UIKit
@@ -11,23 +12,23 @@ import GRDB
 class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     
     //日付のTextField
-    @IBOutlet weak var dateTravel: UITextField!
+    @IBOutlet private weak var dateTravel: UITextField!
     //タイトル名のTextField
-    @IBOutlet weak var travelTitle: UITextField!
+    @IBOutlet private weak var travelTitle: UITextField!
     //メンバー名のTextField
-    @IBOutlet weak var member1: UITextField!
-    @IBOutlet weak var member2: UITextField!
-    @IBOutlet weak var member3: UITextField!
-    @IBOutlet weak var member4: UITextField!
-    @IBOutlet weak var member5: UITextField!
-    @IBOutlet weak var member6: UITextField!
+    @IBOutlet private weak var member1: UITextField!
+    @IBOutlet private weak var member2: UITextField!
+    @IBOutlet private weak var member3: UITextField!
+    @IBOutlet private weak var member4: UITextField!
+    @IBOutlet private weak var member5: UITextField!
+    @IBOutlet private weak var member6: UITextField!
     
     //現在の人数の表示
-    @IBOutlet weak var countMember: UILabel!
+    @IBOutlet private weak var countMember: UILabel!
     //メンバー数をカウントする変数の作成
-    var count = 0
+    private var count = 0
     //新規作成したフォルダのIDを送信する値の変数の作成
-    var sendId:Int64? = 0
+    private var sendId:Int64? = 0
     
     //入力時の処理
     
@@ -145,10 +146,11 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     
     //金額入力ボタン押下後
     @IBAction func Insert(_ sender: UIButton) {
-        //各TextFieldから値を取得
-        let dateTravelDate: String! = dateTravel.text
-        let travelNameString:String! = travelTitle.text
-        let travelMember1String:String! = member1.text
+        // 各TextFieldから値を取得
+        // メンバーは一人目のみ必須事項のため、他はnilを認める
+        let dateTravelDate: String = dateTravel.text!
+        let travelNameString:String = travelTitle.text!
+        let travelMember1String:String = member1.text!
         let travelMember2String:String! = member2.text
         let travelMember3String:String! = member3.text
         let travelMember4String:String! = member4.text
@@ -189,13 +191,14 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
                 print("失敗")
             } else {
                 print("成功")
-                print(dateTravelDate!)
+                print(dateTravelDate)
                 
                 var entity: Folderinfo?
                 
                 let result2 = helper.inDatabase { (db) in
                     //登録した情報を取得
-                    entity = try Folderinfo.filter(Folderinfo.Columns.title == travelNameString).fetchOne(db)
+                    //タイトル名だけだと重複する可能性があるので、日付とメンバー名の一人目も検索条件に追加
+                    entity = try Folderinfo.filter(Folderinfo.Columns.title == travelNameString).filter(Folderinfo.Columns.date == dateTravelDate).filter(Folderinfo.Columns.member1 == travelMember1String).fetchOne(db)
                 }
                 //新規登録出来たか判定
                 if (!result2) {
@@ -240,6 +243,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     //作成完了ボタン押下時の処理
     @IBAction func InsertHome(_ sender: UIButton) {
         //各TextFieldから値を取得
+        // メンバーは一人目のみ必須事項のため、他はnilを認める
         let dateTravelDate: String! = dateTravel.text
         let travelNameString:String! = travelTitle.text
         let travelMember1String:String! = member1.text
