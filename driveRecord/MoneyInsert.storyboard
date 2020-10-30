@@ -89,8 +89,8 @@
                         <outlet property="List" destination="tWx-ZN-dcU" id="uIA-G2-Yh8"/>
                         <outlet property="money" destination="WFs-98-Qn2" id="Ues-LA-c2s"/>
                         <outlet property="selectRepayer" destination="AtP-oP-rei" id="I5R-cJ-9lP"/>
-                        <segue destination="lH1-rG-3ID" kind="show" identifier="detail" id="fwd-FG-WTe"/>
-                        <segue destination="HwE-kh-WNm" kind="show" identifier="home" id="kmz-69-arw"/>
+                        <segue destination="lH1-rG-3ID" kind="presentation" identifier="detail" modalPresentationStyle="fullScreen" id="fwd-FG-WTe"/>
+                        <segue destination="HwE-kh-WNm" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="kmz-69-arw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mA-ar-acE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
