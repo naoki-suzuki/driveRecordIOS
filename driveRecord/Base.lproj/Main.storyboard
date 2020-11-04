@@ -72,7 +72,7 @@
         <!--ドラログ-->
         <scene sceneID="Rsz-H2-SYv">
             <objects>
-                <viewController id="XNo-rQ-rQV" customClass="ViewController" customModule="driveRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XNo-rQ-rQV" customClass="ViewController" customModule="driveRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mjp-XT-PL4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
