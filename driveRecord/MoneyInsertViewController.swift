@@ -148,12 +148,6 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     }
     
     
-    /*入力完了後、キーボードを閉じる
-     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-     self.view.endEditing(true)
-     } */
-    
-    
     @objc func onClickCommitButton (sender: UIButton) {
         if(money.isFirstResponder){
             money.resignFirstResponder()
@@ -166,35 +160,72 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         
     }
     
+    @IBAction func returnHome(_ sender: Any) {
+        let alert: UIAlertController = UIAlertController( title: "", message: "登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
+       
+        // OKボタン(ホームに遷移)
+        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.performSegue(withIdentifier: "home", sender: nil)
+                // storyboardのインスタンス取得
+                 let storyboard3: UIStoryboard = self.storyboard!
+                 
+                 // 遷移先ViewControllerのインスタンス取得
+                 let nextView3 = storyboard3.instantiateViewController(withIdentifier: "home")
+                //コードでフルスクリーン表示を指定
+                 nextView3.modalPresentationStyle = .fullScreen
+                 
+                 // 画面遷移
+                 self.present(nextView3, animated: true, completion: nil)
+                 }
+            }
+        
+        )
+        // キャンセルボタン
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
+        
+        // ③ UIAlertControllerにActionを追加
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        // ④ Alertを表示
+        present(alert, animated: true, completion: nil)
     
-    
-    /*決定ボタン押下
-     @objc func done() {
-     List.endEditing(true)
-     List.text = "\(list[pickerView.selectedRow(inComponent: 0)])"
-     } */
-    
+    }
     
     @IBAction func complete(_ sender: Any) {
-        //各TextFieldから値を取得し格納
-        let selectList:String! = List.text
+        let result = paraInseert(list: List, money: money, repay: selectRepayer)
+        if result {
+            print("成功")
+        } else {
+            print("失敗")
+        }
+    }
+    // 金額登録のメソッド作成
+    func paraInseert (list:UITextField!,money: UITextField!,repay:UITextField!) -> Bool {
+        // 各TextFieldから値を取得し型を変換
+        let selectList:String! = list.text
         let inputMoney:String! = money.text
-        //StringからInt型への変換
+        // StringからInt型への変換
         let intMoney:Int64? = Int64(inputMoney)
-        let chooseRepayer:String! = selectRepayer.text
-        //未入力チェック
+        let chooseRepayer:String! = repay.text
+        // 未入力チェック
         if selectList.isEmpty {
             let alert = UIAlertController(title: "エラー", message: "項目を選択してください" ,preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             present(alert, animated: true, completion: nil)
+            return false
         } else if inputMoney.isEmpty {
             let alert = UIAlertController(title: "エラー", message: "金額を入力してください" ,preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             present(alert, animated: true, completion: nil)
+            return false
         } else if chooseRepayer.isEmpty {
             let alert = UIAlertController(title: "エラー", message: "負担者を選択してください" ,preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             present(alert, animated: true, completion: nil)
+            return false
         } else {
             
             let helper2 = DatabaseHelper()
@@ -221,8 +252,6 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                 }
                 if (!str) {
                     print("失敗")
-                } else {
-                    
                 }
                 
             }
@@ -239,17 +268,18 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.performSegue(withIdentifier: "detail", sender: nil)
                     // storyboardのインスタンス取得
-                    let storyboard1: UIStoryboard = self.storyboard!
-                    
-                    // 遷移先ViewControllerのインスタンス取得
-                    let nextView1 = storyboard1.instantiateViewController(withIdentifier:"detail")
+                     let storyboard1: UIStoryboard = self.storyboard!
+                     
+                     // 遷移先ViewControllerのインスタンス取得
+                     let nextView1 = storyboard1.instantiateViewController(withIdentifier: "detail")
                     //コードでフルスクリーン表示を指定
-                    nextView1.modalPresentationStyle = .fullScreen
-                    // 画面遷移
-                    self.present(nextView1, animated: true, completion: nil)
+                     nextView1.modalPresentationStyle = .fullScreen
+                     
+                     // 画面遷移
+                     self.present(nextView1, animated: true, completion: nil)
+                     }
+                    print("詳細")
                 }
-                print("詳細")
-            }
             
             )
             // ホームボタン
@@ -277,6 +307,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             // ④ Alertを表示
             present(alert, animated: true, completion: nil)
             
+            return true
         }
     }
 }
