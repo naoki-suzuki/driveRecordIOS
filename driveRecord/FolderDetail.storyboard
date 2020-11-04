@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--詳細画面-->
+        <!--フォルダ詳細-->
         <scene sceneID="JwK-i4-vwU">
             <objects>
-                <viewController title="詳細画面" modalPresentationStyle="fullScreen" id="i4w-fH-oSW" customClass="FolderDetailViewController" customModule="driveRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="フォルダ詳細" modalPresentationStyle="fullScreen" id="i4w-fH-oSW" customClass="FolderDetailViewController" customModule="driveRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E0T-eD-jQV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

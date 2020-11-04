@@ -2,7 +2,7 @@
 //  FolderDetailViewContorller.swift
 //  driveRecord
 //
-//  Created by 長阪智哉 on 2020/11/4.
+//  Created by 長阪智哉 on 2020/11/4
 //
 import UIKit
 import GRDB
