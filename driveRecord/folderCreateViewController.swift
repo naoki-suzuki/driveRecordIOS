@@ -3,7 +3,7 @@
 //  driveRecord
 //
 //  Created by 大越悠司 on 2020/10/12.
-//  Update by 大越悠司　on 2020/10/30
+//  Update by 大越悠司　on 2020/11/4
 //
 
 import UIKit
@@ -23,12 +23,14 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var member5: UITextField!
     @IBOutlet private weak var member6: UITextField!
     
-    //現在の人数の表示
+    // 現在の人数の表示
     @IBOutlet private weak var countMember: UILabel!
-    //メンバー数をカウントする変数の作成
+    // メンバー数をカウントする変数の作成
     private var count = 0
-    //新規作成したフォルダのIDを送信する値の変数の作成
+    // 新規作成したフォルダのIDを送信する値の変数の作成
     private var sendId:Int64? = 0
+    // 遷移先のStoryboardIdを格納する変数
+    private let segName = "moneyView"
     
     //入力時の処理
     
@@ -139,93 +141,58 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     @objc func dateChange(){
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd"
+        // 年月日を表示する様に設定
+        formatter.dateFormat = "YYYY/MM/dd"
         dateTravel.text = "\(formatter.string(from: datePicker.date))"
     }
     
+    @IBAction func returnHome(_ sender: Any) {
+        let alert: UIAlertController = UIAlertController( title: "", message: "登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
+       
+        // OKボタン(ホームに遷移)
+        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.performSegue(withIdentifier: "home", sender: nil)
+                // storyboardのインスタンス取得
+                 let storyboard3: UIStoryboard = self.storyboard!
+                 
+                 // 遷移先ViewControllerのインスタンス取得
+                 let nextView3 = storyboard3.instantiateViewController(withIdentifier: "home")
+                //コードでフルスクリーン表示を指定
+                 nextView3.modalPresentationStyle = .fullScreen
+                 
+                 // 画面遷移
+                 self.present(nextView3, animated: true, completion: nil)
+                 }
+            }
+        
+        )
+        // キャンセルボタン
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
+        
+        // ③ UIAlertControllerにActionを追加
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        // ④ Alertを表示
+        present(alert, animated: true, completion: nil)
+    
+    }
     
     //金額入力ボタン押下後
     @IBAction func Insert(_ sender: UIButton) {
-        // 各TextFieldから値を取得
-        // メンバーは一人目のみ必須事項のため、他はnilを認める
-        let dateTravelDate: String = dateTravel.text!
-        let travelNameString:String = travelTitle.text!
-        let travelMember1String:String = member1.text!
-        let travelMember2String:String! = member2.text
-        let travelMember3String:String! = member3.text
-        let travelMember4String:String! = member4.text
-        let travelMember5String:String! = member5.text
-        let travelMember6String:String! = member6.text
         
-        //データベース接続
-        let helper = DatabaseHelper()
-        
-        if  dateTravelDate.isEmpty {
-            let alert = UIAlertController(title: "エラー",
-                                          message: "日付を選択してください",
-                                          preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        } else if travelNameString.isEmpty {
-            let alert = UIAlertController(title: "エラー",
-                                          message: "タイトルを入力してください",
-                                          preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        } else if travelMember1String.isEmpty {
-            let alert = UIAlertController(title: "エラー",
-                                          message: "メンバー名を入力してください",
-                                          preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-            
+        //どちらのボタンからの処理かを識別するための数字
+        let num = 1
+        //メソッド呼び出し
+        let result = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
+        if result {
+           print("成功")
         } else {
-            //データベース接続
-            //let helper = DatabaseHelper()
-            let result = helper.inDatabase{(db) in
-                let folder = Folderinfo(title: travelNameString, date: dateTravelDate, member1: travelMember1String, member2:travelMember2String,member3: travelMember3String,member4: travelMember4String,member5: travelMember5String,member6: travelMember6String)
-                //登録処理
-                try folder.insert(db)
-            }
-            if (!result) {
-                print("失敗")
-            } else {
-                print("成功")
-                print(dateTravelDate)
-                
-                var entity: Folderinfo?
-                
-                let result2 = helper.inDatabase { (db) in
-                    //登録した情報を取得
-                    //タイトル名だけだと重複する可能性があるので、日付とメンバー名の一人目も検索条件に追加
-                    entity = try Folderinfo.filter(Folderinfo.Columns.title == travelNameString).filter(Folderinfo.Columns.date == dateTravelDate).filter(Folderinfo.Columns.member1 == travelMember1String).fetchOne(db)
-                }
-                //新規登録出来たか判定
-                if (!result2) {
-                    print("失敗")
-                } else {
-                    print(entity?.folderid! as Any)
-                    print(entity?.title as Any)
-                    sendId = entity?.folderid
-                    //取得した数字格納ずみを判定
-                    print(sendId!)
-                    //Segueの実行
-                    performSegue(withIdentifier: "moneyView", sender: nil)
-                    
-                    
-                    /*storyboardのインスタンス取得
-                     let storyboard: UIStoryboard = self.storyboard!
-                     //遷移先のインスタンスを取得
-                     let nextView = storyboard.instantiateViewController(withIdentifier: "moneyView") as! MoneyInsertViewController
-                     //値の設定
-                     nextView.receiveId = sendId!
-                     //画面遷移
-                     self.present(nextView, animated: true, completion: nil)*/
-                    
-                }
-            }
-            
+         print("エラー取得")
         }
+       
     }
     //Segue実行前の処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -240,60 +207,99 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             nextView.receiveId = sendId!
         }
     }
-    //作成完了ボタン押下時の処理
+    // 作成完了ボタン押下時の処理
     @IBAction func InsertHome(_ sender: UIButton) {
-        //各TextFieldから値を取得
-        // メンバーは一人目のみ必須事項のため、他はnilを認める
-        let dateTravelDate: String! = dateTravel.text
-        let travelNameString:String! = travelTitle.text
-        let travelMember1String:String! = member1.text
-        let travelMember2String:String! = member2.text
-        let travelMember3String:String! = member3.text
-        let travelMember4String:String! = member4.text
-        let travelMember5String:String! = member5.text
-        let travelMember6String:String! = member6.text
+        //どちらのボタンからの処理かを識別するための数字
+        let num = 0
+        //メソッド呼び出し
+        let result = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
+        if result {
+           print("成功")
+        } else {
+         print("エラー取得")
+        }
+    }
+    
+    // TextFieldの値を受け取り、入力チェック及び、フォルダ作成処理を行うメソッド
+    func insert (dateTravel:UITextField!,travelName:UITextField!,member1:UITextField!,member2:UITextField!,member3:UITextField!,member4:UITextField!,member5:UITextField!,member6:UITextField!,num:Int!) -> Bool {
+        //引数の値を格納
+        let dateTravelName: String = dateTravel.text!
+        let travelName: String = travelName.text!
+        let travelMember1: String = member1.text!
+        let travelMember2: String! = member2.text!
+        let travelMember3: String! = member3.text!
+        let travelMember4: String! = member4.text!
+        let travelMember5: String! = member5.text!
+        let travelMember6: String! = member6.text!
         
-        //未入力チェック
-        if  dateTravelDate.isEmpty {
+        
+        // 未入力チェック
+        // 日付判定
+        if  dateTravelName.isEmpty {
             let alert = UIAlertController(title: "エラー",
                                           message: "日付を選択してください",
                                           preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
-        } else if travelNameString.isEmpty {
+            return false
+        // タイトル名未入力チェック
+        } else if travelName.isEmpty {
             let alert = UIAlertController(title: "エラー",
                                           message: "タイトルを入力してください",
                                           preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
-        } else if travelMember1String.isEmpty {
+            return false
+        // メンバーが一人でも入力されているかチェック
+        } else if travelMember1.isEmpty {
             let alert = UIAlertController(title: "エラー",
                                           message: "メンバー名を入力してください",
                                           preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
-            
+            return false
         } else {
-            
-            //データベース接続
+    
+            // データベース接続
             let helper = DatabaseHelper()
             let result = helper.inDatabase{(db) in
-                let folder = Folderinfo(title: travelNameString, date: dateTravelDate, member1: travelMember1String, member2:travelMember2String,member3: travelMember3String,member4: travelMember4String,member5: travelMember5String,member6: travelMember6String)
-                //登録処理
+                // 登録内容を格納
+                let folder = Folderinfo(title: travelName, date: dateTravelName, member1: travelMember1, member2: travelMember2, member3: travelMember3, member4: travelMember4, member5: travelMember5, member6: travelMember6)
+                // 登録処理
                 try folder.insert(db)
+                //　todo 一番新しいIDを取得する処理
             }
-            //確認のための記述
-            if (!result) {
-                print("失敗")
+            
+            if result && num == 1 {
+                var entity: Folderinfo?
+                
+                let result2 = helper.inDatabase { (db) in
+                    // 登録した情報を取得
+                    // 登録名が重複すると若い番号が取得される
+                    // entity = try Folderinfo.filter(Folderinfo.Columns.title == travelNameString).fetchOne(db)
+                    entity = try Folderinfo.filter(Folderinfo.Columns.title == travelName).filter(Folderinfo.Columns.date == dateTravelName).filter(Folderinfo.Columns.member1 == travelMember1).fetchOne(db)
+                }
+                
+                if result2 {
+                    print(entity?.folderid! as Any)
+                    //print(entity?.title as Any)
+                    sendId = entity?.folderid
+                    // 取得した数字格納ずみを判定
+                    print(sendId!)
+                    // Segueの実行
+                    performSegue(withIdentifier: segName, sender: nil)
+                
+                    return true
+                }
+                return true
+            } else if result {
+                print(num!)
+                return true
             } else {
-                print("成功")
-                print(dateTravelDate!)
-                print(travelNameString!)
-                print(travelMember1String!)
-                print(travelMember6String!)
+               return false
             }
-            
-            
+        
         }
+       
     }
 }

@@ -84,7 +84,18 @@
                         <viewLayoutGuide key="safeArea" id="yoW-GE-VJZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="金額入力" id="3kr-fq-VXa"/>
+                    <navigationItem key="navigationItem" title="金額入力" id="3kr-fq-VXa">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="delete.left.fill" catalog="system" id="RCi-DB-mc2">
+                            <connections>
+                                <action selector="returnHome:" destination="YTA-hF-Cgf" id="Ido-0t-Rjt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="SZw-Rq-Lwa">
+                            <connections>
+                                <segue destination="08C-wB-zA1" kind="show" id="OJM-RK-FL8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="List" destination="tWx-ZN-dcU" id="uIA-G2-Yh8"/>
                         <outlet property="money" destination="WFs-98-Qn2" id="Ues-LA-c2s"/>
@@ -96,6 +107,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mA-ar-acE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1271.0144927536232" y="154.6875"/>
+        </scene>
+        <!--Support-->
+        <scene sceneID="0O7-fC-xGM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Support" id="08C-wB-zA1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ccE-n5-hrQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqU-Mc-fCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921" y="-3"/>
         </scene>
         <!--FolderDetail-->
         <scene sceneID="62T-lD-J3c">
@@ -181,6 +202,8 @@
     </scenes>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="delete.left.fill" catalog="system" width="128" height="104"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

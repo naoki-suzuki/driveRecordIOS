@@ -22,7 +22,7 @@
                                 <state key="normal" title="作成完了"/>
                                 <connections>
                                     <action selector="InsertHome:" destination="Kws-og-tJ9" eventType="touchUpInside" id="9fZ-hb-RHF"/>
-                                    <segue destination="BQa-bK-wXw" kind="presentation" modalPresentationStyle="fullScreen" id="XfC-Sz-MpU"/>
+                                    <segue destination="BQa-bK-wXw" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="XfC-Sz-MpU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-pl-h3l">
@@ -141,7 +141,18 @@
                             <constraint firstItem="2KQ-DD-jBU" firstAttribute="bottom" secondItem="7jG-fh-aiY" secondAttribute="bottom" constant="56" id="mCZ-C1-qLZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ドラログ" id="3UM-Mm-9a4"/>
+                    <navigationItem key="navigationItem" title="ドラログ" id="3UM-Mm-9a4">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="delete.left.fill" catalog="system" id="iGn-ax-aAS">
+                            <connections>
+                                <action selector="returnHome:" destination="Kws-og-tJ9" id="yTy-r1-CsN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="fe7-uP-azA">
+                            <connections>
+                                <segue destination="lQi-av-Rtc" kind="show" id="ebm-rT-sao"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="countMember" destination="2ck-Eu-5qN" id="SZG-e7-emD"/>
@@ -169,10 +180,20 @@
             </objects>
             <point key="canvasLocation" x="1825" y="188"/>
         </scene>
+        <!--Support-->
+        <scene sceneID="avP-Rq-wpZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Support" id="lQi-av-Rtc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tLS-pC-Rql"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGl-IT-4ZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1806" y="121"/>
+        </scene>
         <!--Main-->
         <scene sceneID="ddt-b2-mU0">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="BQa-bK-wXw" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="home" storyboardName="Main" id="BQa-bK-wXw" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="IU9-j0-jaB"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srt-hx-Wcy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -199,6 +220,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="delete.left.fill" catalog="system" width="128" height="104"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
