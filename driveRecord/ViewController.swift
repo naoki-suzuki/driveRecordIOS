@@ -75,6 +75,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     //
     //    }
     
+    // セル押下時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // タップされたセルの行番号を出力
