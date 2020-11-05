@@ -8,6 +8,10 @@ import GRDB
 
 class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // 新規作成したフォルダのIDを送信する値の変数の作成
+    private var sender:Int64? = 0
+    
+    // データ格納用の配列
     private var folderid: [Int64?] = []
     private var folderList: [String] = []
     private var date: [String] = []
@@ -75,6 +79,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     //
     //    }
     
+    // セル押下時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // タップされたセルの行番号を出力
@@ -89,8 +94,12 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showDetailSegue" {
-            if let nextVC = segue.destination as? FolderDetailViewController,
-               let index = sender as? Int {
+            let nextVC = segue.destination as? FolderDetailViewController
+            
+            if let sender = sender as? Int64 {
+                nextVC?.receiveId = sender
+                print("receivedId =")
+                print(nextVC?.receiveId)
             }
         }
     }
