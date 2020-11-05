@@ -40,8 +40,8 @@ class FolderDetailViewController : UIViewController {
     private var count = 1
     
     //値の取得
-    //var receiveId:Int64 = 0
-    var Id = 1
+    var receiveId:Int64 = 0
+    //var Id = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +53,7 @@ class FolderDetailViewController : UIViewController {
         //前画面のfolderid情報を基に検索を行う
         let result = helper.inDatabase { (db) in
             //全画面で登録したフォルダ情報を取得
-            entity = try Folderinfo.filter(Folderinfo.Columns.folderid == Id).fetchOne(db)
+            entity = try Folderinfo.filter(Folderinfo.Columns.folderid == receiveId).fetchOne(db)
         }
         if(!result) {
             print("sippai")
@@ -72,7 +72,7 @@ class FolderDetailViewController : UIViewController {
             
         }
         //変数の格納ができているか調べるためのprint処理（最終的には消す）
-        print(Id)
+        print(receiveId)
         print(member1 as Any)
         
         
