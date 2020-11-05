@@ -41,7 +41,7 @@ class FolderDetailViewController : UIViewController {
     
     //値の取得
     var receiveId:Int64 = 0
-    var Id = 1
+    //var Id = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +53,7 @@ class FolderDetailViewController : UIViewController {
         //前画面のfolderid情報を基に検索を行う
         let result = helper.inDatabase { (db) in
             //全画面で登録したフォルダ情報を取得
-            entity = try Folderinfo.filter(Folderinfo.Columns.folderid == Id).fetchOne(db)
+            entity = try Folderinfo.filter(Folderinfo.Columns.folderid == receiveId).fetchOne(db)
         }
         if(!result) {
             print("sippai")
@@ -72,13 +72,19 @@ class FolderDetailViewController : UIViewController {
             
         }
         //変数の格納ができているか調べるためのprint処理（最終的には消す）
-        print(Id)
+        print(receiveId)
         print(member1 as Any)
+        
+        
+        
+        
         
         //ラベルテキストを使って角ラベルに貼り付け
         day.text = date
         folderTitle.text = folderList
         mem1.text = member1
+        
+        
         
         //member2-6はいない可能性もあるためnilであれば白紙にする
         if member2 == "" {
@@ -121,7 +127,7 @@ class FolderDetailViewController : UIViewController {
         //カウントした人数をラベルに貼り付ける
         people.text = "\(count)人"
         
-        //金額入力にIDを送る処理
+        //memberのnilの数を参照する
         
         
         
