@@ -40,7 +40,7 @@ class FolderDetailViewController : UIViewController {
     private var count = 1
     
     //値の取得
-    var receiveId:Int64 = 0
+    //var receiveId:Int64 = 0
     var Id = 1
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,10 +75,16 @@ class FolderDetailViewController : UIViewController {
         print(Id)
         print(member1 as Any)
         
+        
+        
+        
+        
         //ラベルテキストを使って角ラベルに貼り付け
         day.text = date
         folderTitle.text = folderList
         mem1.text = member1
+        
+        
         
         //member2-6はいない可能性もあるためnilであれば白紙にする
         if member2 == "" {
@@ -121,7 +127,7 @@ class FolderDetailViewController : UIViewController {
         //カウントした人数をラベルに貼り付ける
         people.text = "\(count)人"
         
-        //金額入力にIDを送る処理
+        //memberのnilの数を参照する
         
         
         
