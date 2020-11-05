@@ -99,6 +99,29 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         }
         dateTravel.inputView = datePicker
         
+        // ツールバー生成 サイズはsizeToFitメソッドで自動で調整される。
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+
+        //サイズの自動調整。敢えて手動で実装したい場合はCGRectに記述してsizeToFitは呼び出さない。
+        toolBar.sizeToFit()
+
+        // 左側のBarButtonItemはflexibleSpace。これがないと右に寄らない。
+        let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
+        // Doneボタン
+        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(commitButtonTapped))
+        // BarButtonItemの配置
+        toolBar.items = [spacer, commitButton]
+        // textViewのキーボードにツールバーを設定
+        dateTravel.inputAccessoryView = toolBar
+        travelTitle.returnKeyType = UIReturnKeyType.done
+        member1.returnKeyType = UIReturnKeyType.done
+        member2.returnKeyType = UIReturnKeyType.done
+        member3.returnKeyType = UIReturnKeyType.done
+        member4.returnKeyType = UIReturnKeyType.done
+        member5.returnKeyType = UIReturnKeyType.done
+        member6.returnKeyType = UIReturnKeyType.done
+        
+        
         //UserDefaultのインスタンス生成
         //let setting = UserDefaults.standard
         //UserDefaultに初期値を設定
@@ -113,6 +136,10 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         member6.delegate = self
         
         //displayUpdate()
+    }
+    // 完了ボタン押下後の処理
+    @objc func commitButtonTapped() {
+        self.view.endEditing(true)
     }
     
     

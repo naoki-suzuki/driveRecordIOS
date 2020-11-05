@@ -162,7 +162,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     
     @IBAction func returnHome(_ sender: Any) {
         let alert: UIAlertController = UIAlertController( title: "", message: "登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
-       
+        
         // OKボタン(ホームに遷移)
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
             // ボタンが押された時の処理を書く（クロージャ実装）
@@ -170,17 +170,17 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.performSegue(withIdentifier: "home", sender: nil)
                 // storyboardのインスタンス取得
-                 let storyboard3: UIStoryboard = self.storyboard!
-                 
-                 // 遷移先ViewControllerのインスタンス取得
-                 let nextView3 = storyboard3.instantiateViewController(withIdentifier: "home")
+                let storyboard3: UIStoryboard = self.storyboard!
+                
+                // 遷移先ViewControllerのインスタンス取得
+                let nextView3 = storyboard3.instantiateViewController(withIdentifier: "home")
                 //コードでフルスクリーン表示を指定
-                 nextView3.modalPresentationStyle = .fullScreen
-                 
-                 // 画面遷移
-                 self.present(nextView3, animated: true, completion: nil)
-                 }
+                nextView3.modalPresentationStyle = .fullScreen
+                
+                // 画面遷移
+                self.present(nextView3, animated: true, completion: nil)
             }
+        }
         
         )
         // キャンセルボタン
@@ -191,7 +191,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         alert.addAction(okAction)
         // ④ Alertを表示
         present(alert, animated: true, completion: nil)
-    
+        
     }
     
     @IBAction func complete(_ sender: Any) {
@@ -238,78 +238,119 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             if (!result) {
                 print("失敗")
             } else {
-                print("成功")
-                //登録済みか確認用コード
-                var result3 :[Paragraphinfo] = []
-                let helper4 = DatabaseHelper()
+                let alert: UIAlertController = UIAlertController( title: "", message: "どちらに移動しますか？", preferredStyle:  UIAlertController.Style.alert)
                 
-                let str = helper4.inDatabase { (db) in
-                    result3 = try Paragraphinfo.fetchAll(db)
-                }
-                // 出力
-                result3.forEach { (it) in
-                    print("\(String(describing: it.folderid)) - \(String(describing: it.para_name)) - \(String(describing: it.para_cost)) - \(String(describing: it.para_num))")
-                }
-                if (!str) {
-                    print("失敗")
-                }
-                
-            }
-            
-            let alert: UIAlertController = UIAlertController( title: "", message: "どちらに移動しますか？", preferredStyle:  UIAlertController.Style.alert)
-            
-            // ② Actionの設定
-            // Action初期化時にタイトル, スタイル, 押された時に実行されるハンドラを指定する
-            // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
-            // 詳細ボタン
-            let detailAction: UIAlertAction = UIAlertAction(title: "詳細", style: UIAlertAction.Style.default, handler:{
-                // ボタンが押された時の処理を書く（クロージャ実装）
-                (action: UIAlertAction!) -> Void in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.performSegue(withIdentifier: "detail", sender: nil)
-                    // storyboardのインスタンス取得
-                     let storyboard1: UIStoryboard = self.storyboard!
-                     
-                     // 遷移先ViewControllerのインスタンス取得
-                     let nextView1 = storyboard1.instantiateViewController(withIdentifier: "detail")
-                    //コードでフルスクリーン表示を指定
-                     nextView1.modalPresentationStyle = .fullScreen
-                     
-                     // 画面遷移
-                     self.present(nextView1, animated: true, completion: nil)
-                     }
+                // ② Actionの設定
+                // Action初期化時にタイトル, スタイル, 押された時に実行されるハンドラを指定する
+                // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
+                // 詳細ボタン
+                let detailAction: UIAlertAction = UIAlertAction(title: "詳細", style: UIAlertAction.Style.default, handler:{
+                    // ボタンが押された時の処理を書く（クロージャ実装）
+                    (action: UIAlertAction!) -> Void in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.performSegue(withIdentifier: "detail", sender: nil)
+                        
+                        let helper2 = DatabaseHelper()
+                        let result = helper2.inDatabase{(db) in
+                            //receivedIdは送信されたフォルダ番号
+                            let folder = Paragraphinfo(folderid: self.receiveId, para_name: selectList, para_cost: intMoney, repayer: chooseRepayer)
+                            //登録処理
+                            try folder.insert(db)
+                        }
+                        if (!result) {
+                            print("失敗")
+                        } else {
+                            print("成功")
+                            //登録済みか確認用コード
+                            var result3 :[Paragraphinfo] = []
+                            let helper4 = DatabaseHelper()
+                            
+                            let str = helper4.inDatabase { (db) in
+                                result3 = try Paragraphinfo.fetchAll(db)
+                            }
+                            // 出力
+                            result3.forEach { (it) in
+                                print("\(String(describing: it.folderid)) - \(String(describing: it.para_name)) - \(String(describing: it.para_cost)) - \(String(describing: it.para_num))")
+                            }
+                            if (!str) {
+                                print("失敗")
+                            }
+                            
+                        }
+                        // storyboardのインスタンス取得
+                        let storyboard1: UIStoryboard = self.storyboard!
+                        
+                        // 遷移先ViewControllerのインスタンス取得
+                        let nextView1 = storyboard1.instantiateViewController(withIdentifier: "detail")
+                        //コードでフルスクリーン表示を指定
+                        nextView1.modalPresentationStyle = .fullScreen
+                        
+                        // 画面遷移
+                        self.present(nextView1, animated: true, completion: nil)
+                    }
                     print("詳細")
                 }
-            
-            )
-            // ホームボタン
-            let homeAction: UIAlertAction = UIAlertAction(title: "ホーム", style: UIAlertAction.Style.default, handler:{
-                // ボタンが押された時の処理を書く（クロージャ実装）
-                (action: UIAlertAction!) -> Void in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    // storyboardのインスタンス取得
-                    let storyboard2: UIStoryboard = self.storyboard!
-                    
-                    // 遷移先ViewControllerのインスタンス取得
-                    let nextView2 = storyboard2.instantiateViewController(withIdentifier: "home")
-                    //コードでフルスクリーン表示を指定
-                    nextView2.modalPresentationStyle = .fullScreen
-                    // 画面遷移
-                    self.present(nextView2, animated: true, completion: nil)
+                
+                )
+                // ホームボタン
+                let homeAction: UIAlertAction = UIAlertAction(title: "ホーム", style: UIAlertAction.Style.default, handler:{
+                    // ボタンが押された時の処理を書く（クロージャ実装）
+                    (action: UIAlertAction!) -> Void in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        let helper2 = DatabaseHelper()
+                        let result = helper2.inDatabase{(db) in
+                            //receivedIdは送信されたフォルダ番号
+                            let folder = Paragraphinfo(folderid: self.receiveId, para_name: selectList, para_cost: intMoney, repayer: chooseRepayer)
+                            //登録処理
+                            try folder.insert(db)
+                        }
+                        if (!result) {
+                            print("失敗")
+                        } else {
+                            print("成功")
+                            //登録済みか確認用コード
+                            var result3 :[Paragraphinfo] = []
+                            let helper4 = DatabaseHelper()
+                            
+                            let str = helper4.inDatabase { (db) in
+                                result3 = try Paragraphinfo.fetchAll(db)
+                            }
+                            // 出力
+                            result3.forEach { (it) in
+                                print("\(String(describing: it.folderid)) - \(String(describing: it.para_name)) - \(String(describing: it.para_cost)) - \(String(describing: it.para_num))")
+                            }
+                            if (!str) {
+                                print("失敗")
+                            }
+                            
+                        }
+                        // storyboardのインスタンス取得
+                        let storyboard2: UIStoryboard = self.storyboard!
+                        
+                        // 遷移先ViewControllerのインスタンス取得
+                        let nextView2 = storyboard2.instantiateViewController(withIdentifier: "home")
+                        //コードでフルスクリーン表示を指定
+                        nextView2.modalPresentationStyle = .fullScreen
+                        // 画面遷移
+                        self.present(nextView2, animated: true, completion: nil)
+                    }
+                    print("ホーム")
                 }
-                print("ホーム")
+                )
+                // キャンセルボタン
+                let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
+                
+                
+                // ③ UIAlertControllerにActionを追加
+                alert.addAction(homeAction)
+                alert.addAction(detailAction)
+                alert.addAction(cancelAction)
+                // ④ Alertを表示
+                present(alert, animated: true, completion: nil)
+                
             }
-            )
-            
-            // ③ UIAlertControllerにActionを追加
-            alert.addAction(homeAction)
-            alert.addAction(detailAction)
-            // ④ Alertを表示
-            present(alert, animated: true, completion: nil)
-            
             return true
         }
     }
+    
 }
-
-
