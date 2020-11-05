@@ -89,8 +89,10 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showDetailSegue" {
-            if let nextVC = segue.destination as? FolderDetailViewController,
-               let index = sender as? Int {
+            let nextVC = segue.destination as? FolderDetailViewController
+            
+            if let sender = sender as? Int64 {
+                nextVC?.receiveId = sender
             }
         }
     }
