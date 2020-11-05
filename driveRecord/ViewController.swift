@@ -8,6 +8,10 @@ import GRDB
 
 class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // 新規作成したフォルダのIDを送信する値の変数の作成
+    private var sendId:Int64? = 0
+    
+    // データ格納用の配列
     private var folderid: [Int64?] = []
     private var folderList: [String] = []
     private var date: [String] = []
@@ -93,6 +97,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
             let nextVC = segue.destination as? FolderDetailViewController
             
             if let sender = sender as? Int64 {
+                print(nextVC?.receiveId)
                 nextVC?.receiveId = sender
             }
         }
