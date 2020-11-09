@@ -16,6 +16,8 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     private var folderList: [String] = []
     private var date: [String] = []
     
+    private var sendId:Int64?
+    
     // 元からあるコード
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,30 +82,61 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     //    }
     
     // セル押下時の処理
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // タップされたセルの行番号を出力
         print("\(indexPath.row)番目の行が選択されました。")
         // セルの選択を解除
         tableView.deselectRow(at: indexPath, animated: true)
         // 画面遷移
+        //sendId = folderid[indexPath.row]
+        //print(sendId as Any)
         // sender に渡したい値
-        performSegue(withIdentifier: "showDetailSegue", sender: folderid[indexPath.row])
-    }
-    
+        //performSegue(withIdentifier: "showDetailSegue", sender: folderid[indexPath.row])
+        performSegue(withIdentifier: "showDetailSegue", sender: indexPath.row)
+    }*/
+    // prepareとtableviewは両方存在すると二重に処理が発生する
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        //Segueの識別子確認
         if segue.identifier == "showDetailSegue" {
-            let nextVC = segue.destination as? FolderDetailViewController
-            
-            if let sender = sender as? Int64 {
-                nextVC?.receiveId = sender
-                print("receivedId =")
-                print(nextVC?.receiveId)
+            let x = self.tableView.indexPathForSelectedRow
+            // 選択した行数を習得
+            let y = x?.row
+            // 送信したい値を格納
+            let post = folderid[y!]
+            print(post!)
+            // 送信先の画面をインスタンス化
+            let nextVC  = segue.destination as! UINavigationController
+            let secondView = nextVC.topViewController as! FolderDetailViewController
+                
+            secondView.receiveId = post!
+            //performSegue(withIdentifier: "showDetailSegue", sender: post)
             }
-        }
+                /*if let nextVC = segue.destination as? FolderDetailViewController,
+                   //まずここを一回目が通らない
+                   let index = sender as? Int {
+                // モデルそのものを渡した方が良いかと(itemList[index])
+                    nextVC.receiveId = folderid[Int(index)]!
+                    print(folderid[Int(index)]!)
+                // nextVC.item = itemList[index]
+            }*/
+        /*if segue.identifier == "showDetailSegue" {
+            let secondVC: FolderDetailViewController = (segue.destination as? FolderDetailViewController)!
+            secondVC.receiveId = sendId!
+            /* if let nextVC = segue.destination as? FolderDetailViewController {
+                
+                nextVC.receiveId = sendId!
+                print(sendId!)
+            }*/
+        }*/
+            /*if (sender as? Int64) != nil {
+                nextVC?.receiveId = sendId!
+                print("receivedId =")
+                
+            }
+        }*/
+        
     }
-    
     
     
     

@@ -26,8 +26,8 @@ class FolderDetailViewController : UIViewController {
      let controller  = UIActivityViewController(activityItems: [show], applicationActivities: nil)
      self.present(controller,animated:true, completion:nil)
      }*/
-    
-    var folderList: String?   //title
+    var id: Int64!
+    var folderList: String!  //title
     var date: String?          //日付
     var member1: String?      //メンバー
     var member2: String?     //メンバー
@@ -40,8 +40,9 @@ class FolderDetailViewController : UIViewController {
     private var count = 1
     
     //値の取得
-    var receiveId:Int64 = 0
+    var receiveId:Int64 = 0 
     //var Id = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,12 +50,13 @@ class FolderDetailViewController : UIViewController {
         let helper = DatabaseHelper()
         //前画面で作成したfolderinfoの一列情報を格納するための変数
         var entity: Folderinfo?
-        
+        print(receiveId)
         //前画面のfolderid情報を基に検索を行う
         let result = helper.inDatabase { (db) in
             //全画面で登録したフォルダ情報を取得
             entity = try Folderinfo.filter(Folderinfo.Columns.folderid == receiveId).fetchOne(db)
         }
+        
         if(!result) {
             print("sippai")
         } else {
@@ -68,24 +70,18 @@ class FolderDetailViewController : UIViewController {
             member4 = entity?.member4
             member5 = entity?.member5
             member6 = entity?.member6
-            
-            
-        }
+            id = entity?.folderid
         //変数の格納ができているか調べるためのprint処理（最終的には消す）
         print(receiveId)
+        print(date as Any)
         print(member1 as Any)
-        
-        
-        
+            
         
         
         //ラベルテキストを使って角ラベルに貼り付け
         day.text = date
         folderTitle.text = folderList
         mem1.text = member1
-        
-        
-        
         //member2-6はいない可能性もあるためnilであれば白紙にする
         if member2 == "" {
             
@@ -122,8 +118,7 @@ class FolderDetailViewController : UIViewController {
             mem6.text = member6
             count += 1
         }
-        
-        
+                
         //カウントした人数をラベルに貼り付ける
         people.text = "\(count)人"
         
@@ -132,5 +127,5 @@ class FolderDetailViewController : UIViewController {
         
         
     }
-    
+    }
 }

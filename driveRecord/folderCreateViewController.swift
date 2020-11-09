@@ -31,62 +31,53 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     private var sendId:Int64? = 0
     // 遷移先のStoryboardIdを格納する変数
     private let segName = "moneyView"
-    
-    //入力時の処理
-    
-    @IBAction func mem1(_ sender: Any) {
-        if let text = member1.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
+    // 人数をカウントするメソッド
+    func memberCount(member1:UITextField,member2:UITextField,member3:UITextField,member4:UITextField,member5:UITextField,member6:UITextField ) {
+        let s : [UITextField] = [ member1,member2,member3,member4,member5,member6]
+        var count = 0
+        for i in s {
+            if let member = i.text, !member.isEmpty {
+                count += 1
+            }
         }
         countMember.text = "人数：\(count)人"
+    }
+    
+    //入力時の処理
+    @IBAction func mem1(_ sender: Any) {
+        // 入力されているメンバーの数を数えるメソッドの呼び出し
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
         
     }
     
     @IBAction func mem2(_ sender: Any) {
-        if let text = member2.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        // 入力されているメンバーの数を数えるメソッドの呼び出し
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
+        
     }
     
     @IBAction func mem3(_ sender: Any) {
-        if let text = member3.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        // 入力されているメンバーの数を数えるメソッドの呼び出し
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
+        
     }
     
     @IBAction func mem4(_ sender: Any) {
-        if let text = member4.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        // 入力されているメンバーの数を数えるメソッドの呼び出し
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
+        
     }
     
     @IBAction func mem5(_ sender: Any) {
-        if let text = member5.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        // 入力されているメンバーの数を数えるメソッドの呼び出し
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
+        
     }
     
     @IBAction func mem6(_ sender: Any) {
-        if let text = member6.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        // 入力されているメンバーの数を数えるメソッドの呼び出し
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
+        
     }
     
     
@@ -101,10 +92,10 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         
         // ツールバー生成 サイズはsizeToFitメソッドで自動で調整される。
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-
+        
         //サイズの自動調整。敢えて手動で実装したい場合はCGRectに記述してsizeToFitは呼び出さない。
         toolBar.sizeToFit()
-
+        
         // 左側のBarButtonItemはflexibleSpace。これがないと右に寄らない。
         let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
         // Doneボタン
@@ -175,7 +166,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     
     @IBAction func returnHome(_ sender: Any) {
         let alert: UIAlertController = UIAlertController( title: "", message: "登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
-       
+        
         // OKボタン(ホームに遷移)
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
             // ボタンが押された時の処理を書く（クロージャ実装）
@@ -183,17 +174,17 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.performSegue(withIdentifier: "home", sender: nil)
                 // storyboardのインスタンス取得
-                 let storyboard3: UIStoryboard = self.storyboard!
-                 
-                 // 遷移先ViewControllerのインスタンス取得
-                 let nextView3 = storyboard3.instantiateViewController(withIdentifier: "home")
+                let storyboard3: UIStoryboard = self.storyboard!
+                
+                // 遷移先ViewControllerのインスタンス取得
+                let nextView3 = storyboard3.instantiateViewController(withIdentifier: "home")
                 //コードでフルスクリーン表示を指定
-                 nextView3.modalPresentationStyle = .fullScreen
-                 
-                 // 画面遷移
-                 self.present(nextView3, animated: true, completion: nil)
-                 }
+                nextView3.modalPresentationStyle = .fullScreen
+                
+                // 画面遷移
+                self.present(nextView3, animated: true, completion: nil)
             }
+        }
         
         )
         // キャンセルボタン
@@ -204,7 +195,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         alert.addAction(okAction)
         // ④ Alertを表示
         present(alert, animated: true, completion: nil)
-    
+        
     }
     
     //金額入力ボタン押下後
@@ -215,11 +206,11 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         //メソッド呼び出し
         let result = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
         if result {
-           print("成功")
+            print("成功")
         } else {
-         print("エラー取得")
+            print("エラー取得")
         }
-       
+        
     }
     //Segue実行前の処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -241,9 +232,9 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         //メソッド呼び出し
         let result = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
         if result {
-           print("成功")
+            print("成功")
         } else {
-         print("エラー取得")
+            print("エラー取得")
         }
     }
     
@@ -269,7 +260,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             return false
-        // タイトル名未入力チェック
+            // タイトル名未入力チェック
         } else if travelName.isEmpty {
             let alert = UIAlertController(title: "エラー",
                                           message: "タイトルを入力してください",
@@ -277,7 +268,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             return false
-        // メンバーが一人でも入力されているかチェック
+            // メンバーが一人でも入力されているかチェック
         } else if travelMember1.isEmpty {
             let alert = UIAlertController(title: "エラー",
                                           message: "メンバー名を入力してください",
@@ -286,7 +277,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             present(alert, animated: true, completion: nil)
             return false
         } else {
-    
+            
             // データベース接続
             let helper = DatabaseHelper()
             let result = helper.inDatabase{(db) in
@@ -315,7 +306,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
                     print(sendId!)
                     // Segueの実行
                     performSegue(withIdentifier: segName, sender: nil)
-                
+                    
                     return true
                 }
                 return true
@@ -323,10 +314,10 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
                 print(num!)
                 return true
             } else {
-               return false
+                return false
             }
-        
+            
         }
-       
+        
     }
 }
