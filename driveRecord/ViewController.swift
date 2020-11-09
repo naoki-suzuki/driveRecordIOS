@@ -8,9 +8,6 @@ import GRDB
 
 class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // 新規作成したフォルダのIDを送信する値の変数の作成
-    private var sender:Int64? = 0
-    
     // データ格納用の配列
     private var folderid: [Int64?] = []
     private var folderList: [String] = []
