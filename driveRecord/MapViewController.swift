@@ -58,6 +58,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
     }
     
+    
     // マーカーのタップを検知するメソッド
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         return true
