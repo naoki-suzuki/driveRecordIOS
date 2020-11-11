@@ -1,0 +1,21 @@
+
+/* Class = "UINavigationItem"; title = "ドラログ"; ObjectID = "7yk-YN-o0h"; */
+"7yk-YN-o0h.title" = "ドラログ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9QK-93-1rg"; */
+"9QK-93-1rg.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "ELK-Iw-rT3"; */
+"ELK-Iw-rT3.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "FB8-PL-QJQ"; */
+"FB8-PL-QJQ.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Fcc-D1-V2x"; */
+"Fcc-D1-V2x.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MoY-ye-dS8"; */
+"MoY-ye-dS8.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "akG-D7-GHa"; */
+"akG-D7-GHa.normalTitle" = "Button";

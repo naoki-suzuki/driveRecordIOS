@@ -20,5 +20,3 @@ pod 'GooglePlaces'
   end
 
 end
-
-

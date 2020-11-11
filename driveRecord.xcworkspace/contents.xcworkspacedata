@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:driveRecord">
+      location = "group:driveRecord.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:driveRecord">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
