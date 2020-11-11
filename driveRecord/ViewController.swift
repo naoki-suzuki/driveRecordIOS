@@ -89,20 +89,20 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "showDetailSegue" {
-               
-            let x = self.tableView.indexPathForSelectedRow
-           // 選択した行数を習得
-           let y = x?.row
-           // 送信したい値を格納
-           let post = folderid[y!]
-           print(post!)
-           // 送信先の画面をインスタンス化
-           let nextVC  = segue.destination as! UINavigationController
-           let secondView = nextVC.topViewController as! FolderDetailViewController
-           secondView.receiveId = post!
-           }
-       }
+        if segue.identifier == "showDetailSegue" {
+            
+        let x = self.tableView.indexPathForSelectedRow
+        // 選択した行数を習得
+        let y = x?.row
+        // 送信したい値を格納
+        let post = folderid[y!]
+        print(post!)
+        // 送信先の画面をインスタンス化
+        let nextVC  = segue.destination as! UINavigationController
+        let secondView = nextVC.topViewController as! FolderDetailViewController
+        secondView.receiveId = post!
+        }
+    }
     
     
     

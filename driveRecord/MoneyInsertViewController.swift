@@ -9,7 +9,7 @@
 import UIKit
 import GRDB
 
-class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate {
+class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -66,6 +66,11 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     
     //負担者を格納する変数
     var repayerList:[String?] = []
+    
+    // ID番号を管理する変数
+    var sendId :Int64 = 0
+    
+    var setImage: UIImageView! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,6 +165,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         
     }
     
+    
     @IBAction func returnHome(_ sender: Any) {
         let alert: UIAlertController = UIAlertController( title: "", message: "登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
         
@@ -193,6 +199,61 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         present(alert, animated: true, completion: nil)
         
     }
+    
+    // Segue実行前の処理
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     
+            // Segueの識別子確認
+            if segue.identifier == "showDetailSegue" {
+     
+                // 遷移先ViewCntrollerの取得
+                let nc = segue.destination as! UINavigationController
+                let nextView = nc.topViewController as! FolderDetailViewController
+     
+                // 値の設定　FolderCreateから送信された値を活用
+                nextView.receiveId = receiveId
+                
+            } else if segue.identifier == "photoConfirm" {
+                let photoConfirm = segue.destination as! cameraViewController
+                photoConfirm.cameraPic = setImage
+                
+            }
+        }
+    
+    
+    //　カメラ撮影開始
+    @IBAction func cameraOpen(_ sender: Any) {
+        let sourceType:UIImagePickerController.SourceType =
+                UIImagePickerController.SourceType.camera
+            // カメラが利用可能かチェック
+            if UIImagePickerController.isSourceTypeAvailable(
+                UIImagePickerController.SourceType.camera){
+                // インスタンスの作成
+                let cameraPicker = UIImagePickerController()
+                cameraPicker.sourceType = sourceType
+                cameraPicker.delegate = self
+                self.present(cameraPicker, animated: true, completion: nil)
+                
+            }
+            else{
+                
+            }
+        }
+    
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImageView {
+            self.setImage = image
+            picker.dismiss(animated: true, completion: nil)
+            // 撮影完了画面へ遷移
+            self.performSegue(withIdentifier: "photoConfirm", sender: self)
+            
+        } else {
+            picker.dismiss(animated: true, completion: nil)
+            
+        }
+    }
+
+    
     
     @IBAction func complete(_ sender: Any) {
         let result = paraInseert(list: List, money: money, repay: selectRepayer)
@@ -247,8 +308,8 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                 let detailAction: UIAlertAction = UIAlertAction(title: "詳細", style: UIAlertAction.Style.default, handler:{
                     // ボタンが押された時の処理を書く（クロージャ実装）
                     (action: UIAlertAction!) -> Void in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        self.performSegue(withIdentifier: "detail", sender: nil)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+                        // self.performSegue(withIdentifier: "detail", sender: nil)
                         
                         let helper2 = DatabaseHelper()
                         let result = helper2.inDatabase{(db) in
@@ -280,11 +341,12 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                         // storyboardのインスタンス取得
                         let storyboard1: UIStoryboard = self.storyboard!
                         
-                        // 遷移先ViewControllerのインスタンス取得
-                        let nextView1 = storyboard1.instantiateViewController(withIdentifier: "detail")
-                        //コードでフルスクリーン表示を指定
+                        // 遷移先FolderDetailViewControllerのインスタンス取得
+                        let nextView1 = storyboard1.instantiateViewController(withIdentifier: "showDetailSegue")
+                        //　コードでフルスクリーン表示を指定
                         nextView1.modalPresentationStyle = .fullScreen
-                        
+                        // Segueの実行
+                        performSegue(withIdentifier:"showDetailSegue" , sender: nil)
                         // 画面遷移
                         self.present(nextView1, animated: true, completion: nil)
                     }
