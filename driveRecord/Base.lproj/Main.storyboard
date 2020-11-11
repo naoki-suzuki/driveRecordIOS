@@ -22,7 +22,7 @@
         <!--FolderDetail-->
         <scene sceneID="nO3-3l-fmm">
             <objects>
-                <viewControllerPlaceholder storyboardName="FolderDetail" id="NmH-O9-JLO" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="showDetailSegue" storyboardName="FolderDetail" id="NmH-O9-JLO" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Rgr-BC-Qig"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLx-dN-l6S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

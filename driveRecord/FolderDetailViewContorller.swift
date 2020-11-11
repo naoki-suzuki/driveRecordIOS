@@ -76,7 +76,7 @@ class FolderDetailViewController : UIViewController {
         print(member1 as Any)
         
         
-        
+
         
         
         //ラベルテキストを使って角ラベルに貼り付け
