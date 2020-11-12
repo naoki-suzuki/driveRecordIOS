@@ -7,6 +7,7 @@ import UIKit
 import GRDB
 
 class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var mapBtn: UIButton!
     
     // データ格納用の配列
     private var folderid: [Int64?] = []
@@ -16,6 +17,10 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     // 元からあるコード
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapBtn.imageView?.contentMode = .scaleAspectFit
+        mapBtn.contentHorizontalAlignment = .fill
+        mapBtn.contentVerticalAlignment = .fill
         
         // データベース接続
         var result: [Folderinfo] = []
@@ -136,4 +141,30 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+}
+
+class CustomBtn: UIButton {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super .init(coder: aDecoder)
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        print("awakeFromNib")
+        // UIButtonサイズは width:44, height:30 に固定
+        // UIButton配置は viewSafeAreaのHcenter/Vcenter
+        // ここへの記述が的確なのか？
+        self.imageView?.contentMode = .scaleAspectFit
+        self.contentHorizontalAlignment = .fill
+        self.contentVerticalAlignment = .fill
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
 }
