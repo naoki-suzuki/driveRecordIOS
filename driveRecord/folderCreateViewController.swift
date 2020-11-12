@@ -32,61 +32,42 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     // 遷移先のStoryboardIdを格納する変数
     private let segName = "moneyView"
     
+    // 人数をカウントするメソッド
+    func memberCount(member1:UITextField,member2:UITextField,member3:UITextField,member4:UITextField,member5:UITextField,member6:UITextField ) {
+        let s : [UITextField] = [ member1,member2,member3,member4,member5,member6]
+        var count = 0
+        for i in s {
+            if let member = i.text, !member.isEmpty {
+                count += 1
+            }
+        }
+        countMember.text = "人数：\(count)人"
+    }
     //入力時の処理
     
     @IBAction func mem1(_ sender: Any) {
-        if let text = member1.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
         
     }
     
     @IBAction func mem2(_ sender: Any) {
-        if let text = member2.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
     @IBAction func mem3(_ sender: Any) {
-        if let text = member3.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
     @IBAction func mem4(_ sender: Any) {
-        if let text = member4.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
     @IBAction func mem5(_ sender: Any) {
-        if let text = member5.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
     @IBAction func mem6(_ sender: Any) {
-        if let text = member6.text, !text.isEmpty {
-            count += 1
-        } else {
-            count -= 1
-        }
-        countMember.text = "人数：\(count)人"
+        memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
     
