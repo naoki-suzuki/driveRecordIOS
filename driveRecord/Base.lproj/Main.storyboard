@@ -122,7 +122,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-D7-GHa">
-                                <rect key="frame" x="185" y="751.5" width="45" height="30"/>
+                                <rect key="frame" x="185" y="752" width="45" height="35"/>
                                 <rect key="contentStretch" x="0.5" y="0.29999999999999999" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="GEV-Tg-Awc"/>
