@@ -15,8 +15,12 @@
                     <view key="view" contentMode="scaleToFill" id="TcO-fc-Nfn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJJ-R0-05G">
+                        <viewLayoutGuide key="safeArea" id="YZX-bS-Atg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="地図" id="0K6-fv-orI">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="vdV-cs-Vfq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="JJJ-R0-05G">
                                 <rect key="frame" x="32" y="737" width="71" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
@@ -24,11 +28,8 @@
                                     <segue destination="GjR-Ng-jeF" kind="presentation" modalPresentationStyle="fullScreen" id="YOk-Sp-lHI"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="YZX-bS-Atg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="地図" id="0K6-fv-orI"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqq-zW-Hpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
