@@ -103,9 +103,9 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         let post = folderid[y!]
         print(post!)
         // 送信先の画面をインスタンス化
-        let nextVC  = segue.destination as! UINavigationController
-        let secondView = nextVC.topViewController as! FolderDetailViewController
-        secondView.receiveId = post!
+        let nextVC  = segue.destination as! FolderDetailViewController
+        //let secondView = nextVC.topViewController as! FolderDetailViewController
+        nextVC.receiveId = post!
         }
     }
     

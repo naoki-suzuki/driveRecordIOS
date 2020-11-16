@@ -1,14 +1,14 @@
 //
-//  driveRecordTests.swift
-//  driveRecordTests
+//  driveRecordIOSTests.swift
+//  driveRecordIOSTests
 //
-//  Created by 大越悠司 on 2020/10/12.
+//  Created by 鈴木直輝 on 2020/11/16.
 //
 
 import XCTest
-@testable import driveRecord
+@testable import driveRecordIOS
 
-class driveRecordTests: XCTestCase {
+class driveRecordIOSTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
