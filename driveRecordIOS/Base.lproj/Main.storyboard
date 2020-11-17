@@ -121,11 +121,13 @@
                                     <outlet property="delegate" destination="XNo-rQ-rQV" id="wB4-jW-M9r"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-D7-GHa">
-                                <rect key="frame" x="185" y="752" width="45" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-D7-GHa">
+                                <rect key="frame" x="63" y="739" width="45" height="35"/>
                                 <rect key="contentStretch" x="0.5" y="0.29999999999999999" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="GEV-Tg-Awc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="qyq-04-TIM"/>
+                                    <constraint firstAttribute="height" constant="36.5" id="ueJ-kt-lbz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <state key="normal" image="map" catalog="system" backgroundImage="map.fill"/>
