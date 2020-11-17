@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		39417800D58722B4039C7728 /* Pods_driveRecordIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2A232E381C070317150D27 /* Pods_driveRecordIOSTests.framework */; };
-		5B60613E2563945F0098B8C6 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B606131256394490098B8C6 /* GRDB.framework */; };
-		5B60613F2563945F0098B8C6 /* GRDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B606131256394490098B8C6 /* GRDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C7E04EF6A04B67DBE74EE88 /* Pods_driveRecordIOS_driveRecordIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F5DF1C6D779E265CA6648F /* Pods_driveRecordIOS_driveRecordIOSUITests.framework */; };
 		6270B7152562608000C382E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270B7142562608000C382E5 /* AppDelegate.swift */; };
 		6270B7172562608000C382E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270B7162562608000C382E5 /* SceneDelegate.swift */; };
@@ -43,69 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5B60612A256394490098B8C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC3773F319C8CBB3004FCF85;
-			remoteInfo = GRDBOSX;
-		};
-		5B60612C256394490098B8C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 56E5D7F91B4D422D00430942;
-			remoteInfo = GRDBOSXTests;
-		};
-		5B60612E256394490098B8C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 56553C181C3E906C00522B5C;
-			remoteInfo = GRDBOSXCrashTests;
-		};
-		5B606130256394490098B8C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 56E5D7CA1B4D3FED00430942;
-			remoteInfo = GRDBiOS;
-		};
-		5B606132256394490098B8C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 56E5D7D31B4D3FEE00430942;
-			remoteInfo = GRDBiOSTests;
-		};
-		5B606134256394490098B8C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 565490A01D5A4798005622CB;
-			remoteInfo = GRDBWatchOS;
-		};
-		5B606136256394490098B8C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AAA4DCFE230F1E0600C74B15;
-			remoteInfo = GRDBtvOS;
-		};
-		5B606138256394490098B8C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AAA4DDD4230F262000C74B15;
-			remoteInfo = GRDBtvOSTests;
-		};
-		5B60613C256394540098B8C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 56E5D7C91B4D3FED00430942;
-			remoteInfo = GRDBiOS;
-		};
 		6270B7282562608200C382E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6270B7092562607F00C382E5 /* Project object */;
@@ -129,7 +64,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B60613F2563945F0098B8C6 /* GRDB.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,7 +75,7 @@
 		1F2A232E381C070317150D27 /* Pods_driveRecordIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_driveRecordIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FF86FE9B11242FA5B864B9 /* Pods-driveRecordIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-driveRecordIOS.debug.xcconfig"; path = "Target Support Files/Pods-driveRecordIOS/Pods-driveRecordIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3AB242BA51A4BE3280EA7CDE /* Pods-driveRecordIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-driveRecordIOSTests.release.xcconfig"; path = "Target Support Files/Pods-driveRecordIOSTests/Pods-driveRecordIOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		5B60611F256394490098B8C6 /* GRDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GRDB.xcodeproj; path = "../../../Downloads/GRDB.swift-master/GRDB.xcodeproj"; sourceTree = "<group>"; };
+		5B60611F256394490098B8C6 /* GRDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GRDB.xcodeproj; path = "../../../../Downloads/GRDB.swift-master/GRDB.xcodeproj"; sourceTree = "<group>"; };
 		6270B7112562608000C382E5 /* driveRecordIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = driveRecordIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6270B7142562608000C382E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6270B7162562608000C382E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,7 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45CBE103C7146401154A50A /* Pods_driveRecordIOS.framework in Frameworks */,
-				5B60613E2563945F0098B8C6 /* GRDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,21 +156,6 @@
 				3AB242BA51A4BE3280EA7CDE /* Pods-driveRecordIOSTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		5B606120256394490098B8C6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5B60612B256394490098B8C6 /* GRDB.framework */,
-				5B60612D256394490098B8C6 /* GRDBOSXTests.xctest */,
-				5B60612F256394490098B8C6 /* GRDBOSXCrashTests.xctest */,
-				5B606131256394490098B8C6 /* GRDB.framework */,
-				5B606133256394490098B8C6 /* GRDBiOSTests.xctest */,
-				5B606135256394490098B8C6 /* GRDB.framework */,
-				5B606137256394490098B8C6 /* GRDB.framework */,
-				5B606139256394490098B8C6 /* GRDBtvOSTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		6270B7082562607F00C382E5 = {
@@ -342,7 +260,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				5B60613D256394540098B8C6 /* PBXTargetDependency */,
 			);
 			name = driveRecordIOS;
 			productName = driveRecordIOS;
@@ -421,12 +338,6 @@
 			mainGroup = 6270B7082562607F00C382E5;
 			productRefGroup = 6270B7122562608000C382E5 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5B606120256394490098B8C6 /* Products */;
-					ProjectRef = 5B60611F256394490098B8C6 /* GRDB.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6270B7102562608000C382E5 /* driveRecordIOS */,
@@ -435,65 +346,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5B60612B256394490098B8C6 /* GRDB.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GRDB.framework;
-			remoteRef = 5B60612A256394490098B8C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B60612D256394490098B8C6 /* GRDBOSXTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GRDBOSXTests.xctest;
-			remoteRef = 5B60612C256394490098B8C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B60612F256394490098B8C6 /* GRDBOSXCrashTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GRDBOSXCrashTests.xctest;
-			remoteRef = 5B60612E256394490098B8C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B606131256394490098B8C6 /* GRDB.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GRDB.framework;
-			remoteRef = 5B606130256394490098B8C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B606133256394490098B8C6 /* GRDBiOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GRDBiOSTests.xctest;
-			remoteRef = 5B606132256394490098B8C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B606135256394490098B8C6 /* GRDB.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GRDB.framework;
-			remoteRef = 5B606134256394490098B8C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B606137256394490098B8C6 /* GRDB.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GRDB.framework;
-			remoteRef = 5B606136256394490098B8C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B606139256394490098B8C6 /* GRDBtvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GRDBtvOSTests.xctest;
-			remoteRef = 5B606138256394490098B8C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6270B70F2562608000C382E5 /* Resources */ = {
@@ -675,11 +527,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5B60613D256394540098B8C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GRDBiOS;
-			targetProxy = 5B60613C256394540098B8C6 /* PBXContainerItemProxy */;
-		};
 		6270B7292562608200C382E5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6270B7102562608000C382E5 /* driveRecordIOS */;
