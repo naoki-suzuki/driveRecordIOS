@@ -13,58 +13,16 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
     
    
     @IBOutlet weak var cameraPic: UIImageView!
+    var cameraReceive: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        // cameraPic.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.cameraPic.image = self.cameraReceive
     }
     
-    // カメラの撮影開始
-    @IBAction func cameraAction(_ sender: Any) {
-    
-    let sourceType:UIImagePickerController.SourceType =
-            UIImagePickerController.SourceType.camera
-        // カメラが利用可能かチェック
-        if UIImagePickerController.isSourceTypeAvailable(
-            UIImagePickerController.SourceType.camera){
-            // インスタンスの作成
-            let cameraPicker = UIImagePickerController()
-            cameraPicker.sourceType = sourceType
-            cameraPicker.delegate = self
-            self.present(cameraPicker, animated: true, completion: nil)
-            
-        }
-        else{
-            
-        }
-    }
-    
-    //　撮影が完了時した時に呼ばれる
-    func imagePickerController(_ imagePicker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        
-        if let pickedImage = info[.originalImage]
-            as? UIImage {
-            
-            cameraPic.contentMode = .scaleAspectFit
-            cameraPic.image = pickedImage
-            
-        }
-        
-        //閉じる処理
-        imagePicker.dismiss(animated: true, completion: nil)
-        
-        
-    }
-    
-    // 撮影がキャンセルされた時に呼ばれる
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-        
-    }
-    
-    
+   
+    // 撮影した写真の保存
     @IBAction func save(_ sender: Any) {
    
         let image:UIImage! = cameraPic.image
@@ -75,6 +33,10 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
                 self,
                 #selector(cameraViewController.image(_:didFinishSavingWithError:contextInfo:)),
                 nil)
+            
+            let alert = UIAlertController(title: "", message: "写真を保存しました" ,preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
+            present(alert, animated: true, completion: nil)
         }
         else{
             

@@ -121,7 +121,6 @@
                                                 <state key="normal" title="Button" image="camera.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="cameraOpen:" destination="YTA-hF-Cgf" eventType="touchUpInside" id="TCN-gG-pzh"/>
-                                                    <segue destination="cBv-3j-GBe" kind="presentation" identifier="photoConfirm" modalPresentationStyle="fullScreen" id="u6x-2A-adQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -223,6 +222,7 @@
                         <outlet property="selectRepayer" destination="bBn-6Y-Hkl" id="lcc-od-imk"/>
                         <segue destination="HwE-kh-WNm" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="kmz-69-arw"/>
                         <segue destination="lH1-rG-3ID" kind="presentation" identifier="showDetailSegue" modalPresentationStyle="fullScreen" id="uQN-2f-L7X"/>
+                        <segue destination="cBv-3j-GBe" kind="show" identifier="photoConfirm" id="FdD-QR-8gd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mA-ar-acE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -257,40 +257,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="107-Fn-G0Z">
-                                <rect key="frame" x="88" y="783" width="57" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YPV-6H-ZMg" userLabel="cameraPic">
+                                <rect key="frame" x="0.0" y="88" width="414" height="573"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="573" id="ZA4-hF-S39"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="107-Fn-G0Z">
+                                <rect key="frame" x="0.0" y="702" width="414" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="保存"/>
                                 <connections>
                                     <action selector="save:" destination="cBv-3j-GBe" eventType="touchUpInside" id="quj-iG-Ebm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIo-I3-ZmC">
-                                <rect key="frame" x="271" y="788" width="61" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="撮影"/>
-                                <connections>
-                                    <action selector="cameraAction:" destination="cBv-3j-GBe" eventType="touchUpInside" id="2FQ-lx-eoh"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPV-6H-ZMg" userLabel="cameraPic">
-                                <rect key="frame" x="0.0" y="88" width="414" height="657"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OfW-TU-YBp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YPV-6H-ZMg" firstAttribute="trailing" secondItem="OfW-TU-YBp" secondAttribute="trailing" id="2Rp-pS-CR5"/>
+                            <constraint firstItem="YPV-6H-ZMg" firstAttribute="top" secondItem="OfW-TU-YBp" secondAttribute="top" id="3ly-kS-Gox"/>
+                            <constraint firstItem="107-Fn-G0Z" firstAttribute="leading" secondItem="OfW-TU-YBp" secondAttribute="leading" id="EOY-VI-HaB"/>
+                            <constraint firstItem="107-Fn-G0Z" firstAttribute="top" secondItem="YPV-6H-ZMg" secondAttribute="bottom" constant="41" id="I02-VD-71h"/>
+                            <constraint firstItem="YPV-6H-ZMg" firstAttribute="leading" secondItem="OfW-TU-YBp" secondAttribute="leading" id="bHB-Zk-TQF"/>
+                            <constraint firstItem="OfW-TU-YBp" firstAttribute="trailing" secondItem="107-Fn-G0Z" secondAttribute="trailing" id="lz7-fq-l5E"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3wK-dL-IfB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraPic" destination="YPV-6H-ZMg" id="7Bs-l2-DIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kym-7h-j7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492.753623188406" y="154.6875"/>
+            <point key="canvasLocation" x="2805.7971014492755" y="213.61607142857142"/>
         </scene>
         <!--Main-->
         <scene sceneID="t3j-C7-RFj">
@@ -330,3 +331,5 @@
         </systemColor>
     </resources>
 </document>
+
+

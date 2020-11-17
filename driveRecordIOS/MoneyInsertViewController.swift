@@ -4,7 +4,7 @@
 //
 //  Created by 大越悠司 on 2020/10/12.
 //  Update by 大越悠司 on 2020/10/30
-//
+//　Update by　大越悠司　on 2020/11/17
 
 import UIKit
 import GRDB
@@ -42,16 +42,15 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         }
     }
     
-    
-    //値の取得
+    //　値の取得
     var receiveId:Int64 = 0
-    //項目の変数
+    //　項目の変数
     @IBOutlet private weak var List: UITextField!
-    //金額入力を管理する変数
+    //　金額入力を管理する変数
     @IBOutlet private weak var money: UITextField!
-    //負担者を選択する変数
+    //　負担者を選択する変数
     @IBOutlet private weak var selectRepayer: UITextField!
-    
+    // PickerViewの設定
     private var pickerView: UIPickerView = UIPickerView()
     private var pickerView2: UIPickerView = UIPickerView()
     //項目の選択肢
@@ -62,31 +61,29 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     private var member4: String?
     private var member5: String?
     private var member6: String?
-    
-    
-    //負担者を格納する変数
+        
+    // 負担者を格納する変数
     var repayerList:[String?] = []
-    
     // ID番号を管理する変数
     var sendId :Int64 = 0
-    
-    var setImage: UIImageView! = nil
+    // 写真を管理する変数
+    var setImage: UIImage! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //データベース接続
+        // データベース接続
         let helper = DatabaseHelper()
-        //前画面で作成したfolderinfoの一列情報を格納するための変数
+        // 前画面で作成したfolderinfoの一列情報を格納するための変数
         var entity: Folderinfo?
-        //前画面のfolderid情報を基に検索を行う
+        // 前画面のfolderid情報を基に検索を行う
         let result2 = helper.inDatabase { (db) in
-            //全画面で登録したフォルダ情報を取得
+            // 全画面で登録したフォルダ情報を取得
             entity = try Folderinfo.filter(Folderinfo.Columns.folderid == receiveId).fetchOne(db)
         }
         if(!result2) {
             print("sippai")
         } else {
-            //負担者のViewPickerを作成するため、検索結果から取り出す
+            // 負担者のViewPickerを作成するため、検索結果から取り出す
             member1 = entity?.member1
             member2 = entity?.member2
             member3 = entity?.member3
@@ -124,7 +121,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         pickerView2.dataSource = self
         
         
-        //決定バーの生成
+        // 決定バーの生成
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
         //let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         //let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
@@ -146,7 +143,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         List.inputAccessoryView = toolbar
         selectRepayer.inputView = pickerView2
         
-        //金額入力を数字のみにする
+        // 金額入力を数字のみにする
         self.money.keyboardType = UIKeyboardType.numberPad
         
         
@@ -202,49 +199,51 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     
     // Segue実行前の処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     
-            // Segueの識別子確認
-            if segue.identifier == "showDetailSegue" {
-     
-                // 遷移先ViewCntrollerの取得
-                let nc = segue.destination as! UINavigationController
-                let nextView = nc.topViewController as! FolderDetailViewController
-     
-                // 値の設定　FolderCreateから送信された値を活用
-                nextView.receiveId = receiveId
-                
-            } else if segue.identifier == "photoConfirm" {
-                let photoConfirm = segue.destination as! cameraViewController
-                photoConfirm.cameraPic = setImage
-                
-            }
+        
+        // Segueの識別子確認
+        if segue.identifier == "showDetailSegue" {
+            
+            // 遷移先ViewCntrollerの取得
+            let nextVC  = segue.destination as! FolderDetailViewController
+            
+            // 値の設定　FolderCreateから送信された値を活用
+            nextVC.receiveId = receiveId
+            
+        } else if segue.identifier == "photoConfirm" {
+            let nc = segue.destination as! cameraViewController
+            // let photoConfirm = nc.topViewController as! cameraViewController
+            // let photoConfirm = segue.destination as! cameraViewController
+            nc.cameraReceive = self.setImage
+            
         }
+    }
     
     
     //　カメラ撮影開始
     @IBAction func cameraOpen(_ sender: Any) {
         let sourceType:UIImagePickerController.SourceType =
-                UIImagePickerController.SourceType.camera
-            // カメラが利用可能かチェック
-            if UIImagePickerController.isSourceTypeAvailable(
-                UIImagePickerController.SourceType.camera){
-                // インスタンスの作成
-                let cameraPicker = UIImagePickerController()
-                cameraPicker.sourceType = sourceType
-                cameraPicker.delegate = self
-                self.present(cameraPicker, animated: true, completion: nil)
-                
-            }
-            else{
-                
-            }
+            UIImagePickerController.SourceType.camera
+        // カメラが利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerController.SourceType.camera){
+            // インスタンスの作成
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+            
         }
+        else{
+            
+        }
+    }
     
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImageView {
+    //　撮影が完了時した時に呼ばれる
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
             self.setImage = image
             picker.dismiss(animated: true, completion: nil)
-            // 撮影完了画面へ遷移
+            //写真confirm画面へ遷移
             self.performSegue(withIdentifier: "photoConfirm", sender: self)
             
         } else {
@@ -252,17 +251,26 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             
         }
     }
-
+    
+    
+    // 撮影がキャンセルされた時に呼ばれる
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
     
     
     @IBAction func complete(_ sender: Any) {
         let result = paraInseert(list: List, money: money, repay: selectRepayer)
         if result {
             print("成功")
+            
         } else {
             print("失敗")
         }
     }
+    
     // 金額登録のメソッド作成
     func paraInseert (list:UITextField!,money: UITextField!,repay:UITextField!) -> Bool {
         // 各TextFieldから値を取得し型を変換
@@ -289,16 +297,6 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             return false
         } else {
             
-            let helper2 = DatabaseHelper()
-            let result = helper2.inDatabase{(db) in
-                //receivedIdは送信されたフォルダ番号
-                let folder = Paragraphinfo(folderid: receiveId, para_name: selectList, para_cost: intMoney, repayer: chooseRepayer)
-                //登録処理
-                try folder.insert(db)
-            }
-            if (!result) {
-                print("失敗")
-            } else {
                 let alert: UIAlertController = UIAlertController( title: "", message: "どちらに移動しますか？", preferredStyle:  UIAlertController.Style.alert)
                 
                 // ② Actionの設定
@@ -310,15 +308,14 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                     (action: UIAlertAction!) -> Void in
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
                         // self.performSegue(withIdentifier: "detail", sender: nil)
-                        
                         let helper2 = DatabaseHelper()
-                        let result = helper2.inDatabase{(db) in
+                        let result2 = helper2.inDatabase{(db) in
                             //receivedIdは送信されたフォルダ番号
                             let folder = Paragraphinfo(folderid: self.receiveId, para_name: selectList, para_cost: intMoney, repayer: chooseRepayer)
                             //登録処理
                             try folder.insert(db)
                         }
-                        if (!result) {
+                        if (!result2) {
                             print("失敗")
                         } else {
                             print("成功")
@@ -338,6 +335,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                             }
                             
                         }
+                        print(result2)
                         // storyboardのインスタンス取得
                         let storyboard1: UIStoryboard = self.storyboard!
                         
@@ -411,8 +409,10 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                 present(alert, animated: true, completion: nil)
                 
             }
-            return true
-        }
+                return true
+            }
+            
+        
     }
     
-}
+
