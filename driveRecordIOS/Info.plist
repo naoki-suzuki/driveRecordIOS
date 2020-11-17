@@ -51,6 +51,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>カメラにアクセスします</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>フォトライブラリーに保存します</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
