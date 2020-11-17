@@ -126,6 +126,17 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         let index = folderid[indexPath.row]
         
+        // 外部キーの制約のため、先に子テーブルのParagraphinfoの該当列から削除処理を行う
+              let result2 = helper.inDatabase { (db) in
+                  try Paragraphinfo.filter(Paragraphinfo.Columns.folderid == index).deleteAll(db)
+              }
+              
+              if result2 {
+                  print("成功")
+              } else {
+                  print("失敗")
+              }
+        
         // フォルダID取得
         
         _ = helper.inDatabase { (db) in
