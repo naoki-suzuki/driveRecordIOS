@@ -3,7 +3,9 @@
 //  driveRecord
 //
 //  Created by 長阪智哉 on 2020/11/4
-//
+//  Update by 大越悠司　on 2020/11/17
+
+
 import UIKit
 import GRDB
 
@@ -37,13 +39,15 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     var member4: String?    // メンバー
     var member5: String?    // メンバー
     var member6: String?     // メンバー
-    var use: [String] = []        // 使用用途
-    var cost: [Int64?] = []          // 費用
+    // var use: [String] = []        // 使用用途
+    var use : Array<String> = Array<String>()
+    // var cost: [Int64?] = []          // 費用
+    var cost: [Int64] = []
     var buyer: [String] = []      // 負担者
     
     // メンバー数をカウントする変数の作成
-    private var count = 1
-    
+    // private var count = 1
+    private var count: Int64 = 1
     // 値の取得
     var receiveId:Int64 = 0
     //var Id = 1
@@ -96,22 +100,21 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             
         }
         
-        if(!result1) {
+        if(!result2) {
             print("sippai")
         } else {
             // 検索結果から取り出し各変数に代入
             
             for it in entity2 {
                 use.append(it!.para_name)
-                cost.append(it?.para_cost)
+                // cost.append(it?.para_cost)
+                cost.append((it?.para_cost)!)
                 buyer.append(it!.repayer)
                 
             }
-            
+        
             
         }
-        
-        
         
         
         //ラベルテキストを使って角ラベルに貼り付け
@@ -205,8 +208,9 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         // 金額のラベル
         let labelMoney = cell.viewWithTag(4) as! UILabel
         // ラベルに表示する文字列を設定
-        labelMoney.text = "000えん"//(cost[indexPath.row])
-        
+        // labelMoney.text = "000えん"//(cost[indexPath.row])
+        labelMoney.text = "\(cost[indexPath.row])円"
+
         // 一人当たり金額のラベル
         let labelsyou = cell.viewWithTag(5) as! UILabel
         // ラベルに表示する文字列を設定
@@ -215,7 +219,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         // 一人当たり金額のラベル
         let labelSyou = cell.viewWithTag(6) as! UILabel
         // ラベルに表示する文字列を設定
-        labelSyou.text = "えん園"
+        labelSyou.text = "\(cost[indexPath.row]/count)円"
         
         // 負担者のラベル
         let labelbuyer = cell.viewWithTag(7) as! UILabel
@@ -242,6 +246,59 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             secondView.receiveId = post
             
             
+        }
+    }
+    
+    @IBAction func showActivityView(_ sender: Any) {
+        //表示情報を取得
+        if let shareLabel = day.text {
+            let shareLabel2:String = folderTitle.text!
+            let shareLabel3:String = people.text!
+            let shareLabel4:String = mem1.text!
+            let shareLabel5:String = mem2.text!
+            let shareLabel6:String  = mem3.text!
+            let shareLabel7:String  = mem4.text!
+            let shareLabel8:String  = mem5.text!
+            let shareLabel9:String  = mem6.text!
+            
+            var text = ""
+            
+            for s in 0..<use.count {
+                text += """
+                \(use[s])
+                \(String(describing: cost[s]))円
+                1人当たり：\(cost[s]/count)円
+                負担者：\(buyer[s])\n
+                
+                """
+            }
+        
+            
+            let lineText = """
+            ドラレコ
+            日付：\(shareLabel)
+            タイトル：\(shareLabel2)
+            人数：\(shareLabel3)
+            メンバー：\(shareLabel4)
+                            \(shareLabel5)
+                            \(shareLabel6)
+                            \(shareLabel7)
+                            \(shareLabel8)
+                            \(shareLabel9)\n
+            使用項目
+            \(text)
+            合計金額：円
+            1人当たり：円
+            """
+            //UIActivityに渡す配列を作成
+            let shareItems = [lineText]
+            //UIACtitivityViewControllerにシェアラベルを渡す
+            let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+            //iPadで落ちてしまう対策
+            controller.popoverPresentationController?.sourceView = view
+            
+            //UIActivityViewControllerを表示
+            present(controller, animated: true, completion: nil)
         }
     }
     
