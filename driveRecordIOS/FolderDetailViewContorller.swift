@@ -11,16 +11,18 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     
 
     // 各ラベルに受け取った値を格納
-    @IBOutlet weak var day: UILabel!
-    @IBOutlet weak var folderTitle: UILabel!
-    @IBOutlet weak var people: UILabel!
-    @IBOutlet weak var mem1: UILabel!
-    @IBOutlet weak var mem2: UILabel!
-    @IBOutlet weak var mem3: UILabel!
-    @IBOutlet weak var mem4: UILabel!
-    @IBOutlet weak var mem5: UILabel!
-    @IBOutlet weak var mem6: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var day: UILabel!
+    @IBOutlet private weak var folderTitle: UILabel!
+    @IBOutlet private weak var people: UILabel!
+    @IBOutlet private weak var mem1: UILabel!
+    @IBOutlet private weak var mem2: UILabel!
+    @IBOutlet private weak var mem3: UILabel!
+    @IBOutlet private weak var mem4: UILabel!
+    @IBOutlet private weak var mem5: UILabel!
+    @IBOutlet private weak var mem6: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var sum: UILabel!
+    @IBOutlet private weak var ave: UILabel!
     
     
     /* @IBAction func showActivityView(_ sender: UIBarButtonItem) {
@@ -29,24 +31,29 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
      self.present(controller,animated:true, completion:nil)
      }*/
     
-    var folderList: String?   // title
-    var date: String?          // 日付
-    var member1: String?      // メンバー
-    var member2: String?     // メンバー
-    var member3: String?    // メンバー
-    var member4: String?    // メンバー
-    var member5: String?    // メンバー
-    var member6: String?     // メンバー
-    var use: [String] = []        // 使用用途
-    var cost: [Int64?] = []          // 費用
-    var buyer: [String] = []      // 負担者
+    private var folderList: String?   // title
+    private var date: String?          // 日付
+    private var member1: String?      // メンバー
+    private var member2: String?     // メンバー
+    private var member3: String?    // メンバー
+    private var member4: String?    // メンバー
+    private var member5: String?    // メンバー
+    private var member6: String?     // メンバー
+    private var use: [String] = []        // 使用用途
+    // private var use : Array<String> = Array<String>()
+    // var cost: [Int64?] = []          // 費用
+    private var cost: [Int64] = []
+    private var buyer: [String] = []      // 負担者
     
     // メンバー数をカウントする変数の作成
-    private var count = 1
-    
+    // private var count = 1
+    private var count: Int64 = 1
     // 値の取得
     var receiveId:Int64 = 0
     //var Id = 1
+    
+    private var sumCost: Int64 = 0     //合計金額
+    private var aveCost: Int64 = 0     //一人当たりの金額
     
     @IBAction func moenyInsert(_ sender: Any) {
         //segueの実行
@@ -96,22 +103,22 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             
         }
         
-        if(!result1) {
+        if(!result2) {
             print("sippai")
         } else {
             // 検索結果から取り出し各変数に代入
             
             for it in entity2 {
                 use.append(it!.para_name)
-                cost.append(it?.para_cost)
+                // cost.append(it?.para_cost)
+                cost.append((it?.para_cost)!)
                 buyer.append(it!.repayer)
                 
             }
+        
             
             
         }
-        
-        
         
         
         //ラベルテキストを使って角ラベルに貼り付け
@@ -163,6 +170,16 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             count += 1
         }
         
+        //　合計金額と一人当たりの金額を算出
+        let sumCost: Int64 = cost.reduce(0) { $0 + $1}
+        print(sumCost)
+        
+        aveCost = sumCost / count
+        print(aveCost)
+        
+        //ラベルに合計と一人当たりの金額の貼り付け
+        sum.text = "\(sumCost)円"
+        ave.text = "\(aveCost)円"
         
         //カウントした人数をラベルに貼り付ける
         people.text = "\(count)人"
@@ -181,7 +198,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
-        let cell = tableView.dequeueReusableCell(withIdentifier: "table", for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath as IndexPath)
         
         // ラベルオブジェクトを作る
         // 使用用途のラベル
@@ -205,7 +222,8 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         // 金額のラベル
         let labelMoney = cell.viewWithTag(4) as! UILabel
         // ラベルに表示する文字列を設定
-        labelMoney.text = "000えん"//(cost[indexPath.row])
+        // labelMoney.text = "000えん"//(cost[indexPath.row])
+        labelMoney.text = "\(cost[indexPath.row])円"
         
         // 一人当たり金額のラベル
         let labelsyou = cell.viewWithTag(5) as! UILabel
@@ -215,7 +233,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         // 一人当たり金額のラベル
         let labelSyou = cell.viewWithTag(6) as! UILabel
         // ラベルに表示する文字列を設定
-        labelSyou.text = "えん園"
+        labelSyou.text = "\(cost[indexPath.row]/count)円"
         
         // 負担者のラベル
         let labelbuyer = cell.viewWithTag(7) as! UILabel
@@ -230,6 +248,8 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "moneyView" {
             
@@ -242,6 +262,63 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             secondView.receiveId = post
             
             
+        }
+    }
+    
+    @IBAction func showActivityView(_ sender: Any) {
+        //表示情報を取得
+        if let shareLabel = day.text {
+            let shareLabel2:String = folderTitle.text!
+            let shareLabel3:String = people.text!
+            let shareLabel4:String = mem1.text!
+            let shareLabel5:String = mem2.text!
+            let shareLabel6:String  = mem3.text!
+            let shareLabel7:String  = mem4.text!
+            let shareLabel8:String  = mem5.text!
+            let shareLabel9:String  = mem6.text!
+            
+            var text = ""
+            
+            for s in 0..<use.count {
+                text += """
+                \(use[s])
+                \(String(describing: cost[s]))円
+                1人当たり：\(cost[s]/count)円
+                負担者：\(buyer[s])\n
+                
+                """
+            }
+        
+            
+            let lineText = """
+            ドラレコ
+            日付
+            \(shareLabel)
+            タイトル
+            \(shareLabel2)
+            人数
+            \(shareLabel3)
+            メンバー
+            \(shareLabel4)
+            \(shareLabel5)
+            \(shareLabel6)
+            \(shareLabel7)
+            \(shareLabel8)
+            \(shareLabel9)\n
+            使用項目
+            \(text)
+            合計金額：円
+            1人当たり：円
+            """
+            //UIActivityに渡す配列を作成
+            let shareItems = [lineText]
+            //UIACtitivityViewControllerにシェアラベルを渡す
+            let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+            //iPadで落ちてしまう対策
+            controller.popoverPresentationController?.sourceView = view
+            
+            //UIActivityViewControllerを表示
+            present(controller, animated: true, completion: nil)
         }
     }
     

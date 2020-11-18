@@ -166,7 +166,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="mapBtn" destination="akG-D7-GHa" id="Rxb-7m-OuY"/>
+                        <outlet property="mapBtn" destination="akG-D7-GHa" id="RMc-we-12n"/>
                         <outlet property="tableView" destination="eMf-jh-WMU" id="Quu-ti-2rA"/>
                     </connections>
                 </viewController>

@@ -207,11 +207,11 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             if segue.identifier == "showDetailSegue" {
      
                 // 遷移先ViewCntrollerの取得
-                let nc = segue.destination as! UINavigationController
-                let nextView = nc.topViewController as! FolderDetailViewController
+                let nc = segue.destination as! FolderDetailViewController
+                //let nextView = nc.topViewController as! FolderDetailViewController
      
                 // 値の設定　FolderCreateから送信された値を活用
-                nextView.receiveId = receiveId
+                nc.receiveId = receiveId
                 
             } else if segue.identifier == "photoConfirm" {
                 let photoConfirm = segue.destination as! cameraViewController
