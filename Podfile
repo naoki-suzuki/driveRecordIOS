@@ -9,7 +9,6 @@ target 'driveRecordIOS' do
 
 pod 'GoogleMaps', '~>4.0.0'
 pod 'GooglePlaces'
-pod 'LicensePlist'
 
   target 'driveRecordIOSTests' do
     inherit! :search_paths
