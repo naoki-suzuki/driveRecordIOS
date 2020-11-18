@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfJ-4Q-Mzl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfJ-4Q-Mzl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -121,27 +122,44 @@
         <!--サポート-->
         <scene sceneID="qcE-nA-EkF">
             <objects>
-                <viewController id="e2v-uf-nnE" sceneMemberID="viewController">
+                <viewController id="e2v-uf-nnE" customClass="SupportViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhS-e7-ebe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQ1-Yf-6e3">
-                                <rect key="frame" x="159" y="227" width="102" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQ1-Yf-6e3">
+                                <rect key="frame" x="0.0" y="218" width="414" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="利用規約"/>
                                 <connections>
                                     <segue destination="t5R-bf-HQY" kind="show" id="mIb-kL-SSm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOo-Eo-L58">
+                                <rect key="frame" x="0.0" y="290" width="414" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="ライセンス"/>
+                                <connections>
+                                    <action selector="license:" destination="xrj-ik-VIT" eventType="touchUpInside" id="eWo-hW-jXp"/>
+                                    <action selector="license:" destination="e2v-uf-nnE" eventType="touchUpInside" id="eaZ-YT-J45"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2TI-Wt-d0o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2TI-Wt-d0o" firstAttribute="trailing" secondItem="aOo-Eo-L58" secondAttribute="trailing" id="5nF-iY-GCz"/>
+                            <constraint firstItem="CQ1-Yf-6e3" firstAttribute="top" secondItem="2TI-Wt-d0o" secondAttribute="top" constant="130" id="REb-tq-vpO"/>
+                            <constraint firstItem="aOo-Eo-L58" firstAttribute="leading" secondItem="2TI-Wt-d0o" secondAttribute="leading" id="T3F-VQ-qyG"/>
+                            <constraint firstItem="2TI-Wt-d0o" firstAttribute="trailing" secondItem="CQ1-Yf-6e3" secondAttribute="trailing" id="mf3-iY-Wwe"/>
+                            <constraint firstItem="aOo-Eo-L58" firstAttribute="top" secondItem="CQ1-Yf-6e3" secondAttribute="bottom" constant="30" id="qwe-Nm-oDj"/>
+                            <constraint firstItem="CQ1-Yf-6e3" firstAttribute="leading" secondItem="2TI-Wt-d0o" secondAttribute="leading" id="wCx-e0-YfA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="サポート" id="pMI-yJ-4nO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUN-a4-1FU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="xrj-ik-VIT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="903" y="78"/>
         </scene>
