@@ -43,30 +43,74 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         }
         countMember.text = "人数：\(count)人"
     }
+    // 文字数をカウントするメソッド
+        func letterCount(nameString:UITextField) -> Bool {
+            let name = nameString.text!
+            if name.count > 10 {
+                let alert = UIAlertController(title: "エラー",
+                                              message: "10文字以内で入力してください",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                
+                return false
+            }
+            return true
+        }
     //入力時の処理
+    @IBAction func checkTitle(_ sender: Any) {
+        // if文を満たすと、入力された中身が削除される
+        if !letterCount(nameString: travelTitle) {
+            travelTitle.text = ""
+        }
+    }
     
     @IBAction func mem1(_ sender: Any) {
+        // 入力文字数チェック
+        if !letterCount(nameString: member1) {
+            member1.text = ""
+        }
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
         
     }
     
     @IBAction func mem2(_ sender: Any) {
+        // 入力文字数チェック
+        if !letterCount(nameString: member2) {
+            member2.text = ""
+        }
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
     @IBAction func mem3(_ sender: Any) {
+        // 入力文字数チェック
+        if !letterCount(nameString: member3) {
+            member3.text = ""
+        }
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
     @IBAction func mem4(_ sender: Any) {
+        // 入力文字数チェック
+        if !letterCount(nameString: member4) {
+            member4.text = ""
+        }
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
     @IBAction func mem5(_ sender: Any) {
+        // 入力文字数チェック
+        if !letterCount(nameString: member5) {
+            member5.text = ""
+        }
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
     @IBAction func mem6(_ sender: Any) {
+        // 入力文字数チェック
+        if !letterCount(nameString: member6) {
+            member6.text = ""
+        }
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
