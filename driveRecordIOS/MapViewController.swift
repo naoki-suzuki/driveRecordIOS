@@ -13,8 +13,8 @@
  * permissions and limitations under the License.
  */
 
-//  Created by 鈴木 on 2020/11/9
-//
+// Created by 鈴木 on 2020/11/9
+// Updated by 鈴木 on 2020/11/17
 
 import UIKit
 import GoogleMaps
@@ -59,9 +59,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    // マーカーのタップを検知するメソッド
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        return true
+//    // マーカーのタップを検知するメソッド
+//    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+//        return true
+//    }
+    
+    /**
+      マップにマーカを設置する処理
+
+      - parameter title: マーカのタイトル
+      - parameter coordinate: 位置
+      - parameter iconName: アイコン名
+      - parameter completion: Callback
+    */
+    private func putMarker(title: String?, coordinate: CLLocationCoordinate2D, iconName: String?, completion: @escaping ((GMSMarker) -> Void)) {
+      // マーカの生成
+      let marker = GMSMarker()
+      marker.title = title
+      marker.position = coordinate
+      if iconName != nil {
+        // アイコン名が指定されている場合は画像を設定
+        marker.icon = UIImage.init(named: iconName!)
+      }
+      marker.map = self.mapView
+      completion(marker)
     }
 }
 
