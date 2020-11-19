@@ -258,15 +258,15 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         let index = paragraphId[indexPath.row]
         
         // 外部キーの制約のため、先に子テーブルのParagraphinfoの該当列から削除処理を行う
-              let result2 = helper.inDatabase { (db) in
-                try Paragraphinfo.filter(Paragraphinfo.Columns.para_num == index).deleteAll(db)
-              }
-              
-              if result2 {
-                  print("成功")
-              } else {
-                  print("失敗")
-              }
+        let result2 = helper.inDatabase { (db) in
+            try Paragraphinfo.filter(Paragraphinfo.Columns.para_num == index).deleteAll(db)
+        }
+        
+        if result2 {
+            print("成功")
+        } else {
+            print("失敗")
+        }
         
         // パラグラフID配列の要素を削除
         paragraphId.remove(at: indexPath.row)
@@ -276,10 +276,15 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             buyer.remove(at: indexPath.row)
             cost.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            
+            //　削除後の合計金額と一人当たりの金額を算出してラベルに再度貼り付け
+            sumCost = cost.reduce(0) { $0 + $1}
+            aveCost = sumCost / count
+            sum.text = "\(sumCost)円"
+            ave.text = "\(aveCost)円"
+            
         }
     }
-    
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -314,25 +319,26 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             if use.count == 0 {
                 text = "未登録"
             } else {
-            for s in 0..<use.count {
-                text += """
+                for s in 0..<use.count {
+                    text += """
                 \(use[s])
                 \(String(describing: cost[s]))円
                 1人当たり：\(cost[s]/count)円
                 負担者：\(buyer[s])\n
                 
                 """
-            }
+                }
             }
             
             
             let lineText = """
             ドラレコ
-            日付:\(shareLabel)
+            日付
+            \(shareLabel)\n
             タイトル
-            \(shareLabel2)
+            \(shareLabel2)\n
             人数
-            \(shareLabel3)
+            \(shareLabel3)\n
             メンバー
             \(shareLabel4)
             \(shareLabel5)
@@ -343,7 +349,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             使用項目
             \(text)
             合計金額
-            \(sumCost)円
+            \(sumCost)円\n
             1人当たり
             \(aveCost)円
             """
