@@ -2,27 +2,27 @@
 //  FolderDetailViewContorller.swift
 //  driveRecord
 //
-//  Created by 長阪智哉 on 2020/11/4
-//  Update by 大越悠司　on 2020/11/17
-
-
+//  Created by 長阪智哉 on 2020/11/19
+//
 import UIKit
 import GRDB
 
 class FolderDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-
+    
     // 各ラベルに受け取った値を格納
-    @IBOutlet weak var day: UILabel!
-    @IBOutlet weak var folderTitle: UILabel!
-    @IBOutlet weak var people: UILabel!
-    @IBOutlet weak var mem1: UILabel!
-    @IBOutlet weak var mem2: UILabel!
-    @IBOutlet weak var mem3: UILabel!
-    @IBOutlet weak var mem4: UILabel!
-    @IBOutlet weak var mem5: UILabel!
-    @IBOutlet weak var mem6: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var day: UILabel!
+    @IBOutlet private weak var folderTitle: UILabel!
+    @IBOutlet private weak var people: UILabel!
+    @IBOutlet private weak var mem1: UILabel!
+    @IBOutlet private weak var mem2: UILabel!
+    @IBOutlet private weak var mem3: UILabel!
+    @IBOutlet private weak var mem4: UILabel!
+    @IBOutlet private weak var mem5: UILabel!
+    @IBOutlet private weak var mem6: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var sum: UILabel!
+    @IBOutlet private weak var ave: UILabel!
     
     
     /* @IBAction func showActivityView(_ sender: UIBarButtonItem) {
@@ -31,19 +31,21 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
      self.present(controller,animated:true, completion:nil)
      }*/
     
-    var folderList: String?   // title
-    var date: String?          // 日付
-    var member1: String?      // メンバー
-    var member2: String?     // メンバー
-    var member3: String?    // メンバー
-    var member4: String?    // メンバー
-    var member5: String?    // メンバー
-    var member6: String?     // メンバー
-    // var use: [String] = []        // 使用用途
-    var use : Array<String> = Array<String>()
+    private var folderid: Int64?        //フォルダID
+    private var paragraphId: [Int64] = []     //パラグラフID
+    private var folderList: String?   // title
+    private var date: String?          // 日付
+    private var member1: String?      // メンバー
+    private var member2: String?     // メンバー
+    private var member3: String?    // メンバー
+    private var member4: String?    // メンバー
+    private var member5: String?    // メンバー
+    private var member6: String?     // メンバー
+    private var use: [String] = []        // 使用用途
+    // private var use : Array<String> = Array<String>()
     // var cost: [Int64?] = []          // 費用
-    var cost: [Int64] = []
-    var buyer: [String] = []      // 負担者
+    private var cost: [Int64] = []
+    private var buyer: [String] = []      // 負担者
     
     // メンバー数をカウントする変数の作成
     // private var count = 1
@@ -51,6 +53,9 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     // 値の取得
     var receiveId:Int64 = 0
     //var Id = 1
+    
+    private var sumCost: Int64 = 0     //合計金額
+    private var aveCost: Int64 = 0     //一人当たりの金額
     
     @IBAction func moenyInsert(_ sender: Any) {
         //segueの実行
@@ -93,9 +98,9 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             
         }
         
-        //前画面のfolderid情報を基にParagraphinfoに検索を行う
+        // 前画面のfolderid情報を基にParagraphinfoに検索を行う
         let result2 = helper.inDatabase { (db) in
-            //全画面で登録したフォルダ情報を取得
+            // 全画面で登録したフォルダ情報を取得
             entity2 = try Paragraphinfo.filter(Paragraphinfo.Columns.folderid == receiveId).fetchAll(db)
             
         }
@@ -106,30 +111,32 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             // 検索結果から取り出し各変数に代入
             
             for it in entity2 {
+                paragraphId.append(it!.para_num)
                 use.append(it!.para_name)
                 // cost.append(it?.para_cost)
                 cost.append((it?.para_cost)!)
                 buyer.append(it!.repayer)
                 
             }
-        
+            
+            
             
         }
         
         
-        //ラベルテキストを使って角ラベルに貼り付け
+        // ラベルテキストを使って角ラベルに貼り付け
         day.text = date
         folderTitle.text = folderList
         mem1.text = member1
         
         
         
-        //member2-6はいない可能性もあるためnilであれば空文字にする
+        // member2-6はいない可能性もあるためnilであれば空文字にする
         if member2 == "" {
             mem2.text = ""
             
         } else {
-            //nilでなければラベルに代入して人数を1増やす
+            // nilでなければラベルに代入して人数を1増やす
             mem2.text = member2
             count += 1
         }
@@ -166,6 +173,16 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             count += 1
         }
         
+        //　合計金額と一人当たりの金額を算出
+        sumCost = cost.reduce(0) { $0 + $1}
+        print(sumCost)
+        
+        aveCost = sumCost / count
+        print(aveCost)
+        
+        //ラベルに合計と一人当たりの金額の貼り付け
+        sum.text = "\(sumCost)円"
+        ave.text = "\(aveCost)円"
         
         //カウントした人数をラベルに貼り付ける
         people.text = "\(count)人"
@@ -179,60 +196,63 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 130
-        }
+        return 130
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
-        let cell = tableView.dequeueReusableCell(withIdentifier: "table", for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath as IndexPath)
         
         // ラベルオブジェクトを作る
         // 使用用途のラベル
-        let labeluse = cell.viewWithTag(1) as! UILabel
-        // ラベルに表示する文字列を設定
-        labeluse.text = "使用用途"
-        
-        // ラベルオブジェクトを作る
-        // 使用用途のラベル
-        let labelUse = cell.viewWithTag(2) as! UILabel
+        let labelUse = cell.viewWithTag(1) as! UILabel
         // ラベルに表示する文字列を設定
         labelUse.text = (use[indexPath.row])
         
         // ラベルオブジェクトを作る
         // 金額のラベル
-        let labelmoney = cell.viewWithTag(3) as! UILabel
+        let labelmoney = cell.viewWithTag(2) as! UILabel
         // ラベルに表示する文字列を設定
         labelmoney.text = "金額"
         
         // ラベルオブジェクトを作る
         // 金額のラベル
-        let labelMoney = cell.viewWithTag(4) as! UILabel
+        let labelMoney = cell.viewWithTag(3) as! UILabel
         // ラベルに表示する文字列を設定
         // labelMoney.text = "000えん"//(cost[indexPath.row])
         labelMoney.text = "\(cost[indexPath.row])円"
-
+        
         // 一人当たり金額のラベル
-        let labelsyou = cell.viewWithTag(5) as! UILabel
+        let labelsyou = cell.viewWithTag(4) as! UILabel
         // ラベルに表示する文字列を設定
         labelsyou.text = "一人当たり"
         
         // 一人当たり金額のラベル
-        let labelSyou = cell.viewWithTag(6) as! UILabel
+        let labelSyou = cell.viewWithTag(5) as! UILabel
         // ラベルに表示する文字列を設定
         labelSyou.text = "\(cost[indexPath.row]/count)円"
         
         // 負担者のラベル
-        let labelbuyer = cell.viewWithTag(7) as! UILabel
+        let labelbuyer = cell.viewWithTag(6) as! UILabel
         // ラベルに表示する文字列を設定
         labelbuyer.text = "負担者"
         
         // 負担者のラベル
-        let labelBuyer = cell.viewWithTag(8) as! UILabel
+        let labelBuyer = cell.viewWithTag(7) as! UILabel
         // ラベルに表示する文字列を設定
         labelBuyer.text = (buyer[indexPath.row])
         
         return cell
     }
+    
+    // セルの編集許可
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "moneyView" {
@@ -263,6 +283,9 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             
             var text = ""
             
+            if use.count == 0 {
+                text = "未登録"
+            } else {
             for s in 0..<use.count {
                 text += """
                 \(use[s])
@@ -272,23 +295,29 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
                 
                 """
             }
-        
+            }
+            
             
             let lineText = """
             ドラレコ
-            日付：\(shareLabel)
-            タイトル：\(shareLabel2)
-            人数：\(shareLabel3)
-            メンバー：\(shareLabel4)
-                            \(shareLabel5)
-                            \(shareLabel6)
-                            \(shareLabel7)
-                            \(shareLabel8)
-                            \(shareLabel9)\n
+            日付:\(shareLabel)
+            タイトル
+            \(shareLabel2)
+            人数
+            \(shareLabel3)
+            メンバー
+            \(shareLabel4)
+            \(shareLabel5)
+            \(shareLabel6)
+            \(shareLabel7)
+            \(shareLabel8)
+            \(shareLabel9)\n
             使用項目
             \(text)
-            合計金額：円
-            1人当たり：円
+            合計金額
+            \(sumCost)円
+            1人当たり
+            \(aveCost)円
             """
             //UIActivityに渡す配列を作成
             let shareItems = [lineText]
