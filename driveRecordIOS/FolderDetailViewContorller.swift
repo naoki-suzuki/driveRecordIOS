@@ -2,7 +2,7 @@
 //  FolderDetailViewContorller.swift
 //  driveRecord
 //
-//  Created by 長阪智哉 on 2020/11/4
+//  Created by 長阪智哉 on 2020/11/19
 //
 import UIKit
 import GRDB
@@ -205,46 +205,40 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         
         // ラベルオブジェクトを作る
         // 使用用途のラベル
-        let labeluse = cell.viewWithTag(1) as! UILabel
-        // ラベルに表示する文字列を設定
-        labeluse.text = "使用用途"
-        
-        // ラベルオブジェクトを作る
-        // 使用用途のラベル
-        let labelUse = cell.viewWithTag(2) as! UILabel
+        let labelUse = cell.viewWithTag(1) as! UILabel
         // ラベルに表示する文字列を設定
         labelUse.text = (use[indexPath.row])
         
         // ラベルオブジェクトを作る
         // 金額のラベル
-        let labelmoney = cell.viewWithTag(3) as! UILabel
+        let labelmoney = cell.viewWithTag(2) as! UILabel
         // ラベルに表示する文字列を設定
         labelmoney.text = "金額"
         
         // ラベルオブジェクトを作る
         // 金額のラベル
-        let labelMoney = cell.viewWithTag(4) as! UILabel
+        let labelMoney = cell.viewWithTag(3) as! UILabel
         // ラベルに表示する文字列を設定
         // labelMoney.text = "000えん"//(cost[indexPath.row])
         labelMoney.text = "\(cost[indexPath.row])円"
         
         // 一人当たり金額のラベル
-        let labelsyou = cell.viewWithTag(5) as! UILabel
+        let labelsyou = cell.viewWithTag(4) as! UILabel
         // ラベルに表示する文字列を設定
         labelsyou.text = "一人当たり"
         
         // 一人当たり金額のラベル
-        let labelSyou = cell.viewWithTag(6) as! UILabel
+        let labelSyou = cell.viewWithTag(5) as! UILabel
         // ラベルに表示する文字列を設定
         labelSyou.text = "\(cost[indexPath.row]/count)円"
         
         // 負担者のラベル
-        let labelbuyer = cell.viewWithTag(7) as! UILabel
+        let labelbuyer = cell.viewWithTag(6) as! UILabel
         // ラベルに表示する文字列を設定
         labelbuyer.text = "負担者"
         
         // 負担者のラベル
-        let labelBuyer = cell.viewWithTag(8) as! UILabel
+        let labelBuyer = cell.viewWithTag(7) as! UILabel
         // ラベルに表示する文字列を設定
         labelBuyer.text = (buyer[indexPath.row])
         
