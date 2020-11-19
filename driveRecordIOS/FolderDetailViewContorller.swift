@@ -119,8 +119,6 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
                 
             }
             
-            
-            
         }
         
         
@@ -249,6 +247,36 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     {
         return true
+    }
+    
+    // スワイプしたセルを削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // データベース接続し、該当項目のフォルダを削除
+        let helper = DatabaseHelper()
+        
+        let index = paragraphId[indexPath.row]
+        
+        // 外部キーの制約のため、先に子テーブルのParagraphinfoの該当列から削除処理を行う
+              let result2 = helper.inDatabase { (db) in
+                try Paragraphinfo.filter(Paragraphinfo.Columns.para_num == index).deleteAll(db)
+              }
+              
+              if result2 {
+                  print("成功")
+              } else {
+                  print("失敗")
+              }
+        
+        // パラグラフID配列の要素を削除
+        paragraphId.remove(at: indexPath.row)
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            use.remove(at: indexPath.row)
+            buyer.remove(at: indexPath.row)
+            cost.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
     }
     
     
