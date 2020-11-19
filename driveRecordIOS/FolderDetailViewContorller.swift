@@ -9,7 +9,7 @@ import GRDB
 
 class FolderDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    
+
     // 各ラベルに受け取った値を格納
     @IBOutlet private weak var day: UILabel!
     @IBOutlet private weak var folderTitle: UILabel!
@@ -31,8 +31,6 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
      self.present(controller,animated:true, completion:nil)
      }*/
     
-    private var folderid: Int64?        //フォルダID
-    private var paragraphId: [Int64] = []     //パラグラフID
     private var folderList: String?   // title
     private var date: String?          // 日付
     private var member1: String?      // メンバー
@@ -98,9 +96,9 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             
         }
         
-        // 前画面のfolderid情報を基にParagraphinfoに検索を行う
+        //前画面のfolderid情報を基にParagraphinfoに検索を行う
         let result2 = helper.inDatabase { (db) in
-            // 全画面で登録したフォルダ情報を取得
+            //全画面で登録したフォルダ情報を取得
             entity2 = try Paragraphinfo.filter(Paragraphinfo.Columns.folderid == receiveId).fetchAll(db)
             
         }
@@ -111,32 +109,31 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             // 検索結果から取り出し各変数に代入
             
             for it in entity2 {
-                paragraphId.append(it!.para_num)
                 use.append(it!.para_name)
                 // cost.append(it?.para_cost)
                 cost.append((it?.para_cost)!)
                 buyer.append(it!.repayer)
                 
             }
-            
+        
             
             
         }
         
         
-        // ラベルテキストを使って角ラベルに貼り付け
+        //ラベルテキストを使って角ラベルに貼り付け
         day.text = date
         folderTitle.text = folderList
         mem1.text = member1
         
         
         
-        // member2-6はいない可能性もあるためnilであれば空文字にする
+        //member2-6はいない可能性もあるためnilであれば空文字にする
         if member2 == "" {
             mem2.text = ""
             
         } else {
-            // nilでなければラベルに代入して人数を1増やす
+            //nilでなければラベルに代入して人数を1増やす
             mem2.text = member2
             count += 1
         }
@@ -174,7 +171,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         }
         
         //　合計金額と一人当たりの金額を算出
-        sumCost = cost.reduce(0) { $0 + $1}
+        let sumCost: Int64 = cost.reduce(0) { $0 + $1}
         print(sumCost)
         
         aveCost = sumCost / count
@@ -196,12 +193,12 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
-    }
+            return 130
+        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath as IndexPath)
         
         // ラベルオブジェクトを作る
         // 使用用途のラベル
@@ -251,13 +248,6 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
-    // セルの編集許可
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    {
-        return true
-    }
-    
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -289,9 +279,6 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             
             var text = ""
             
-            if use.count == 0 {
-                text = "未登録"
-            } else {
             for s in 0..<use.count {
                 text += """
                 \(use[s])
@@ -301,12 +288,12 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
                 
                 """
             }
-            }
-            
+        
             
             let lineText = """
             ドラレコ
-            日付:\(shareLabel)
+            日付
+            \(shareLabel)
             タイトル
             \(shareLabel2)
             人数
@@ -320,10 +307,8 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             \(shareLabel9)\n
             使用項目
             \(text)
-            合計金額
-            \(sumCost)円
-            1人当たり
-            \(aveCost)円
+            合計金額：円
+            1人当たり：円
             """
             //UIActivityに渡す配列を作成
             let shareItems = [lineText]
