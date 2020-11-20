@@ -117,9 +117,9 @@
                                         <rect key="frame" x="0.0" y="170" width="300" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-L9-fBX">
-                                                <rect key="frame" x="260" y="19" width="79" height="22"/>
+                                                <rect key="frame" x="287" y="19" width="25" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="camera.fill" catalog="system"/>
+                                                <state key="normal" image="camera.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="cameraOpen:" destination="YTA-hF-Cgf" eventType="touchUpInside" id="TCN-gG-pzh"/>
                                                 </connections>
@@ -211,7 +211,7 @@
                                 <action selector="returnHome:" destination="YTA-hF-Cgf" id="Ido-0t-Rjt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="SZw-Rq-Lwa">
+                        <barButtonItem key="rightBarButtonItem" title="サポート" image="gearshape.fill" catalog="system" id="SZw-Rq-Lwa">
                             <connections>
                                 <segue destination="08C-wB-zA1" kind="show" id="OJM-RK-FL8"/>
                             </connections>
