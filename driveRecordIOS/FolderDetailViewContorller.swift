@@ -2,7 +2,7 @@
 //  FolderDetailViewContorller.swift
 //  driveRecord
 //
-//  Created by 長阪智哉 on 2020/11/19
+//  Created by 長阪智哉 on 2020/11/20
 //
 import UIKit
 import GRDB
@@ -42,18 +42,12 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     private var member5: String?    // メンバー
     private var member6: String?     // メンバー
     private var use: [String] = []        // 使用用途
-    // private var use : Array<String> = Array<String>()
-    // var cost: [Int64?] = []          // 費用
-    private var cost: [Int64] = []
+    private var cost: [Int64] = []        //費用
     private var buyer: [String] = []      // 負担者
-    
     // メンバー数をカウントする変数の作成
-    // private var count = 1
     private var count: Int64 = 1
     // 値の取得
     var receiveId:Int64 = 0
-    //var Id = 1
-    
     private var sumCost: Int64 = 0     //合計金額
     private var aveCost: Int64 = 0     //一人当たりの金額
     
@@ -81,11 +75,11 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
                 Folderinfo.filter(Folderinfo.Columns.folderid == receiveId).fetchOne(db)
             
         }
+        
         if(!result1) {
             print("sippai")
         } else {
             // 検索結果から取り出し各変数に代入
-            
             date = entity1?.date
             folderList = entity1?.title
             member1 = entity1?.member1
@@ -94,7 +88,6 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             member4 = entity1?.member4
             member5 = entity1?.member5
             member6 = entity1?.member6
-            
             
         }
         
@@ -121,13 +114,10 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             
         }
         
-        
         // ラベルテキストを使って角ラベルに貼り付け
         day.text = date
         folderTitle.text = folderList
         mem1.text = member1
-        
-        
         
         // member2-6はいない可能性もあるためnilであれば空文字にする
         if member2 == "" {
@@ -178,15 +168,13 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         aveCost = sumCost / count
         print(aveCost)
         
-        //ラベルに合計と一人当たりの金額の貼り付け
+        // ラベルに合計と一人当たりの金額の貼り付け
         sum.text = "\(sumCost)円"
         ave.text = "\(aveCost)円"
         
-        //カウントした人数をラベルに貼り付ける
+        // カウントした人数をラベルに貼り付ける
         people.text = "\(count)人"
-        
-        //memberのnilの数を参照する
-        
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -303,21 +291,17 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func showActivityView(_ sender: Any) {
-        //表示情報を取得
+        // 表示情報を取得
         if let shareLabel = day.text {
             let shareLabel2:String = folderTitle.text!
             let shareLabel3:String = people.text!
-            let shareLabel4:String = mem1.text!
-            let shareLabel5:String = mem2.text!
-            let shareLabel6:String  = mem3.text!
-            let shareLabel7:String  = mem4.text!
-            let shareLabel8:String  = mem5.text!
-            let shareLabel9:String  = mem6.text!
-            
+            let shareLabel4:[String] = [mem1.text!,mem2.text!,mem3.text!,mem4.text!,mem5.text!,mem6.text!]
+            var memberText:String = ""
             var text = ""
             
+            // 使用項目がある場合と無い場合でtextを変更
             if use.count == 0 {
-                text = "未登録"
+                text = "未登録\n"
             } else {
                 for s in 0..<use.count {
                     text += """
@@ -330,6 +314,17 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
                 }
             }
             
+            // メンバーのデータが空白以外の場合にmembertextに代入
+            for i in 0..<shareLabel4.count {
+                if shareLabel4[i] != "" {
+                    memberText += """
+                    \(shareLabel4[i])\n
+                    """
+                }
+            }
+            
+            
+            
             
             let lineText = """
             ドラレコ
@@ -340,12 +335,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             人数
             \(shareLabel3)\n
             メンバー
-            \(shareLabel4)
-            \(shareLabel5)
-            \(shareLabel6)
-            \(shareLabel7)
-            \(shareLabel8)
-            \(shareLabel9)\n
+            \(memberText)
             使用項目
             \(text)
             合計金額
