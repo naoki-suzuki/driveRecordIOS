@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ipO-Sn-8Pc">
-                                <rect key="frame" x="36" y="109" width="332" height="730"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ipO-Sn-8Pc">
+                                <rect key="frame" x="36" y="109" width="342" height="678"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">この利用規約（以下，「本規約」といいます。）は，株式会社シムテック（以下，「当社」といいます。）がこのアプリ上で提供するサービス、「ドラログ」（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。
 
@@ -94,6 +93,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aLR-Z0-Kgo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ipO-Sn-8Pc" firstAttribute="centerY" secondItem="sSJ-fn-6uP" secondAttribute="centerY" id="Mgy-0c-Vua"/>
+                            <constraint firstItem="ipO-Sn-8Pc" firstAttribute="top" secondItem="aLR-Z0-Kgo" secondAttribute="top" constant="21" id="e1g-Y0-fZQ"/>
+                            <constraint firstItem="ipO-Sn-8Pc" firstAttribute="centerX" secondItem="sSJ-fn-6uP" secondAttribute="centerX" id="sXj-sM-WXf"/>
+                            <constraint firstItem="ipO-Sn-8Pc" firstAttribute="leading" secondItem="aLR-Z0-Kgo" secondAttribute="leading" constant="36" id="zxn-iH-mzU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="利用規約" id="eR5-hI-rzs"/>
                 </viewController>

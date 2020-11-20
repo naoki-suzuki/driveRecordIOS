@@ -18,10 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SfW-wC-3SS">
-                                <rect key="frame" x="57" y="228" width="300" height="440"/>
+                                <rect key="frame" x="57" y="218" width="300" height="460"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6A-E6-caW" userLabel="Space">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Pr6-VO-6kL"/>
+                                            <constraint firstAttribute="width" constant="300" id="kGR-69-mDH"/>
+                                        </constraints>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgy-f4-Jxo" userLabel="日付">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="20" width="300" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXN-r7-hB9">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -51,7 +59,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iut-46-wfe" userLabel="Space">
-                                        <rect key="frame" x="0.0" y="30" width="300" height="20"/>
+                                        <rect key="frame" x="0.0" y="50" width="300" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="Enh-P5-l5R"/>
@@ -59,7 +67,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-vu-Cg2" userLabel="タイトル">
-                                        <rect key="frame" x="0.0" y="50" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="70" width="300" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fda-A1-v3O">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -92,7 +100,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdU-xk-aXB" userLabel="Space">
-                                        <rect key="frame" x="0.0" y="80" width="300" height="20"/>
+                                        <rect key="frame" x="0.0" y="100" width="300" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="asi-2Y-Sr0"/>
@@ -100,7 +108,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oV9-cY-P1j" userLabel="メンバー１">
-                                        <rect key="frame" x="0.0" y="100" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="120" width="300" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メンバー" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi2-l4-GhZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -133,7 +141,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5b-Tf-Ow9" userLabel="Space">
-                                        <rect key="frame" x="0.0" y="130" width="300" height="20"/>
+                                        <rect key="frame" x="0.0" y="150" width="300" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="Mlk-aF-JVP"/>
@@ -141,7 +149,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IK2-lS-2Du" userLabel="メンバー2">
-                                        <rect key="frame" x="0.0" y="150" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="170" width="300" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9t1-BH-vcU">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -174,7 +182,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAj-v2-k6b" userLabel="Space">
-                                        <rect key="frame" x="0.0" y="180" width="300" height="20"/>
+                                        <rect key="frame" x="0.0" y="200" width="300" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="YHH-39-Jpr"/>
@@ -182,7 +190,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YjS-Rd-yg6" userLabel="メンバー3">
-                                        <rect key="frame" x="0.0" y="200" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="220" width="300" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYi-eN-HuA">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -215,7 +223,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfM-JX-1fI" userLabel="Space">
-                                        <rect key="frame" x="0.0" y="230" width="300" height="20"/>
+                                        <rect key="frame" x="0.0" y="250" width="300" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="1tV-hW-I6S"/>
@@ -223,7 +231,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6y-uP-HOZ" userLabel="メンバー4">
-                                        <rect key="frame" x="0.0" y="250" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="270" width="300" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr9-ZL-Ba2">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -256,7 +264,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylc-52-mPt" userLabel=" Space">
-                                        <rect key="frame" x="0.0" y="280" width="300" height="20"/>
+                                        <rect key="frame" x="0.0" y="300" width="300" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="kPh-hQ-emh"/>
@@ -264,7 +272,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HR9-tP-UfH" userLabel="メンバー5">
-                                        <rect key="frame" x="0.0" y="300" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="320" width="300" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5t-bL-vo5">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -297,7 +305,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSF-yj-1Ws" userLabel="Space">
-                                        <rect key="frame" x="0.0" y="330" width="300" height="20"/>
+                                        <rect key="frame" x="0.0" y="350" width="300" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="37i-JL-Bng"/>
@@ -305,7 +313,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsO-6N-QpD" userLabel="メンバー6">
-                                        <rect key="frame" x="0.0" y="350" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="370" width="300" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgf-MF-mQ5">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -338,7 +346,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hft-JP-tpc">
-                                        <rect key="frame" x="0.0" y="380" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="400" width="300" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sY3-dp-8DD">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
@@ -353,7 +361,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mo1-CU-bUb">
-                                        <rect key="frame" x="0.0" y="410" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="430" width="300" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isn-wT-j9U">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
@@ -393,8 +401,8 @@
                         <viewLayoutGuide key="safeArea" id="2KQ-DD-jBU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SfW-wC-3SS" firstAttribute="centerY" secondItem="pOq-nR-GIb" secondAttribute="centerY" id="lNW-qw-Hck"/>
-                            <constraint firstItem="SfW-wC-3SS" firstAttribute="centerX" secondItem="pOq-nR-GIb" secondAttribute="centerX" id="zKy-Nt-1UF"/>
+                            <constraint firstItem="SfW-wC-3SS" firstAttribute="centerX" secondItem="pOq-nR-GIb" secondAttribute="centerX" id="aod-CQ-oYn"/>
+                            <constraint firstItem="SfW-wC-3SS" firstAttribute="centerY" secondItem="pOq-nR-GIb" secondAttribute="centerY" id="oGI-hm-ojy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ドラログ" id="3UM-Mm-9a4">
@@ -403,7 +411,7 @@
                                 <action selector="returnHome:" destination="Kws-og-tJ9" id="yTy-r1-CsN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="fe7-uP-azA">
+                        <barButtonItem key="rightBarButtonItem" title="サポート" image="gearshape.fill" catalog="system" id="fe7-uP-azA">
                             <connections>
                                 <segue destination="lQi-av-Rtc" kind="show" id="ebm-rT-sao"/>
                             </connections>
