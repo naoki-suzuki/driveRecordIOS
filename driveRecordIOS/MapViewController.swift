@@ -21,63 +21,65 @@ import GoogleMaps
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
-    // 現在地
+    // 現在地取得のためのメソッドをインスタンス化
     var locationManager = CLLocationManager()
     
-    //
+    // 地図に関するメソッドをインスタンス化
     var mapView = GMSMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMap()
-        requestLoacion() //
+        requestLoacion()
     }
     
     private func setupMap() {
         
-        // GoogleMapの初期位置(仮で東京駅付近に設定)
+        // GoogleMapの初期位置を東京駅付近に設定
         let camera = GMSCameraPosition.camera(withLatitude: 35.6812226, longitude: 139.7670594, zoom: 12.0)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         view = mapView
         
-        mapView.settings.myLocationButton = true //右下のボタン追加する
-        mapView.isMyLocationEnabled = true //現在地
+        mapView.settings.myLocationButton = true // 右下の現在地ボタン追加する
+        mapView.isMyLocationEnabled = true // 現在地表示
         view = mapView
     }
     
-    // 現在地
+    // 現在地表示の許可をダイアログ表示する関数
     private func requestLoacion() {
         // ユーザにアプリ使用中のみ位置情報取得の許可を求めるダイアログを表示
         locationManager.requestWhenInUseAuthorization()
         // 常に取得したい場合はこちら↓
-        // locationManager.requestAlwaysAuthorization()
-    }
-    
-    func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
-        print("Tapped at coordinate: " + String(coordinate.latitude) + " "
-                + String(coordinate.longitude))
+        //locationManager.requestAlwaysAuthorization()
     }
     
     
-    /**
-     マップにマーカを設置する処理
-     - parameter title: マーカのタイトル
-     - parameter coordinate: 位置
-     - parameter iconName: アイコン名
-     - parameter completion: Callback
-     */
-    private func putMarker(title: String?, coordinate: CLLocationCoordinate2D, iconName: String?, completion: @escaping ((GMSMarker) -> Void)) {
-        // マーカの生成
-        let marker = GMSMarker()
-        marker.title = title
-        marker.position = coordinate
-        if iconName != nil {
-            // アイコン名が指定されている場合は画像を設定
-            marker.icon = UIImage.init(named: iconName!)
-        }
-        marker.map = self.mapView
-        completion(marker)
-    }
     
+    
+    
+    //    func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
+    //        print("Tapped at coordinate: " + String(coordinate.latitude) + " "
+    //                + String(coordinate.longitude))
+    //}
+    //    /**
+    //     マップにマーカを設置する処理
+    //     - parameter title: マーカのタイトル
+    //     - parameter coordinate: 位置
+    //     - parameter iconName: アイコン名
+    //     - parameter completion: Callback
+    //     */
+    //    private func putMarker(title: String?, coordinate: CLLocationCoordinate2D, iconName: String?, completion: @escaping ((GMSMarker) -> Void)) {
+    //        // マーカの生成
+    //        let marker = GMSMarker()
+    //        marker.title = title
+    //        marker.position = coordinate
+    //        if iconName != nil {
+    //            // アイコン名が指定されている場合は画像を設定
+    //            marker.icon = UIImage.init(named: iconName!)
+    //        }
+    //        marker.map = self.mapView
+    //        completion(marker)
+    //    }
+    //
 }
 
