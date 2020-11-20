@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msI-Qv-IBp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -463,13 +462,13 @@
                                             <segue destination="KWx-1r-YGR" kind="presentation" modalPresentationStyle="fullScreen" id="amB-lh-5E3"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="70" style="plain" systemItem="fixedSpace" id="d7g-xO-4Et"/>
-                                    <barButtonItem title="共有" id="gbo-x1-QIh">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ru1-er-huv"/>
+                                    <barButtonItem title="共有" image="square.and.arrow.up" catalog="system" id="gbo-x1-QIh">
                                         <connections>
                                             <action selector="showActivityView:" destination="msI-Qv-IBp" id="Uef-Pq-A9m"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="80" style="plain" systemItem="fixedSpace" id="mcm-Kq-Jhn"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eel-4I-Cpm"/>
                                     <barButtonItem title="金額入力" id="ooW-op-X2N">
                                         <connections>
                                             <action selector="moenyInsert:" destination="msI-Qv-IBp" id="Dgk-rd-GPJ"/>
@@ -953,6 +952,7 @@
     <resources>
         <image name="delete.left.fill" catalog="system" width="128" height="104"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
