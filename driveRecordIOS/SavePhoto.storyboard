@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XtG-Ig-zG9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="Jey-VD-kZJ">
+            <objects>
+                <viewController id="XtG-Ig-zG9" customClass="cameraViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u6m-NQ-IN6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dQ5-V6-BBM" userLabel="cameraPic">
+                                <rect key="frame" x="0.0" y="54" width="414" height="450"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="BBh-BW-C1s"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QG-mM-Oaf">
+                                <rect key="frame" x="0.0" y="514" width="414" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="save:" destination="XtG-Ig-zG9" eventType="touchUpInside" id="ED3-7y-if0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="anG-Xl-oXx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3QG-mM-Oaf" firstAttribute="top" secondItem="dQ5-V6-BBM" secondAttribute="bottom" constant="10" id="IRX-yf-R9O"/>
+                            <constraint firstItem="dQ5-V6-BBM" firstAttribute="leading" secondItem="anG-Xl-oXx" secondAttribute="leading" id="WaO-Vk-MQE"/>
+                            <constraint firstItem="3QG-mM-Oaf" firstAttribute="trailing" secondItem="anG-Xl-oXx" secondAttribute="trailing" id="aru-Jo-jdh"/>
+                            <constraint firstItem="dQ5-V6-BBM" firstAttribute="top" secondItem="anG-Xl-oXx" secondAttribute="top" constant="10" id="eHt-qb-5kE"/>
+                            <constraint firstItem="dQ5-V6-BBM" firstAttribute="trailing" secondItem="anG-Xl-oXx" secondAttribute="trailing" id="ecJ-cU-44o"/>
+                            <constraint firstItem="3QG-mM-Oaf" firstAttribute="leading" secondItem="anG-Xl-oXx" secondAttribute="leading" id="t2x-a0-70C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c34-yf-6g6"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraPic" destination="dQ5-V6-BBM" id="PZE-5w-Ga3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2RC-IG-8Ev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2805.7971014492755" y="213.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
