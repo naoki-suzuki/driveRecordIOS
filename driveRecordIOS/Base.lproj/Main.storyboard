@@ -160,7 +160,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="Fcc-D1-V2x">
+                        <barButtonItem key="rightBarButtonItem" title="サポート" image="gearshape.fill" catalog="system" id="Fcc-D1-V2x">
                             <connections>
                                 <segue destination="i3W-XZ-F6R" kind="show" id="2jQ-Z5-erk"/>
                             </connections>
