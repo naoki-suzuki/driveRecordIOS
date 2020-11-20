@@ -53,8 +53,9 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     // PickerViewの設定
     private var pickerView: UIPickerView = UIPickerView()
     private var pickerView2: UIPickerView = UIPickerView()
-    //項目の選択肢
+    //　項目の選択肢
     private let list: [String] = ["レンタカー代", "ガソリン代", "高速道路代", "駐車場代", "その他"]
+    // メンバー名を格納する変数
     private var member1:String?
     private var member2: String?
     private var member3: String?
@@ -63,11 +64,11 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     private var member6: String?
         
     // 負担者を格納する変数
-    var repayerList:[String?] = []
+    private var repayerList:[String?] = []
     // ID番号を管理する変数
-    var sendId :Int64 = 0
+    private var sendId :Int64 = 0
     // 写真を管理する変数
-    var setImage: UIImage! = nil
+    private var setImage: UIImage! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +92,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             member5 = entity?.member5
             member6 = entity?.member6
             
-            //入力されているか判定し、配列に格納をする
+            //　入力されているか判定し、配列に格納をする
             if !(member1!.isEmpty) {
                 repayerList.append(member1)
             }
@@ -149,21 +150,22 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         
     }
     
-    
+    // 金額入力のキーボードに閉じるボタンの追加
     @objc func onClickCommitButton (sender: UIButton) {
         if(money.isFirstResponder){
             money.resignFirstResponder()
         }
     }
-    
+    // キーボードに完了ボタンの設置
     @objc func commitButtonTapped() {
         self.view.endEditing(true)
         //List.text = "\(list[pickerView.selectedRow(inComponent: 0)])"
         
     }
     
-    
+    // 戻るボタン押下時の処理
     @IBAction func returnHome(_ sender: Any) {
+        // アラート表示内容
         let alert: UIAlertController = UIAlertController( title: "", message: "登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
         
         // OKボタン(ホームに遷移)
@@ -260,8 +262,9 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     }
     
     
-    
+    // 入力完了ボタン押下時の処理
     @IBAction func complete(_ sender: Any) {
+        // paraInsertメソッドを呼び出し、登録処理を行う
         let result = paraInseert(list: List, money: money, repay: selectRepayer)
         if result {
             print("成功")
