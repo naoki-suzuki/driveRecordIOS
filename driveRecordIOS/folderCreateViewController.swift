@@ -305,14 +305,23 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             return false
-        // メンバーが一人でも入力されているかチェック
+            // メンバーが一人でも入力されているかチェック
         } else if travelMember1.isEmpty {
-            let alert = UIAlertController(title: "エラー",
-                                          message: "メンバー名を入力してください",
-                                          preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-            return false
+            if travelMember2.isEmpty && travelMember3.isEmpty && travelMember3.isEmpty && travelMember4.isEmpty && travelMember5.isEmpty && travelMember6.isEmpty  {
+                let alert = UIAlertController(title: "エラー",
+                                              message: "メンバー名を入力してください",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return false
+            } else {
+                let alert = UIAlertController(title: "エラー",
+                                              message: "一番上からメンバー名を入力してください",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return false
+            }
         } else {
             
             // データベース接続
