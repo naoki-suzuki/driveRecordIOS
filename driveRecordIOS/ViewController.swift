@@ -18,6 +18,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // ボタンレイアウト
         mapBtn.imageView?.contentMode = .scaleAspectFit
         mapBtn.contentHorizontalAlignment = .fill
         mapBtn.contentVerticalAlignment = .fill
@@ -41,12 +42,12 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    // ③テーブルの行数を指定するメソッド（必須）
+    // テーブルの行数を指定するメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return folderList.count
     }
     
-    // ④セルの中身を設定するメソッド（必須）
+    // セルの中身を設定するメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath as IndexPath)
@@ -57,7 +58,6 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         // ラベルに表示する文字列を設定
         labelDate.text = (date[indexPath.row])
         
-        // ラベルオブジェクトを作る
         // タイトルのラベル
         let labelFolderList = cell.viewWithTag(2) as! UILabel
         // ラベルに表示する文字列を設定
@@ -82,30 +82,31 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     //    }
     
     /* セル押下時の処理
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // タップされたセルの行番号を出力
-        print("\(indexPath.row)番目の行が選択されました。")
-        // セルの選択を解除
-        tableView.deselectRow(at: indexPath, animated: true)
-        // 画面遷移
-        // sender に渡したい値
-        performSegue(withIdentifier: "showDetailSegue", sender: folderid[indexPath.row])
-    }*/
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
+     // タップされたセルの行番号を出力
+     print("\(indexPath.row)番目の行が選択されました。")
+     // セルの選択を解除
+     tableView.deselectRow(at: indexPath, animated: true)
+     // 画面遷移
+     // sender に渡したい値
+     performSegue(withIdentifier: "showDetailSegue", sender: folderid[indexPath.row])
+     }*/
     
+    // 選択されたセルのfolderidを詳細画面へ送る関数
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetailSegue" {
             
-        let x = self.tableView.indexPathForSelectedRow
-        // 選択した行数を習得
-        let y = x?.row
-        // 送信したい値を格納
-        let post = folderid[y!]
-        print(post!)
-        // 送信先の画面をインスタンス化
-        let nextVC  = segue.destination as! FolderDetailViewController
-        //let secondView = nextVC.topViewController as! FolderDetailViewController
-        nextVC.receiveId = post!
+            let x = self.tableView.indexPathForSelectedRow
+            // 選択した行数を習得
+            let y = x?.row
+            // 送信したい値を格納
+            let post = folderid[y!]
+            print(post!)
+            // 送信先の画面をインスタンス化
+            let nextVC  = segue.destination as! FolderDetailViewController
+            //let secondView = nextVC.topViewController as! FolderDetailViewController
+            nextVC.receiveId = post!
         }
     }
     
@@ -127,15 +128,15 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         let index = folderid[indexPath.row]
         
         // 外部キーの制約のため、先に子テーブルのParagraphinfoの該当列から削除処理を行う
-              let result2 = helper.inDatabase { (db) in
-                  try Paragraphinfo.filter(Paragraphinfo.Columns.folderid == index).deleteAll(db)
-              }
-              
-              if result2 {
-                  print("成功")
-              } else {
-                  print("失敗")
-              }
+        let result2 = helper.inDatabase { (db) in
+            try Paragraphinfo.filter(Paragraphinfo.Columns.folderid == index).deleteAll(db)
+        }
+        
+        if result2 {
+            print("成功")
+        } else {
+            print("失敗")
+        }
         
         // フォルダID取得
         
@@ -155,15 +156,15 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
 }
 
 class CustomBtn: UIButton {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super .init(coder: aDecoder)
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         print("awakeFromNib")
@@ -174,7 +175,7 @@ class CustomBtn: UIButton {
         self.contentHorizontalAlignment = .fill
         self.contentVerticalAlignment = .fill
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
