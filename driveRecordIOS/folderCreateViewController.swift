@@ -44,19 +44,20 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         countMember.text = "人数：\(count)人"
     }
     // 文字数をカウントするメソッド
-        func letterCount(nameString:UITextField) -> Bool {
-            let name = nameString.text!
-            if name.count > 10 {
-                let alert = UIAlertController(title: "エラー",
-                                              message: "10文字以内で入力してください",
-                                              preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                present(alert, animated: true, completion: nil)
-                
-                return false
-            }
-            return true
+    func letterCount(nameString:UITextField) -> Bool {
+        let name = nameString.text!
+        // 入力された文字が10字以上か判定し、trueの場合アラート表示
+        if name.count > 10 {
+            let alert = UIAlertController(title: "エラー",
+                                          message: "10文字以内で入力してください",
+                                          preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+            return false
         }
+        return true
+    }
     //入力時の処理
     @IBAction func checkTitle(_ sender: Any) {
         // if文を満たすと、入力された中身が削除される
@@ -65,6 +66,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         }
     }
     
+    // 入力文字数と人数カウントの処理
     @IBAction func mem1(_ sender: Any) {
         // 入力文字数チェック
         if !letterCount(nameString: member1) {
@@ -74,6 +76,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         
     }
     
+    // 入力文字数と人数カウントの処理
     @IBAction func mem2(_ sender: Any) {
         // 入力文字数チェック
         if !letterCount(nameString: member2) {
@@ -82,6 +85,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
+    // 入力文字数と人数カウントの処理
     @IBAction func mem3(_ sender: Any) {
         // 入力文字数チェック
         if !letterCount(nameString: member3) {
@@ -90,6 +94,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
+    // 入力文字数と人数カウントの処理
     @IBAction func mem4(_ sender: Any) {
         // 入力文字数チェック
         if !letterCount(nameString: member4) {
@@ -98,6 +103,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
+    // 入力文字数と人数カウントの処理
     @IBAction func mem5(_ sender: Any) {
         // 入力文字数チェック
         if !letterCount(nameString: member5) {
@@ -106,6 +112,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
+    // 入力文字数と人数カウントの処理
     @IBAction func mem6(_ sender: Any) {
         // 入力文字数チェック
         if !letterCount(nameString: member6) {
@@ -146,11 +153,6 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         member5.returnKeyType = UIReturnKeyType.done
         member6.returnKeyType = UIReturnKeyType.done
         
-        
-        //UserDefaultのインスタンス生成
-        //let setting = UserDefaults.standard
-        //UserDefaultに初期値を設定
-        //setting.register(defaults: [settingKey:0])
         //キーボード処理を終了するための処理
         travelTitle.delegate = self
         member1.delegate = self
@@ -160,15 +162,13 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         member5.delegate = self
         member6.delegate = self
         
-        //displayUpdate()
     }
     // 完了ボタン押下後の処理
     @objc func commitButtonTapped() {
         self.view.endEditing(true)
     }
     
-    
-    
+    // キーボードを閉じる処理
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         
         //label.text = textField.text
@@ -190,6 +190,8 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         dp.addTarget(self, action: #selector(dateChange), for: .valueChanged)
         return dp
     }()
+    
+    // 日付の表示方法の変換
     @objc func dateChange(){
         
         let formatter = DateFormatter()
@@ -198,6 +200,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         dateTravel.text = "\(formatter.string(from: datePicker.date))"
     }
     
+    // 戻るボタン押下時の処理
     @IBAction func returnHome(_ sender: Any) {
         let alert: UIAlertController = UIAlertController( title: "", message: "登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
        
@@ -232,7 +235,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     
     }
     
-    //金額入力ボタン押下後
+    //　金額入力ボタン押下後
     @IBAction func Insert(_ sender: UIButton) {
         
         //どちらのボタンからの処理かを識別するための数字
@@ -246,7 +249,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         }
        
     }
-    //Segue実行前の処理
+    //　Segue実行前の処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Segueの識別子確認
         if segue.identifier == "moneyView" {
@@ -311,7 +314,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             present(alert, animated: true, completion: nil)
             return false
         } else {
-    
+            
             // データベース接続
             let helper = DatabaseHelper()
             let result = helper.inDatabase{(db) in
@@ -319,9 +322,9 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
                 let folder = Folderinfo(title: travelName, date: dateTravelName, member1: travelMember1, member2: travelMember2, member3: travelMember3, member4: travelMember4, member5: travelMember5, member6: travelMember6)
                 // 登録処理
                 try folder.insert(db)
-                //　todo 一番新しいIDを取得する処理
+                
             }
-            
+            // 結果がtrue且、遷移先の識別番号によって判定
             if result && num == 1 {
                 var entity: Folderinfo?
                 
@@ -340,18 +343,17 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
                     print(sendId!)
                     // Segueの実行
                     performSegue(withIdentifier: segName, sender: nil)
-                
-                    return true
+                    
                 }
                 return true
             } else if result {
                 print(num!)
                 return true
             } else {
-               return false
+                return false
             }
-        
+            
         }
-       
+        
     }
 }

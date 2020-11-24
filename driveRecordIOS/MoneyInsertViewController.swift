@@ -33,7 +33,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             return repayerList[row]
         }
     }
-    
+    // UIPickerViewの中身を画面に表示
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {      // <<<<<<<<<<　変更
             List.text = list[row]
@@ -235,9 +235,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             self.present(cameraPicker, animated: true, completion: nil)
             
         }
-        else{
-            
-        }
+       
     }
     
     //　撮影が完了時した時に呼ばれる
@@ -253,7 +251,6 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             
         }
     }
-    
     
     // 撮影がキャンセルされた時に呼ばれる
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -283,26 +280,30 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         let intMoney:Int64? = Int64(inputMoney)
         let chooseRepayer:String! = repay.text
         // 未入力チェック
+        // 項目チェック
         if selectList.isEmpty {
             let alert = UIAlertController(title: "エラー", message: "項目を選択してください" ,preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             present(alert, animated: true, completion: nil)
             return false
+        // 金額チェック
         } else if inputMoney.isEmpty {
             let alert = UIAlertController(title: "エラー", message: "金額を入力してください" ,preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             present(alert, animated: true, completion: nil)
             return false
+        // 負担者チェック
         } else if chooseRepayer.isEmpty {
             let alert = UIAlertController(title: "エラー", message: "負担者を選択してください" ,preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             present(alert, animated: true, completion: nil)
             return false
+        // アラート表示し、詳細かホームを選択時に登録処理を行う
         } else {
             
                 let alert: UIAlertController = UIAlertController( title: "", message: "どちらに移動しますか？", preferredStyle:  UIAlertController.Style.alert)
                 
-                // ② Actionの設定
+                // Actionの設定
                 // Action初期化時にタイトル, スタイル, 押された時に実行されるハンドラを指定する
                 // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
                 // 詳細ボタン
