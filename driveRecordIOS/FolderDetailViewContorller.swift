@@ -31,7 +31,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
      self.present(controller,animated:true, completion:nil)
      }*/
     
-    private var folderid: Int64?        //フォルダID
+   //private var folderid: Int64?        //フォルダID
     private var paragraphId: [Int64] = []     //パラグラフID
     private var folderList: String?   // title
     private var date: String?          // 日付
@@ -56,6 +56,12 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         performSegue(withIdentifier: "moneyView", sender: nil)
     }
     
+    
+    // 文字数に応じてviewをhiddennにするための宣言
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view3: UIView!
+    @IBOutlet weak var view4: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +123,21 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         // ラベルテキストを使って角ラベルに貼り付け
         day.text = date
         folderTitle.text = folderList
+        // 文字数に応じてviewをhiddenにする
+        if folderList!.count > 5{
+            view1.isHidden = true
+            view2.isHidden = true
+            view3.isHidden = true
+            view4.isHidden = true
+        }
         mem1.text = member1
+        // 文字数に応じてviewをhiddenにする
+        if member1!.count > 5{
+            view1.isHidden = true
+            view2.isHidden = true
+            view3.isHidden = true
+            view4.isHidden = true
+        }
         
         // member2-6はいない可能性もあるためnilであれば空文字にする
         if member2 == "" {
@@ -127,6 +147,13 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             // nilでなければラベルに代入して人数を1増やす
             mem2.text = member2
             count += 1
+            // 文字数に応じてviewをhiddenにする
+            if member2!.count > 5{
+                view1.isHidden = true
+                view2.isHidden = true
+                view3.isHidden = true
+                view4.isHidden = true
+            }
         }
         
         if member3 == "" {
@@ -135,6 +162,13 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         } else {
             mem3.text = member3
             count += 1
+            // 文字数に応じてviewをhiddenにする
+            if member3!.count > 5{
+                view1.isHidden = true
+                view2.isHidden = true
+                view3.isHidden = true
+                view4.isHidden = true
+            }
         }
         
         if member4 == "" {
@@ -143,6 +177,13 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         } else {
             mem4.text = member4
             count += 1
+            // 文字数に応じてviewをhiddenにする
+            if member4!.count > 5{
+                view1.isHidden = true
+                view2.isHidden = true
+                view3.isHidden = true
+                view4.isHidden = true
+            }
         }
         
         if member5 == "" {
@@ -151,6 +192,13 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         } else {
             mem5.text = member5
             count += 1
+            // 文字数に応じてviewをhiddenにする
+            if member5!.count > 5{
+                view1.isHidden = true
+                view2.isHidden = true
+                view3.isHidden = true
+                view4.isHidden = true
+            }
         }
         
         if member6 == "" {
@@ -159,6 +207,13 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         } else {
             mem6.text = member6
             count += 1
+            // 文字数に応じてviewをhiddenにする
+            if member6!.count > 5{
+                view1.isHidden = true
+                view2.isHidden = true
+                view3.isHidden = true
+                view4.isHidden = true
+            }
         }
         
         //　合計金額と一人当たりの金額を算出
@@ -182,7 +237,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 160
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
