@@ -122,7 +122,7 @@
                                                                     <constraint firstAttribute="width" constant="80" id="pZl-ht-1Dl"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ik3-GY-QHZ">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="folderTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ik3-GY-QHZ">
                                                                 <rect key="frame" x="86" y="0.0" width="134" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -375,8 +375,8 @@
                                                             </tableViewCell>
                                                         </prototypes>
                                                         <connections>
-                                                            <outlet property="dataSource" destination="Dbc-1w-vSc" id="zgL-u4-jRF"/>
-                                                            <outlet property="delegate" destination="Dbc-1w-vSc" id="5Jz-cy-954"/>
+                                                            <outlet property="dataSource" destination="Dbc-1w-vSc" id="7Iy-ek-JN2"/>
+                                                            <outlet property="delegate" destination="Dbc-1w-vSc" id="jFO-A1-oJq"/>
                                                         </connections>
                                                     </tableView>
                                                 </subviews>
@@ -401,7 +401,7 @@
                                                         <rect key="frame" x="69.5" y="0.0" width="150.5" height="20.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klM-Lg-SgD">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sumCost" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klM-Lg-SgD">
                                                         <rect key="frame" x="220" y="0.0" width="100" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="x1r-Bl-TBY"/>
@@ -435,7 +435,7 @@
                                                         <rect key="frame" x="77" y="0.0" width="143" height="20.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnk-lh-yCJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aveCost" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnk-lh-yCJ">
                                                         <rect key="frame" x="220" y="0.0" width="100" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="875-1m-U1f"/>
@@ -478,15 +478,15 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Rvd-YI-9rf"/>
-                                    <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="mvA-Qa-L3I">
+                                    <barButtonItem title="共有" image="square.and.arrow.up" catalog="system" id="mvA-Qa-L3I">
                                         <connections>
-                                            <action selector="showActivityView:" destination="Dbc-1w-vSc" id="Oby-Zt-97e"/>
+                                            <action selector="showActivityView:" destination="Dbc-1w-vSc" id="C2H-QJ-ZoF"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ou6-d7-yJB"/>
                                     <barButtonItem title="金額入力" id="M39-oj-n2h">
                                         <connections>
-                                            <action selector="moenyInsert:" destination="Dbc-1w-vSc" id="j5b-ph-3y8"/>
+                                            <action selector="moenyInsert:" destination="Dbc-1w-vSc" id="LIZ-UW-Hfr"/>
                                             <segue destination="zJo-Tw-z1d" kind="presentation" identifier="moneyView" modalPresentationStyle="fullScreen" id="Dec-cP-Y7d"/>
                                         </connections>
                                     </barButtonItem>
@@ -495,8 +495,8 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zx1-kv-vfw">
                                 <rect key="frame" x="0.0" y="44" width="420" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="XTW-bZ-OkH">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="sC8-ib-nwR">
+                                    <navigationItem title="ドラログ" id="XTW-bZ-OkH">
+                                        <barButtonItem key="rightBarButtonItem" title="サポート" image="gearshape.fill" catalog="system" id="sC8-ib-nwR">
                                             <connections>
                                                 <segue destination="oik-CK-t5A" kind="presentation" id="5N2-dd-sJE"/>
                                             </connections>
@@ -521,22 +521,22 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ave" destination="Rnk-lh-yCJ" id="R46-rh-Exf"/>
-                        <outlet property="day" destination="je8-4x-G3y" id="V3u-0R-97b"/>
-                        <outlet property="folderTitle" destination="ik3-GY-QHZ" id="xWJ-3l-lRi"/>
-                        <outlet property="mem1" destination="0K6-MW-KUc" id="4N3-kd-utE"/>
-                        <outlet property="mem2" destination="h4f-Ni-7fT" id="yfC-qX-qcb"/>
-                        <outlet property="mem3" destination="VOr-ms-MIb" id="G1W-sn-EHd"/>
-                        <outlet property="mem4" destination="reI-sw-CMb" id="1kM-WU-Fvi"/>
-                        <outlet property="mem5" destination="Kgq-qv-kIN" id="nCD-PJ-hBJ"/>
-                        <outlet property="mem6" destination="uLb-I6-5h5" id="B5t-a4-vG9"/>
-                        <outlet property="people" destination="yoy-96-Yys" id="ogZ-LS-qtk"/>
-                        <outlet property="sum" destination="klM-Lg-SgD" id="TLP-2a-Xmb"/>
-                        <outlet property="tableView" destination="tzP-Sw-Pmz" id="OXn-OY-iXy"/>
-                        <outlet property="view1" destination="5j0-Gy-dZh" id="K3q-Gq-j9O"/>
-                        <outlet property="view2" destination="Wq9-Bx-uzt" id="KKo-He-VDL"/>
-                        <outlet property="view3" destination="075-zg-G9E" id="caN-Th-a2a"/>
-                        <outlet property="view4" destination="ptn-rL-Jji" id="xlX-ir-AQg"/>
+                        <outlet property="ave" destination="Rnk-lh-yCJ" id="FVp-DL-Xpu"/>
+                        <outlet property="day" destination="je8-4x-G3y" id="oRE-a8-omq"/>
+                        <outlet property="folderTitle" destination="ik3-GY-QHZ" id="WAM-Ug-tiw"/>
+                        <outlet property="mem1" destination="0K6-MW-KUc" id="I9z-6b-iw7"/>
+                        <outlet property="mem2" destination="h4f-Ni-7fT" id="0So-dH-1qK"/>
+                        <outlet property="mem3" destination="VOr-ms-MIb" id="DIN-dz-eA4"/>
+                        <outlet property="mem4" destination="reI-sw-CMb" id="ey3-tI-Q5T"/>
+                        <outlet property="mem5" destination="Kgq-qv-kIN" id="xke-1H-NML"/>
+                        <outlet property="mem6" destination="uLb-I6-5h5" id="oYz-9r-wUX"/>
+                        <outlet property="people" destination="yoy-96-Yys" id="k7S-xL-vXW"/>
+                        <outlet property="sum" destination="klM-Lg-SgD" id="haa-Xs-emK"/>
+                        <outlet property="tableView" destination="tzP-Sw-Pmz" id="0iT-0u-a33"/>
+                        <outlet property="view1" destination="5j0-Gy-dZh" id="0hP-xI-fRC"/>
+                        <outlet property="view2" destination="Wq9-Bx-uzt" id="wVv-le-z1Z"/>
+                        <outlet property="view3" destination="075-zg-G9E" id="2RV-Lk-uCB"/>
+                        <outlet property="view4" destination="ptn-rL-Jji" id="Nep-bu-lAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euE-Rv-L6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -545,6 +545,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
