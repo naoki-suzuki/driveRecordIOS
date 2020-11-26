@@ -307,7 +307,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             return false
             // メンバーが一人でも入力されているかチェック
         } else if travelMember1.isEmpty {
-            if travelMember2.isEmpty && travelMember3.isEmpty && travelMember3.isEmpty && travelMember4.isEmpty && travelMember5.isEmpty && travelMember6.isEmpty  {
+            if travelMember2.isEmpty && travelMember3.isEmpty && travelMember4.isEmpty && travelMember5.isEmpty && travelMember6.isEmpty  {
                 let alert = UIAlertController(title: "エラー",
                                               message: "メンバー名を入力してください",
                                               preferredStyle: UIAlertController.Style.alert)
