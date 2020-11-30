@@ -493,7 +493,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zx1-kv-vfw">
                                 <rect key="frame" x="0.0" y="44" width="420" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="XTW-bZ-OkH">
+                                    <navigationItem title="ドラログ" id="XTW-bZ-OkH">
                                         <barButtonItem key="rightBarButtonItem" title="サポート" image="gearshape.fill" catalog="system" id="sC8-ib-nwR">
                                             <connections>
                                                 <segue destination="oik-CK-t5A" kind="presentation" id="5N2-dd-sJE"/>
