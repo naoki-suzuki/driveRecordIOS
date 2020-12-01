@@ -379,7 +379,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
                 \(use[s])
                 \(String(describing: cost[s]))円
                 1人当たり：\(cost[s]/count)円
-                負担者：\(buyer[s])\n
+                負担者：\(buyer[s])\n\n
                 """
                 }
             }
