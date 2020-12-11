@@ -7,7 +7,9 @@ import UIKit
 import GRDB
 
 class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var mapBtn: UIButton!
+    @IBOutlet private weak var tableView: UITableView!
     
     // データ格納用の配列
     private var folderid: [Int64?] = []
@@ -17,6 +19,12 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     // 元からあるコード
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // Table Viewの背面を透過させる処理
+        let tblBackColor: UIColor = UIColor.clear
+            tableView.backgroundColor = tblBackColor
+
         
         // ボタンレイアウト
         mapBtn.imageView?.contentMode = .scaleAspectFit
@@ -52,6 +60,12 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         // セルを取得する
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath as IndexPath)
         
+         // cellの背景を透過
+        cell.backgroundColor = UIColor.clear
+         // cell内のcontentViewの背景を透過
+        cell.contentView.backgroundColor = UIColor.clear
+
+
         // ラベルオブジェクトを作る
         // 日付のラベル
         let labelDate = cell.viewWithTag(1) as! UILabel
@@ -67,7 +81,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
-    @IBOutlet private weak var tableView: UITableView!
+
     
     
     // セル押下時の画面遷移
