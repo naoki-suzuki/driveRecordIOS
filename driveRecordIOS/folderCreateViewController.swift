@@ -125,6 +125,8 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Tabバーの色の指定
+        UINavigationBar.appearance().barTintColor = UIColor.systemTeal
         //OSの変更
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
