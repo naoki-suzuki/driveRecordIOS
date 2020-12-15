@@ -52,6 +52,10 @@
                                     <action selector="license:" destination="e2v-uf-nnE" eventType="touchUpInside" id="eaZ-YT-J45"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeCar" id="iD3-WW-u5h">
+                                <rect key="frame" x="0.0" y="388" width="414" height="462"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2TI-Wt-d0o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,7 +73,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUN-a4-1FU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="xrj-ik-VIT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="903" y="78"/>
+            <point key="canvasLocation" x="902.89855072463774" y="77.678571428571431"/>
         </scene>
         <!--Convention-->
         <scene sceneID="EzF-ny-E25">
@@ -83,6 +87,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="homeCar" width="1500" height="1316"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
