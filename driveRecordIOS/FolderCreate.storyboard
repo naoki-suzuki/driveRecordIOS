@@ -18,14 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CreateFolderBackGround2" translatesAutoresizingMaskIntoConstraints="NO" id="znG-kq-U4j">
-                                <rect key="frame" x="0.0" y="388" width="414" height="425"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SfW-wC-3SS">
                                 <rect key="frame" x="57" y="205.5" width="300" height="485"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6A-E6-caW" userLabel="Space">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="kGR-69-mDH"/>
                                             <constraint firstAttribute="height" constant="30" id="qte-KO-1VY"/>
@@ -45,7 +44,6 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqy-Kv-N2E">
                                                 <rect key="frame" x="110" y="0.0" width="40" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タップしてください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTK-QQ-uZD">
                                                 <rect key="frame" x="150" y="0.0" width="150" height="30"/>
@@ -63,7 +61,6 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iut-46-wfe" userLabel="Space">
                                         <rect key="frame" x="0.0" y="60" width="300" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="Enh-P5-l5R"/>
                                             <constraint firstAttribute="height" constant="20" id="XFh-O3-5uu"/>
@@ -83,7 +80,6 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-3B-gwD">
                                                 <rect key="frame" x="110" y="0.0" width="40" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例：旅行(必須)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ozB-kh-eOC">
                                                 <rect key="frame" x="150" y="0.0" width="150" height="30"/>
@@ -104,7 +100,6 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdU-xk-aXB" userLabel="Space">
                                         <rect key="frame" x="0.0" y="110" width="300" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="asi-2Y-Sr0"/>
                                             <constraint firstAttribute="width" constant="300" id="ubR-w8-dzF"/>
@@ -124,7 +119,6 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIU-vl-95i">
                                                 <rect key="frame" x="110" y="0.0" width="40" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例：山田太郎(必須)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJ6-ZY-lv1">
                                                 <rect key="frame" x="150" y="0.0" width="150" height="30"/>
@@ -145,7 +139,6 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5b-Tf-Ow9" userLabel="Space">
                                         <rect key="frame" x="0.0" y="160" width="300" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="Mlk-aF-JVP"/>
                                             <constraint firstAttribute="height" constant="20" id="uJw-xy-UrY"/>
@@ -165,7 +158,6 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54C-mp-uFg">
                                                 <rect key="frame" x="110" y="0.0" width="40" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例：神田花子" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9b-9N-o3z">
                                                 <rect key="frame" x="150" y="0.0" width="150" height="30"/>
@@ -395,11 +387,11 @@
                         <viewLayoutGuide key="safeArea" id="2KQ-DD-jBU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="znG-kq-U4j" firstAttribute="top" secondItem="2KQ-DD-jBU" secondAttribute="top" constant="300" id="0aU-yE-M86"/>
-                            <constraint firstItem="znG-kq-U4j" firstAttribute="leading" secondItem="2KQ-DD-jBU" secondAttribute="leading" id="2YX-bX-bRs"/>
-                            <constraint firstItem="znG-kq-U4j" firstAttribute="trailing" secondItem="2KQ-DD-jBU" secondAttribute="trailing" id="7aH-z5-2A3"/>
-                            <constraint firstItem="2KQ-DD-jBU" firstAttribute="bottom" secondItem="znG-kq-U4j" secondAttribute="bottom" id="OTI-mF-aYY"/>
+                            <constraint firstItem="znG-kq-U4j" firstAttribute="top" secondItem="2KQ-DD-jBU" secondAttribute="top" id="6Oa-9m-LBz"/>
+                            <constraint firstItem="znG-kq-U4j" firstAttribute="trailing" secondItem="2KQ-DD-jBU" secondAttribute="trailing" id="NP8-QE-fpJ"/>
                             <constraint firstItem="SfW-wC-3SS" firstAttribute="centerX" secondItem="pOq-nR-GIb" secondAttribute="centerX" id="aod-CQ-oYn"/>
+                            <constraint firstAttribute="bottom" secondItem="znG-kq-U4j" secondAttribute="bottom" id="bRX-xE-hxD"/>
+                            <constraint firstItem="znG-kq-U4j" firstAttribute="leading" secondItem="2KQ-DD-jBU" secondAttribute="leading" id="dNg-xb-odj"/>
                             <constraint firstItem="SfW-wC-3SS" firstAttribute="centerY" secondItem="pOq-nR-GIb" secondAttribute="centerY" id="oGI-hm-ojy"/>
                         </constraints>
                     </view>
