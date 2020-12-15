@@ -72,6 +72,9 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Tabバーの文字の色の指定
+        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
         // データベース接続
         let helper = DatabaseHelper()
         // 前画面で作成したfolderinfoの一列情報を格納するための変数

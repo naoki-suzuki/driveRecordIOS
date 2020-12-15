@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--金額入力-->
+        <!--ドラログ-->
         <scene sceneID="6l3-ea-nOJ">
             <objects>
                 <viewController storyboardIdentifier="moneyView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YTA-hF-Cgf" customClass="MoneyInsertViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,15 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MoneyInsertBackground" translatesAutoresizingMaskIntoConstraints="NO" id="wNk-D6-0fy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xpl-oh-WPr">
                                 <rect key="frame" x="57" y="263" width="300" height="370"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMk-gW-ivn" userLabel="space">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGO-aJ-ywC" userLabel="Space">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="4ms-lP-Dmm"/>
-                                            <constraint firstAttribute="height" constant="30" id="LYx-Ae-UCD"/>
+                                            <constraint firstAttribute="width" constant="300" id="LK8-QV-RIm"/>
+                                            <constraint firstAttribute="height" constant="30" id="Og1-ps-VwG"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NN-z4-5K2" userLabel="項目">
@@ -60,7 +62,6 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vq-ZS-e67" userLabel="space">
                                         <rect key="frame" x="0.0" y="60" width="300" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="mTH-jH-pqf"/>
                                             <constraint firstAttribute="height" constant="20" id="sQH-CE-dSo"/>
@@ -107,7 +108,6 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjQ-17-vc2" userLabel="space">
                                         <rect key="frame" x="0.0" y="110" width="300" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="0q6-OK-kbP"/>
                                             <constraint firstAttribute="height" constant="20" id="qye-GG-zeo"/>
@@ -117,15 +117,14 @@
                                         <rect key="frame" x="0.0" y="130" width="300" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-L9-fBX">
-                                                <rect key="frame" x="267" y="20" width="25" height="20"/>
+                                                <rect key="frame" x="144" y="8" width="148" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="camera.fill" catalog="system"/>
+                                                <state key="normal" image="cameraButton"/>
                                                 <connections>
                                                     <action selector="cameraOpen:" destination="YTA-hF-Cgf" eventType="touchUpInside" id="TCN-gG-pzh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Lph-I9-bX4"/>
                                             <constraint firstAttribute="width" constant="300" id="eF9-Rh-sLU"/>
@@ -133,7 +132,6 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOp-1s-qCk" userLabel="space">
                                         <rect key="frame" x="0.0" y="190" width="300" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="E95-cN-Npi"/>
                                             <constraint firstAttribute="width" constant="300" id="OuG-Jt-bMM"/>
@@ -171,7 +169,6 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5p7-3P-ewi" userLabel="space">
                                         <rect key="frame" x="0.0" y="240" width="300" height="70"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="FqP-dx-yrB"/>
                                             <constraint firstAttribute="height" constant="70" id="e5G-Kz-t4d"/>
@@ -180,16 +177,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klr-Ui-mWP" userLabel="入力完了">
                                         <rect key="frame" x="0.0" y="310" width="300" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPr-z6-7dY">
-                                                <rect key="frame" x="119" y="15" width="62" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPr-z6-7dY">
+                                                <rect key="frame" x="52" y="8" width="198" height="61"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="入力完了"/>
+                                                <state key="normal" title="入力完了" image="doneButton"/>
                                                 <connections>
                                                     <action selector="complete:" destination="YTA-hF-Cgf" eventType="touchUpInside" id="Qdb-kP-dvF"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="0Ld-Kg-h44"/>
                                             <constraint firstAttribute="height" constant="60" id="bPc-o6-IfT"/>
@@ -201,17 +197,24 @@
                         <viewLayoutGuide key="safeArea" id="yoW-GE-VJZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xpl-oh-WPr" firstAttribute="centerY" secondItem="Bqw-Fu-cr8" secondAttribute="centerY" id="K1s-0a-NJr"/>
-                            <constraint firstItem="Xpl-oh-WPr" firstAttribute="centerX" secondItem="Bqw-Fu-cr8" secondAttribute="centerX" id="V6a-OM-gvg"/>
+                            <constraint firstAttribute="bottom" secondItem="wNk-D6-0fy" secondAttribute="bottom" id="12u-7f-Ilk"/>
+                            <constraint firstAttribute="trailing" secondItem="wNk-D6-0fy" secondAttribute="trailing" id="RDm-B2-Qj2"/>
+                            <constraint firstItem="Xpl-oh-WPr" firstAttribute="centerY" secondItem="Bqw-Fu-cr8" secondAttribute="centerY" id="bfF-ZR-V0P"/>
+                            <constraint firstAttribute="bottom" secondItem="wNk-D6-0fy" secondAttribute="bottom" id="gbj-kz-xQg"/>
+                            <constraint firstItem="Xpl-oh-WPr" firstAttribute="centerX" secondItem="Bqw-Fu-cr8" secondAttribute="centerX" id="h1T-L4-w0D"/>
+                            <constraint firstItem="wNk-D6-0fy" firstAttribute="top" secondItem="yoW-GE-VJZ" secondAttribute="top" id="tR8-lu-CCe"/>
+                            <constraint firstItem="wNk-D6-0fy" firstAttribute="leading" secondItem="yoW-GE-VJZ" secondAttribute="leading" id="wYk-y3-k6D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="金額入力" id="3kr-fq-VXa">
+                    <navigationItem key="navigationItem" title="ドラログ" id="3kr-fq-VXa">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="delete.left.fill" catalog="system" id="RCi-DB-mc2">
+                            <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                             <connections>
                                 <action selector="returnHome:" destination="YTA-hF-Cgf" id="Ido-0t-Rjt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="サポート" image="gearshape.fill" catalog="system" id="SZw-Rq-Lwa">
+                            <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                             <connections>
                                 <segue destination="08C-wB-zA1" kind="show" id="OJM-RK-FL8"/>
                             </connections>
@@ -228,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mA-ar-acE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271.0144927536232" y="154.6875"/>
+            <point key="canvasLocation" x="1265.217391304348" y="152.67857142857142"/>
         </scene>
         <!--Support-->
         <scene sceneID="0O7-fC-xGM">
@@ -290,10 +293,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="MoneyInsertBackground" width="751" height="676"/>
+        <image name="cameraButton" width="424" height="84"/>
         <image name="delete.left.fill" catalog="system" width="128" height="104"/>
+        <image name="doneButton" width="524" height="104"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
