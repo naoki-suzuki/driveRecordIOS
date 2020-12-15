@@ -20,6 +20,8 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Tabバーの色の指定
+        UINavigationBar.appearance().barTintColor = UIColor.systemTeal
         
         // Table Viewの背面を透過させる処理
         let tblBackColor: UIColor = UIColor.clear
