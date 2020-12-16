@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XtG-Ig-zG9">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,10 +24,10 @@
                                 <rect key="frame" x="8" y="11" width="304" height="448"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QG-mM-Oaf">
-                                <rect key="frame" x="80.5" y="467" width="159" height="52"/>
+                                <rect key="frame" x="90" y="467" width="140" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="159" id="L6e-qa-mwu"/>
-                                    <constraint firstAttribute="height" constant="52" id="tWO-0h-dgj"/>
+                                    <constraint firstAttribute="width" constant="140" id="L6e-qa-mwu"/>
+                                    <constraint firstAttribute="height" constant="45" id="tWO-0h-dgj"/>
                                 </constraints>
                                 <state key="normal" title="保存" image="savePhoto"/>
                                 <connections>
@@ -46,7 +47,7 @@
                             <constraint firstItem="9wG-I9-KMk" firstAttribute="leading" secondItem="u6m-NQ-IN6" secondAttribute="leading" id="PmN-ZI-Ed8"/>
                             <constraint firstItem="3QG-mM-Oaf" firstAttribute="centerX" secondItem="dQ5-V6-BBM" secondAttribute="centerX" id="Rej-M7-CLD"/>
                             <constraint firstItem="dQ5-V6-BBM" firstAttribute="top" secondItem="anG-Xl-oXx" secondAttribute="top" constant="11" id="c8v-q6-ih4"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="3QG-mM-Oaf" secondAttribute="bottom" id="g3q-2A-FGT"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="3QG-mM-Oaf" secondAttribute="bottom" constant="7" id="g3q-2A-FGT"/>
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

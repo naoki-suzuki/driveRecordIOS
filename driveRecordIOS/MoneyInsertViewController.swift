@@ -41,7 +41,8 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             selectRepayer.text = repayerList[row]
         }
     }
-    
+    // 枠線を表示させるためのView
+    @IBOutlet weak var boxView: UIView!
     //　値の取得
     var receiveId:Int64 = 0
     //　項目の変数
@@ -73,6 +74,12 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 枠線の色
+        boxView.layer.borderColor = UIColor.systemGray4.cgColor
+        // 枠線の太さ
+        boxView.layer.borderWidth = 2.0
+        // boxView.layer.cornerRadius = 10
+        // boxView.clipsToBounds = true
         // Tabバーの文字の色の指定
         self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
         // データベース接続
