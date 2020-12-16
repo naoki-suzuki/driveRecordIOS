@@ -23,6 +23,9 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var member5: UITextField!
     @IBOutlet private weak var member6: UITextField!
     
+    // 枠線表示のためのView
+    @IBOutlet weak var folderBox: UIView!
+    
     // 現在の人数の表示
     @IBOutlet private weak var countMember: UILabel!
     // メンバー数をカウントする変数の作成
@@ -127,6 +130,12 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Tabバーの色の指定
         UINavigationBar.appearance().barTintColor = UIColor.systemTeal
+        // Tabバーの文字の色の指定
+        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
+        // 枠線の色
+        folderBox.layer.borderColor = UIColor.systemGray4.cgColor
+        // 枠線の太さ
+        folderBox.layer.borderWidth = 2.0
         //OSの変更
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
