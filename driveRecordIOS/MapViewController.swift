@@ -29,6 +29,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Tabバーの色の指定
+        self.navigationController!.navigationBar.barTintColor = UIColor.systemTeal
+        
         setupMap()
         requestLoacion()
     }

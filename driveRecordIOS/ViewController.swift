@@ -21,7 +21,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         
         // Tabバーの色の指定
-        UINavigationBar.appearance().barTintColor = UIColor.systemTeal
+        self.navigationController!.navigationBar.barTintColor = UIColor.systemTeal
         
         // Table Viewの背面を透過させる処理
         let tblBackColor: UIColor = UIColor.clear

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0y5-xq-FCk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0y5-xq-FCk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!--地図-->
         <scene sceneID="n4c-1V-Bn1">
             <objects>
-                <viewController id="iqn-WU-loN" customClass="MapViewController" customModule="driveRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iqn-WU-loN" customClass="MapViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TcO-fc-Nfn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,10 +21,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="地図" id="0K6-fv-orI">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="vdV-cs-Vfq">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="JJJ-R0-05G">
-                                <rect key="frame" x="32" y="737" width="71" height="51"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JJJ-R0-05G">
+                                <rect key="frame" x="20" y="0.0" width="59" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
+                                <state key="normal" title="戻る" image="delete.left.fill" catalog="system"/>
                                 <connections>
                                     <segue destination="GjR-Ng-jeF" kind="presentation" modalPresentationStyle="fullScreen" id="YOk-Sp-lHI"/>
                                 </connections>
@@ -66,6 +67,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="delete.left.fill" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
