@@ -9,7 +9,12 @@ import UIKit
 
 class SupportViewController : UIViewController {
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Tabバーの文字の色の指定
+        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
+        
+    }
     @IBAction func license(_ sender: Any) {
         showOSSettingView()
     }
