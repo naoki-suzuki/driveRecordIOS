@@ -225,7 +225,6 @@
                         <viewLayoutGuide key="safeArea" id="yoW-GE-VJZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wNk-D6-0fy" firstAttribute="leading" secondItem="Bqw-Fu-cr8" secondAttribute="leading" id="6y0-Ve-VEL"/>
                             <constraint firstItem="wNk-D6-0fy" firstAttribute="leading" secondItem="Bqw-Fu-cr8" secondAttribute="leading" id="PM0-dX-gYl"/>
                             <constraint firstAttribute="bottom" secondItem="wNk-D6-0fy" secondAttribute="bottom" id="U0r-6i-RLG"/>
                             <constraint firstAttribute="bottom" secondItem="wNk-D6-0fy" secondAttribute="bottom" id="WWH-l6-1SQ"/>
