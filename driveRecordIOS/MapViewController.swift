@@ -32,6 +32,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         // Tabバーの色の指定
         self.navigationController!.navigationBar.barTintColor = UIColor.systemTeal
+        // Tabバーの文字の色の指定
+        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
         
         setupMap()
         requestLoacion()
