@@ -103,6 +103,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="dateTravelNow:" destination="Kws-og-tJ9" eventType="editingDidBegin" id="76Z-vJ-1Rk"/>
+                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX8-Ms-uC3">
                                                         <rect key="frame" x="300" y="0.0" width="10" height="30"/>

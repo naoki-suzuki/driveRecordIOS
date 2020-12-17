@@ -157,7 +157,11 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         // 金額入力を数字のみにする
         self.money.keyboardType = UIKeyboardType.numberPad
         
-        
+    }
+    
+    @IBAction func repayerSelectNow(_ sender: Any) {
+        // 負担者を先に、表示しておく
+        selectRepayer.text = repayerList[0]
     }
     
     // 金額入力のキーボードに閉じるボタンの追加

@@ -24,7 +24,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var member6: UITextField!
     
     // 枠線表示のためのView
-    @IBOutlet weak var folderBox: UIView!
+    @IBOutlet private weak var folderBox: UIView!
     
     // 現在の人数の表示
     @IBOutlet private weak var countMember: UILabel!
@@ -124,9 +124,19 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
+    @IBAction func dateTravelNow(_ sender: Any) {
+        // タップ時の年月日を取得し最初に表示する
+        let dt = Date()
+        let format = DateFormatter()
+        // 日付の書式と日本時間に設定する
+        format.dateFormat = DateFormatter.dateFormat(fromTemplate:"YYYY/MM/dd" , options: 0, locale: Locale(identifier: "ja_JP" ))
+        let date = format.string(from: dt)
+        // 現在の日時フォルダ作成画面遷移時に表示する。
+        dateTravel.text = date
+        
+    }
     
-    
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         // Tabバーの色の指定
         UINavigationBar.appearance().barTintColor = UIColor.systemTeal
@@ -136,12 +146,20 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         folderBox.layer.borderColor = UIColor.systemGray4.cgColor
         // 枠線の太さ
         folderBox.layer.borderWidth = 2.0
-        //OSの変更
+        // OSの変更
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         }
         dateTravel.inputView = datePicker
         
+        /* 現在時刻を取得する(保留)
+        let dt = Date()
+        let format = DateFormatter()
+        // 日付の書式と日本時間に設定する
+        format.dateFormat = DateFormatter.dateFormat(fromTemplate:"YYYY/MM/dd" , options: 0, locale: Locale(identifier: "ja_JP" ))
+        let date = format.string(from: dt)
+        // 現在の日時フォルダ作成画面遷移時に表示する。
+        dateTravel.text = date*/
         // ツールバー生成 サイズはsizeToFitメソッドで自動で調整される。
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
 
