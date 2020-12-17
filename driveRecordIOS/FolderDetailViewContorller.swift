@@ -57,14 +57,10 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     }
     
     
-    // 文字数に応じてviewをhiddennにするための宣言
-    @IBOutlet weak var view1: UIView!
-    @IBOutlet weak var view2: UIView!
-    @IBOutlet weak var view3: UIView!
-    @IBOutlet weak var view4: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         // データベース接続
         let helper = DatabaseHelper()
