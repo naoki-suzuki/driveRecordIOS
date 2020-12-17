@@ -191,6 +191,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="repayerSelectNow:" destination="YTA-hF-Cgf" eventType="editingDidBegin" id="Zvh-vm-w58"/>
+                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpc-BM-ijD">
                                                         <rect key="frame" x="300" y="0.0" width="10" height="30"/>
