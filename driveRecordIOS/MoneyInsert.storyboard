@@ -74,6 +74,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="listSelectNow:" destination="YTA-hF-Cgf" eventType="editingDidBegin" id="sE6-OB-eOR"/>
+                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psf-Cs-kwc">
                                                         <rect key="frame" x="300" y="0.0" width="10" height="30"/>
