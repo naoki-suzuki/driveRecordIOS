@@ -158,7 +158,12 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         self.money.keyboardType = UIKeyboardType.numberPad
         
     }
-    
+    // 項目選択時に、行う処理
+    @IBAction func listSelectNow(_ sender: Any) {
+        // 項目も先に、表示しておく
+        List.text = list[0]
+    }
+    // 負担者選択時に行う処理
     @IBAction func repayerSelectNow(_ sender: Any) {
         // 負担者を先に、表示しておく
         selectRepayer.text = repayerList[0]
