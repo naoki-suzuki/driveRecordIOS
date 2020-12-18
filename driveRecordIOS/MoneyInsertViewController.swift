@@ -160,13 +160,23 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     }
     // 項目選択時に、行う処理
     @IBAction func listSelectNow(_ sender: Any) {
-        // 項目も先に、表示しておく
-        List.text = list[0]
+        // 項目のTextFieldに入力されているものをString型に格納
+        let nowList = List.text!
+        // 入力チェックを行う。入力されていたら、選択した項目が変わらないようにする
+        if nowList.isEmpty {
+            // 項目も先に、表示しておく
+            List.text = list[0]
+        }
     }
     // 負担者選択時に行う処理
     @IBAction func repayerSelectNow(_ sender: Any) {
-        // 負担者を先に、表示しておく
-        selectRepayer.text = repayerList[0]
+        // 負担者のTextFieldに入力されているものをString型に格納
+        let nowRepayer = selectRepayer.text!
+        // 未入力チェックを行う。入力されていたら、選択した項目が変わらないようにする
+        if nowRepayer.isEmpty {
+            // 負担者を先に、表示しておく
+            selectRepayer.text = repayerList[0]
+        }
     }
     
     // 金額入力のキーボードに閉じるボタンの追加
