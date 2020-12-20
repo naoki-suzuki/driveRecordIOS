@@ -125,14 +125,17 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func dateTravelNow(_ sender: Any) {
-        // タップ時の年月日を取得し最初に表示する
-        let dt = Date()
-        let format = DateFormatter()
-        // 日付の書式と日本時間に設定する
-        format.dateFormat = DateFormatter.dateFormat(fromTemplate:"YYYY/MM/dd" , options: 0, locale: Locale(identifier: "ja_JP" ))
-        let date = format.string(from: dt)
-        // 現在の日時フォルダ作成画面遷移時に表示する。
-        dateTravel.text = date
+        let dateSelect: String = dateTravel.text!
+        if dateSelect.isEmpty {
+            // タップ時の年月日を取得し最初に表示する
+            let dt = Date()
+            let format = DateFormatter()
+            // 日付の書式と日本時間に設定する
+            format.dateFormat = DateFormatter.dateFormat(fromTemplate:"YYYY/MM/dd" , options: 0, locale: Locale(identifier: "ja_JP" ))
+            let date = format.string(from: dt)
+            // 現在の日時フォルダ作成画面遷移時に表示する。
+            dateTravel.text = date
+        }
         
     }
     
