@@ -1,4 +1,5 @@
 PODS:
+  - DZNEmptyDataSet (1.8.1)
   - GoogleMaps (4.0.0):
     - GoogleMaps/Maps (= 4.0.0)
   - GoogleMaps/Base (4.0.0)
@@ -9,21 +10,24 @@ PODS:
   - LicensePlist (3.0.5)
 
 DEPENDENCIES:
+  - DZNEmptyDataSet
   - GoogleMaps (~> 4.0.0)
   - GooglePlaces
   - LicensePlist
 
 SPEC REPOS:
   trunk:
+    - DZNEmptyDataSet
     - GoogleMaps
     - GooglePlaces
     - LicensePlist
 
 SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
   GooglePlaces: ca8d4aba09ba79e0a829cf1dca03a41de6a09016
   LicensePlist: 11c638fa9dc22ddb5771cdf910242ae1ba2684da
 
-PODFILE CHECKSUM: 1910aba53dd4d6da8ca8d560eb6b4c165ae2bdc1
+PODFILE CHECKSUM: 57684c22af214fd2381fcbaf8c25b520d89d5f6b
 
 COCOAPODS: 1.10.0

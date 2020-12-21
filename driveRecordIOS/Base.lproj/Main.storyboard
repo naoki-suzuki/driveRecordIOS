@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lqC-tA-KX4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -133,7 +134,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-D7-GHa">
-                                <rect key="frame" x="120" y="743" width="175" height="50"/>
+                                <rect key="frame" x="119.5" y="743" width="175" height="50"/>
                                 <rect key="contentStretch" x="0.5" y="0.29999999999999999" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Lqz-ek-lr2"/>
@@ -184,7 +185,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapBtn" destination="akG-D7-GHa" id="Rxb-7m-OuY"/>
-                        <outlet property="tableView" destination="eMf-jh-WMU" id="LrI-Xo-feY"/>
+                        <outlet property="tableView" destination="eMf-jh-WMU" id="trK-1Z-viq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnU-GJ-cSx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -204,4 +205,3 @@
         </systemColor>
     </resources>
 </document>
-
