@@ -5,8 +5,9 @@
 
 import UIKit
 import GRDB
+import DZNEmptyDataSet
 
-class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     @IBOutlet weak var mapBtn: UIButton!
     @IBOutlet private weak var tableView: UITableView!
@@ -20,6 +21,8 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.emptyDataSetDelegate = self
+        self.tableView.emptyDataSetSource = self
         // Tabバーの色の指定
         self.navigationController!.navigationBar.barTintColor = UIColor.systemTeal
         UINavigationBar.appearance().barTintColor = UIColor.systemTeal
@@ -82,6 +85,11 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         labelFolderList.text = (folderList[indexPath.row])
         
         return cell
+    }
+    
+    // TableViewが空だった時のメッセージ定義
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: "データがありません\n左上のボタンから新規作成\nお願いします")
     }
     
     
