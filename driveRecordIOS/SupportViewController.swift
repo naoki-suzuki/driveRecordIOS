@@ -25,6 +25,10 @@ class SupportViewController : UIViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-
+    
+    @IBAction func backView() {
+        
+    self.dismiss(animated: true, completion: nil)
+    }
     
 }
