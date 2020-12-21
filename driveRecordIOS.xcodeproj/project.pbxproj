@@ -348,6 +348,7 @@
 				E0472CB587C10EA185422298 /* [CP] Copy Pods Resources */,
 				6270B77A256263D200C382E5 /* Embed Frameworks */,
 				5B6061FE2563B2E20098B8C6 /* LicensePlist(Run Script) */,
+				4581C8FEEADFD1EF53188751 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -387,6 +388,7 @@
 				6270B72F2562608200C382E5 /* Frameworks */,
 				6270B7302562608200C382E5 /* Resources */,
 				F84D0367454B55547A9D09E1 /* [CP] Copy Pods Resources */,
+				18E354B4C4D6DD821192B3AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -545,6 +547,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		18E354B4C4D6DD821192B3AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-driveRecordIOS-driveRecordIOSUITests/Pods-driveRecordIOS-driveRecordIOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-driveRecordIOS-driveRecordIOSUITests/Pods-driveRecordIOS-driveRecordIOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-driveRecordIOS-driveRecordIOSUITests/Pods-driveRecordIOS-driveRecordIOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4581C8FEEADFD1EF53188751 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-driveRecordIOS/Pods-driveRecordIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-driveRecordIOS/Pods-driveRecordIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-driveRecordIOS/Pods-driveRecordIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5B6061FE2563B2E20098B8C6 /* LicensePlist(Run Script) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
