@@ -51,28 +51,20 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     private var sumCost: Int64 = 0     //合計金額
     private var aveCost: Int64 = 0     //一人当たりの金額
     
-    // 枠線用のviewbox
-    @IBOutlet weak var box1: UIView!
-    @IBOutlet weak var box2: UIView!
-    
     @IBAction func moenyInsert(_ sender: Any) {
         //segueの実行
         performSegue(withIdentifier: "moneyView", sender: nil)
     }
     
     
+    // 文字数に応じてviewをhiddennにするための宣言
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view3: UIView!
+    @IBOutlet weak var view4: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 枠線の色
-        box1.layer.borderColor = UIColor.systemGray4.cgColor
-        // 枠線の太さ
-        box1.layer.borderWidth = 2.0
-        
-        // 枠線の色
-        box2.layer.borderColor = UIColor.systemGray4.cgColor
-        // 枠線の太さ
-        box2.layer.borderWidth = 2.0
         
         // データベース接続
         let helper = DatabaseHelper()
