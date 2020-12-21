@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfJ-4Q-Mzl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfJ-4Q-Mzl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -71,7 +71,18 @@
                             <constraint firstItem="CQ1-Yf-6e3" firstAttribute="leading" secondItem="2TI-Wt-d0o" secondAttribute="leading" id="wCx-e0-YfA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="サポート" id="pMI-yJ-4nO"/>
+                    <navigationItem key="navigationItem" title="サポート" id="pMI-yJ-4nO">
+                        <barButtonItem key="leftBarButtonItem" image="delete.left.fill" catalog="system" style="plain" id="IED-Qs-Ne3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FU7-0l-3ye" userLabel="back">
+                                <rect key="frame" x="20" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="delete.left.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="backView" destination="e2v-uf-nnE" eventType="touchUpInside" id="rGP-PX-AmZ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUN-a4-1FU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="xrj-ik-VIT" userLabel="Exit" sceneMemberID="exit"/>
@@ -90,6 +101,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="delete.left.fill" catalog="system" width="128" height="104"/>
         <image name="homeCar" width="1500" height="1316"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
