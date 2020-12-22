@@ -688,6 +688,9 @@
                     <navigationItem key="navigationItem" title="ドラログ" id="PAc-yY-I0r">
                         <barButtonItem key="rightBarButtonItem" title="サポート" image="gearshape.fill" catalog="system" id="gfy-2d-oWh">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="oik-CK-t5A" kind="presentation" id="XeT-BM-cLd"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
