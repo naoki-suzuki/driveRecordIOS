@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="402" width="414" height="494"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEP-dx-0Kw">
-                                <rect key="frame" x="15" y="103" width="384" height="400"/>
+                                <rect key="frame" x="15" y="103" width="384" height="420"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SfW-wC-3SS">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="415"/>
@@ -399,13 +399,13 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="SfW-wC-3SS" secondAttribute="trailing" id="89b-4r-Gx1"/>
-                                    <constraint firstAttribute="height" constant="400" id="OQB-TJ-SOM"/>
                                     <constraint firstItem="SfW-wC-3SS" firstAttribute="leading" secondItem="UEP-dx-0Kw" secondAttribute="leading" id="WUP-DH-hEt"/>
+                                    <constraint firstAttribute="height" constant="420" id="bdR-JB-Yhb"/>
                                     <constraint firstItem="SfW-wC-3SS" firstAttribute="top" secondItem="UEP-dx-0Kw" secondAttribute="top" id="mtj-w8-bNY"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mo1-CU-bUb">
-                                <rect key="frame" x="52" y="726" width="310" height="45"/>
+                                <rect key="frame" x="52" y="746" width="310" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isn-wT-j9U">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="45"/>
@@ -449,7 +449,7 @@
                             <constraint firstItem="znG-kq-U4j" firstAttribute="leading" secondItem="2KQ-DD-jBU" secondAttribute="leading" id="KUK-79-I34"/>
                             <constraint firstAttribute="bottom" secondItem="znG-kq-U4j" secondAttribute="bottom" id="Kno-ru-Jh5"/>
                             <constraint firstItem="mo1-CU-bUb" firstAttribute="centerX" secondItem="znG-kq-U4j" secondAttribute="centerX" id="Mb6-Wy-WhK"/>
-                            <constraint firstItem="2KQ-DD-jBU" firstAttribute="bottom" secondItem="mo1-CU-bUb" secondAttribute="bottom" constant="42" id="YQs-ME-dXZ"/>
+                            <constraint firstItem="2KQ-DD-jBU" firstAttribute="bottom" secondItem="mo1-CU-bUb" secondAttribute="bottom" constant="22" id="YQs-ME-dXZ"/>
                             <constraint firstItem="znG-kq-U4j" firstAttribute="trailing" secondItem="2KQ-DD-jBU" secondAttribute="trailing" id="bur-8u-Grr"/>
                             <constraint firstAttribute="trailing" secondItem="UEP-dx-0Kw" secondAttribute="trailing" constant="15" id="fSY-bg-Jov"/>
                             <constraint firstItem="UEP-dx-0Kw" firstAttribute="top" secondItem="2KQ-DD-jBU" secondAttribute="top" constant="15" id="jDR-kH-yCo"/>
