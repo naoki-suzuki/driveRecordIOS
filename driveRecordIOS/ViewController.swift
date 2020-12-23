@@ -89,7 +89,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     // TableViewが空だった時のメッセージ定義
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString(string: "データがありません\n左上のボタンから新規作成\nお願いします")
+        return NSAttributedString(string: "データがありません\n左上のボタンから\n新規作成お願いします")
     }
     
     
