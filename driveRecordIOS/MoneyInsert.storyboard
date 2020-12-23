@@ -32,10 +32,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRT-LE-Ns1">
-                                <rect key="frame" x="15" y="103" width="384" height="308"/>
+                                <rect key="frame" x="15" y="103" width="384" height="293"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Xpl-oh-WPr">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="308"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="293"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ¥金額入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-O4-oER">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
@@ -144,13 +144,13 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6y-Oz-CS2" userLabel="カメラ">
-                                                <rect key="frame" x="0.0" y="160" width="384" height="60"/>
+                                                <rect key="frame" x="0.0" y="160" width="384" height="45"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgI-1X-rMz" userLabel="カメラ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="204" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="204" height="45"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-L9-fBX">
-                                                        <rect key="frame" x="204" y="0.0" width="150" height="60"/>
+                                                        <rect key="frame" x="204" y="0.0" width="150" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="vud-5b-6yG"/>
                                                         </constraints>
@@ -160,7 +160,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbf-Jz-DWN">
-                                                        <rect key="frame" x="354" y="0.0" width="30" height="60"/>
+                                                        <rect key="frame" x="354" y="0.0" width="30" height="45"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="huE-Ma-Oe5"/>
@@ -168,17 +168,17 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="Mxq-2v-C1O"/>
+                                                    <constraint firstAttribute="height" constant="45" id="5yA-KI-hee"/>
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOp-1s-qCk" userLabel="space">
-                                                <rect key="frame" x="0.0" y="226" width="384" height="20"/>
+                                                <rect key="frame" x="0.0" y="211" width="384" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="E95-cN-Npi"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="six-zX-FxX" userLabel="負担者">
-                                                <rect key="frame" x="0.0" y="252" width="384" height="30"/>
+                                                <rect key="frame" x="0.0" y="237" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 　負担者" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85b-yo-bL7">
                                                         <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
@@ -217,7 +217,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qie-FF-Nvd" userLabel="space">
-                                                <rect key="frame" x="0.0" y="288" width="384" height="20"/>
+                                                <rect key="frame" x="0.0" y="273" width="384" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="aLh-Zn-D7k"/>
                                                 </constraints>
