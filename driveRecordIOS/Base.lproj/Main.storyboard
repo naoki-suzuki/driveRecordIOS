@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lqC-tA-KX4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -96,7 +97,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QK-93-1rg">
-                                                    <rect key="frame" x="51" y="11" width="139" height="21"/>
+                                                    <rect key="frame" x="60" y="11" width="139" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="9QK-93-1rg" secondAttribute="height" multiplier="139:21" id="rHF-da-V4L"/>
                                                     </constraints>
@@ -105,10 +106,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoY-ye-dS8">
-                                                    <rect key="frame" x="226" y="10" width="168" height="21"/>
+                                                    <rect key="frame" x="226" y="11" width="168" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="MoY-ye-dS8" secondAttribute="height" multiplier="8:1" id="YN1-aF-jLM"/>
-                                                        <constraint firstAttribute="width" constant="168" id="jhc-nM-AuI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -116,10 +116,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MoY-ye-dS8" firstAttribute="leading" secondItem="9QK-93-1rg" secondAttribute="trailing" constant="36" id="4v0-fO-RLp"/>
+                                                <constraint firstItem="MoY-ye-dS8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9QK-93-1rg" secondAttribute="trailing" constant="8" symbolic="YES" id="4v0-fO-RLp"/>
                                                 <constraint firstItem="9QK-93-1rg" firstAttribute="top" secondItem="Wc6-wt-jyR" secondAttribute="topMargin" id="PgF-4y-aaQ"/>
                                                 <constraint firstItem="MoY-ye-dS8" firstAttribute="trailing" secondItem="Wc6-wt-jyR" secondAttribute="trailingMargin" id="ink-eD-ikb"/>
-                                                <constraint firstItem="MoY-ye-dS8" firstAttribute="top" secondItem="Wc6-wt-jyR" secondAttribute="topMargin" constant="-1" id="ncD-kk-xKO"/>
+                                                <constraint firstItem="MoY-ye-dS8" firstAttribute="top" secondItem="Wc6-wt-jyR" secondAttribute="topMargin" id="ncD-kk-xKO"/>
+                                                <constraint firstItem="9QK-93-1rg" firstAttribute="leading" secondItem="Wc6-wt-jyR" secondAttribute="leading" constant="60" id="sQZ-wL-NTP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -133,7 +134,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-D7-GHa">
-                                <rect key="frame" x="120" y="743" width="175" height="50"/>
+                                <rect key="frame" x="119.5" y="743" width="175" height="50"/>
                                 <rect key="contentStretch" x="0.5" y="0.29999999999999999" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Lqz-ek-lr2"/>
@@ -204,4 +205,3 @@
         </systemColor>
     </resources>
 </document>
-
