@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFC-Hw-4xe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFC-Hw-4xe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -113,13 +114,10 @@
                                                                         <rect key="frame" x="100" y="0.0" width="284" height="20.5"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcf-vs-bNR">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="20.5"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="80" id="18e-4z-Bzc"/>
-                                                                                </constraints>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="226.5" height="20.5"/>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFe-9D-pP3">
-                                                                                <rect key="frame" x="80" y="0.0" width="174" height="20.5"/>
+                                                                                <rect key="frame" x="226.5" y="0.0" width="27.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -159,13 +157,10 @@
                                                                         <rect key="frame" x="100" y="0.0" width="284" height="20.5"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-xe-6fp">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="20.5"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="80" id="Xvv-0f-SKH"/>
-                                                                                </constraints>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="225.5" height="20.5"/>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rki-1o-Y3Q">
-                                                                                <rect key="frame" x="80" y="0.0" width="174" height="20.5"/>
+                                                                                <rect key="frame" x="225.5" y="0.0" width="28.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
