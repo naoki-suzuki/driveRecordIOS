@@ -97,7 +97,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoY-ye-dS8">
-                                                    <rect key="frame" x="219" y="11" width="165" height="20.5"/>
+                                                    <rect key="frame" x="229" y="11" width="165" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="MoY-ye-dS8" secondAttribute="height" multiplier="8:1" id="YN1-aF-jLM"/>
                                                         <constraint firstAttribute="width" constant="165" id="ZmQ-Ym-s6V"/>
@@ -107,7 +107,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QK-93-1rg">
-                                                    <rect key="frame" x="30" y="11" width="139" height="21"/>
+                                                    <rect key="frame" x="30" y="11" width="184" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="9QK-93-1rg" secondAttribute="height" multiplier="139:21" id="rHF-da-V4L"/>
                                                     </constraints>
@@ -117,8 +117,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="MoY-ye-dS8" secondAttribute="trailing" constant="30" id="GuH-H9-15f"/>
                                                 <constraint firstItem="9QK-93-1rg" firstAttribute="leading" secondItem="Wc6-wt-jyR" secondAttribute="leading" constant="30" id="KIa-q4-dXB"/>
+                                                <constraint firstItem="MoY-ye-dS8" firstAttribute="leading" secondItem="9QK-93-1rg" secondAttribute="trailing" constant="15" id="Lgh-Gr-qOc"/>
                                                 <constraint firstItem="9QK-93-1rg" firstAttribute="top" secondItem="Wc6-wt-jyR" secondAttribute="topMargin" id="PgF-4y-aaQ"/>
                                                 <constraint firstItem="MoY-ye-dS8" firstAttribute="trailing" secondItem="Wc6-wt-jyR" secondAttribute="trailingMargin" id="ink-eD-ikb"/>
                                                 <constraint firstItem="MoY-ye-dS8" firstAttribute="top" secondItem="Wc6-wt-jyR" secondAttribute="topMargin" id="ncD-kk-xKO"/>
