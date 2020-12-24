@@ -59,8 +59,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road_bgimghdpi" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhg-cS-7mM">
-                                <rect key="frame" x="0.0" y="355" width="414" height="507"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="road_bgimghdpi" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhg-cS-7mM">
+                                <rect key="frame" x="0.0" y="368" width="414" height="528"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYh-uW-mZY">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
@@ -673,9 +674,6 @@
                         <constraints>
                             <constraint firstItem="FYh-uW-mZY" firstAttribute="bottom" secondItem="PwX-Oy-VhQ" secondAttribute="bottom" id="ANM-Zr-9IB"/>
                             <constraint firstItem="FYh-uW-mZY" firstAttribute="top" secondItem="zzV-ok-DZv" secondAttribute="top" constant="88" id="Aik-bd-P63"/>
-                            <constraint firstItem="xhg-cS-7mM" firstAttribute="leading" secondItem="PwX-Oy-VhQ" secondAttribute="leading" id="Bb0-RV-yLb"/>
-                            <constraint firstItem="PwX-Oy-VhQ" firstAttribute="bottom" secondItem="xhg-cS-7mM" secondAttribute="bottom" id="Qnu-XN-TH9"/>
-                            <constraint firstItem="PwX-Oy-VhQ" firstAttribute="trailing" secondItem="xhg-cS-7mM" secondAttribute="trailing" id="lw6-c9-BaD"/>
                             <constraint firstItem="PwX-Oy-VhQ" firstAttribute="trailing" secondItem="FYh-uW-mZY" secondAttribute="trailing" id="qnC-5p-Zpg"/>
                             <constraint firstItem="FYh-uW-mZY" firstAttribute="leading" secondItem="PwX-Oy-VhQ" secondAttribute="leading" id="vuL-Ep-y12"/>
                         </constraints>
@@ -708,7 +706,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kzi-Rl-sCs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="サポート" image="gearshape.fill" catalog="system" id="6sA-QY-wUU"/>
             </objects>
-            <point key="canvasLocation" x="3322" y="130"/>
+            <point key="canvasLocation" x="3321.739130434783" y="129.91071428571428"/>
         </scene>
     </scenes>
     <resources>
