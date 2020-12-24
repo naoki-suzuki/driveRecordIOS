@@ -339,7 +339,7 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="J7J-rB-RKj" secondAttribute="bottom" id="Zpx-v6-R42"/>
                                                     <constraint firstItem="J7J-rB-RKj" firstAttribute="top" secondItem="wIW-h2-Mt1" secondAttribute="top" id="c9K-sv-4EH"/>
@@ -596,7 +596,7 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="ZbZ-eW-TPh" firstAttribute="leading" secondItem="FZu-Vj-4MC" secondAttribute="leading" id="18c-Nh-NKt"/>
                                                     <constraint firstItem="ZbZ-eW-TPh" firstAttribute="top" secondItem="FZu-Vj-4MC" secondAttribute="top" id="LT5-8b-ejv"/>
@@ -669,7 +669,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PwX-Oy-VhQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FYh-uW-mZY" firstAttribute="bottom" secondItem="PwX-Oy-VhQ" secondAttribute="bottom" id="ANM-Zr-9IB"/>
                             <constraint firstItem="FYh-uW-mZY" firstAttribute="top" secondItem="zzV-ok-DZv" secondAttribute="top" constant="88" id="Aik-bd-P63"/>
