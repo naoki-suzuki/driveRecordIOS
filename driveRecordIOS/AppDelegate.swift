@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // APIキー登録
         GMSServices.provideAPIKey("AIzaSyDiouaZuTdUSwZEtwhZbzLpnN-0mymORFY")
 
-        // スプラッシュを1秒表示する
-        sleep(1)
+        // スプラッシュを3秒表示する
+        sleep(3)
         
         // Override point for customization after application launch.
         return true
