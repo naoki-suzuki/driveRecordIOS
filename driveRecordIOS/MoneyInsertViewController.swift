@@ -55,7 +55,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     private var pickerView: UIPickerView = UIPickerView()
     private var pickerView2: UIPickerView = UIPickerView()
     //　項目の選択肢
-    private let list: [String] = ["レンタカー代", "ガソリン代", "高速道路代", "駐車場代", "その他"]
+    private let list: [String] = ["レンタカー代", "ガソリン代", "高速道路代", "駐車場代","飲食代", "その他"]
     // メンバー名を格納する変数
     private var member1:String?
     private var member2: String?
