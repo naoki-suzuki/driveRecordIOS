@@ -192,7 +192,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqC-QW-U4S" userLabel="space">
                                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="48w-YN-fQa">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="48w-YN-fQa">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <string key="text">この利用規約（以下，「本規約」といいます。）は，株式会社シムテック（以下，「当社」といいます。）がこのアプリ上で提供するサービス、「ドラログ」（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。</string>
@@ -230,7 +230,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-wQ-rAZ" userLabel="第一条">
                                                                 <rect key="frame" x="0.0" y="180" width="384" height="350"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-68-Fie">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-68-Fie">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="350"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -476,7 +476,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ng-Os-eYP" userLabel="第二条">
                                                                 <rect key="frame" x="0.0" y="560" width="384" height="800"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hA0-uE-zAD">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hA0-uE-zAD">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="800"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -1338,7 +1338,7 @@ Cg
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjn-uC-bJa" userLabel="第三条">
                                                                 <rect key="frame" x="0.0" y="1390" width="384" height="430"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4IU-SJ-8d0">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4IU-SJ-8d0">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="430"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -1717,7 +1717,7 @@ Cg
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CW1-wP-w2d" userLabel="第四条">
                                                                 <rect key="frame" x="0.0" y="1850" width="384" height="350"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdz-25-ALN">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdz-25-ALN">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="350"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -2096,7 +2096,7 @@ Cg
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opu-OQ-Dxm" userLabel="第五条">
                                                                 <rect key="frame" x="0.0" y="2230" width="384" height="600"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYj-yW-AEg">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYj-yW-AEg">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="600"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -2362,7 +2362,7 @@ Cg
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BK-hE-mRe" userLabel="第六条">
                                                                 <rect key="frame" x="0.0" y="2860" width="384" height="120"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeU-oy-L58">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeU-oy-L58">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -2411,7 +2411,7 @@ Cg
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2J-xl-9C0" userLabel="第七条">
                                                                 <rect key="frame" x="0.0" y="3010" width="384" height="120"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bax-yR-geM">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bax-yR-geM">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -2475,7 +2475,7 @@ Cg
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53c-dj-cRL" userLabel="第八条">
                                                                 <rect key="frame" x="0.0" y="3160" width="384" height="120"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VKX-Im-Amv">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VKX-Im-Amv">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -2596,7 +2596,7 @@ Cg
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2H3-xd-FFx" userLabel="第九条">
                                                                 <rect key="frame" x="0.0" y="3340" width="384" height="150"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeJ-41-ZM8">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeJ-41-ZM8">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -2780,7 +2780,7 @@ Cg
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5a-jH-ykd" userLabel="第十条">
                                                                 <rect key="frame" x="0.0" y="3520" width="384" height="100"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24w-lS-ncS">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24w-lS-ncS">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="100"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
@@ -2829,7 +2829,7 @@ Cg
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEt-Kg-qCO" userLabel="第十一条">
                                                                 <rect key="frame" x="0.0" y="3650" width="384" height="180"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4u-Hf-v8m">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4u-Hf-v8m">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="180"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
