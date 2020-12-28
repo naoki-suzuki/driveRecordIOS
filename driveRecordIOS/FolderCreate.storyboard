@@ -404,13 +404,14 @@
                                     <constraint firstItem="SfW-wC-3SS" firstAttribute="top" secondItem="UEP-dx-0Kw" secondAttribute="top" id="mtj-w8-bNY"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mo1-CU-bUb">
-                                <rect key="frame" x="52" y="746" width="310" height="45"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="H2t-o2-eJD">
+                                <rect key="frame" x="89" y="717" width="236" height="91"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isn-wT-j9U">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="43"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="e5i-fr-4mX"/>
+                                            <constraint firstAttribute="height" constant="43" id="3ME-7n-X4m"/>
+                                            <constraint firstAttribute="width" constant="236" id="tbw-Gs-I2Z"/>
                                         </constraints>
                                         <state key="normal" title="作成完了" image="homeButton"/>
                                         <connections>
@@ -419,15 +420,16 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbx-yy-AV8">
-                                        <rect key="frame" x="140" y="0.0" width="30" height="45"/>
+                                        <rect key="frame" x="0.0" y="43" width="236" height="5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="w0Z-zT-86V"/>
+                                            <constraint firstAttribute="height" constant="5" id="RUM-Qw-vWe"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq3-1t-Lb3">
-                                        <rect key="frame" x="170" y="0.0" width="140" height="45"/>
+                                        <rect key="frame" x="0.0" y="48" width="236" height="43"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="EgH-ok-fzN"/>
+                                            <constraint firstAttribute="height" constant="43" id="pwk-tw-Qh8"/>
+                                            <constraint firstAttribute="width" constant="236" id="v1w-hY-S7N"/>
                                         </constraints>
                                         <state key="normal" title="金額入力" image="moneyInsertButton"/>
                                         <connections>
@@ -436,9 +438,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="dhZ-Mb-Pmq"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2KQ-DD-jBU"/>
@@ -448,11 +447,11 @@
                             <constraint firstItem="znG-kq-U4j" firstAttribute="top" secondItem="2KQ-DD-jBU" secondAttribute="top" constant="314" id="Ep9-Fq-Yfc"/>
                             <constraint firstItem="znG-kq-U4j" firstAttribute="leading" secondItem="2KQ-DD-jBU" secondAttribute="leading" id="KUK-79-I34"/>
                             <constraint firstAttribute="bottom" secondItem="znG-kq-U4j" secondAttribute="bottom" id="Kno-ru-Jh5"/>
-                            <constraint firstItem="mo1-CU-bUb" firstAttribute="centerX" secondItem="znG-kq-U4j" secondAttribute="centerX" id="Mb6-Wy-WhK"/>
-                            <constraint firstItem="2KQ-DD-jBU" firstAttribute="bottom" secondItem="mo1-CU-bUb" secondAttribute="bottom" constant="22" id="YQs-ME-dXZ"/>
                             <constraint firstItem="znG-kq-U4j" firstAttribute="trailing" secondItem="2KQ-DD-jBU" secondAttribute="trailing" id="bur-8u-Grr"/>
                             <constraint firstAttribute="trailing" secondItem="UEP-dx-0Kw" secondAttribute="trailing" constant="15" id="fSY-bg-Jov"/>
                             <constraint firstItem="UEP-dx-0Kw" firstAttribute="top" secondItem="2KQ-DD-jBU" secondAttribute="top" constant="15" id="jDR-kH-yCo"/>
+                            <constraint firstItem="2KQ-DD-jBU" firstAttribute="bottom" secondItem="H2t-o2-eJD" secondAttribute="bottom" constant="5" id="toy-i8-lPB"/>
+                            <constraint firstItem="H2t-o2-eJD" firstAttribute="centerX" secondItem="znG-kq-U4j" secondAttribute="centerX" id="wSo-4h-sia"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ドラログ" id="3UM-Mm-9a4">
