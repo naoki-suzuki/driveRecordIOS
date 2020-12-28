@@ -11,6 +11,8 @@ class SupportViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Tabバーの色の指定
+        UINavigationBar.appearance().barTintColor = UIColor.systemTeal
         // Tabバーの文字の色の指定
         self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
         
