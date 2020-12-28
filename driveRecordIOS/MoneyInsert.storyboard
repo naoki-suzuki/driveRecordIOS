@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="451" width="414" height="445"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPr-z6-7dY">
-                                <rect key="frame" x="137" y="735" width="140" height="45"/>
+                                <rect key="frame" x="89" y="737" width="236" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="SZ6-ub-qBH"/>
-                                    <constraint firstAttribute="height" constant="45" id="bbF-F2-gg8"/>
+                                    <constraint firstAttribute="height" constant="43" id="E9p-ui-zMJ"/>
+                                    <constraint firstAttribute="width" constant="236" id="XPh-VX-B2E"/>
                                 </constraints>
                                 <state key="normal" title="入力完了" image="doneButton"/>
                                 <connections>
