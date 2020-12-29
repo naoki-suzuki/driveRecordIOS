@@ -37,13 +37,18 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     
     // 人数をカウントするメソッド
     func memberCount(member1:UITextField,member2:UITextField,member3:UITextField,member4:UITextField,member5:UITextField,member6:UITextField ) {
+        // 引数を配列に格納
         let s : [UITextField] = [ member1,member2,member3,member4,member5,member6]
+        // 合計人数をカウントする変数
         var count = 0
+        // 配列の中身を空判定行う
         for i in s {
             if let member = i.text, !member.isEmpty {
+                // 空でないときに加算する
                 count += 1
             }
         }
+        // 繰り返しの結果を画面上に表示
         countMember.text = "人数：\(count)人"
     }
     // 文字数をカウントするメソッド
@@ -75,6 +80,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         if !letterCount(nameString: member1) {
             member1.text = ""
         }
+        // 人数カウント
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
         
     }
@@ -85,6 +91,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         if !letterCount(nameString: member2) {
             member2.text = ""
         }
+        // 人数カウント
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
@@ -94,6 +101,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         if !letterCount(nameString: member3) {
             member3.text = ""
         }
+        // 人数カウント
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
@@ -103,6 +111,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         if !letterCount(nameString: member4) {
             member4.text = ""
         }
+        // 人数カウント
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
@@ -112,6 +121,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         if !letterCount(nameString: member5) {
             member5.text = ""
         }
+        // 人数カウント
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
     
@@ -121,11 +131,13 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         if !letterCount(nameString: member6) {
             member6.text = ""
         }
+        // 人数カウント
         memberCount(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
     }
-    
+    // タップ時の日時を取得する処理
     @IBAction func dateTravelNow(_ sender: Any) {
         let dateSelect: String = dateTravel.text!
+        // 未入力時に起動
         if dateSelect.isEmpty {
             // タップ時の年月日を取得し最初に表示する
             let dt = Date()
@@ -149,7 +161,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         folderBox.layer.borderColor = UIColor.systemGray4.cgColor
         // 枠線の太さ
         folderBox.layer.borderWidth = 2.0
-        // OSの変更
+        // OSの変更、ドラムロール 実装のため
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         }
@@ -202,17 +214,12 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     
     // キーボードを閉じる処理
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
-        
-        //label.text = textField.text
         // キーボードを閉じる
         textField.resignFirstResponder()
-        //キーボード処理終了時に、カウントを行う
-        //displayUpdate()
-        
         return true
     }
     
-    
+    // datePickerの作成
     let datePicker: UIDatePicker = {
         
         let dp = UIDatePicker()
@@ -373,12 +380,11 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
                     // 登録した情報を取得
                     // 登録名が重複すると若い番号が取得される
                     // entity = try Folderinfo.filter(Folderinfo.Columns.title == travelNameString).fetchOne(db)
-                    entity = try Folderinfo.filter(Folderinfo.Columns.title == travelName).filter(Folderinfo.Columns.date == dateTravelName).filter(Folderinfo.Columns.member1 == travelMember1).fetchOne(db)
+                    entity = try Folderinfo.filter(Folderinfo.Columns.title == travelName).filter(Folderinfo.Columns.date == dateTravelName).filter(Folderinfo.Columns.member1 == travelMember1).filter(Folderinfo.Columns.membet2 == travelMember2).filter(Folderinfo.Columns.member3 == travelMember3).filter(Folderinfo.Columns.member4 == travelMember4).filter(Folderinfo.Columns.member5 == travelMember5).filter(Folderinfo.Columns.member6 == travelMember6).fetchOne(db)
                 }
                 
                 if result2 {
                     print(entity?.folderid! as Any)
-                    //print(entity?.title as Any)
                     sendId = entity?.folderid
                     // 取得した数字格納ずみを判定
                     print(sendId!)

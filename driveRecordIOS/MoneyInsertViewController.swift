@@ -122,7 +122,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                 repayerList.append(member6)
             }
         }
-        
+        // pickerViewを識別するための数字
         pickerView.tag = 1
         pickerView2.tag = 2
         // ピッカー設定
@@ -188,7 +188,6 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     // キーボードに完了ボタンの設置
     @objc func commitButtonTapped() {
         self.view.endEditing(true)
-        //List.text = "\(list[pickerView.selectedRow(inComponent: 0)])"
         
     }
     
@@ -443,9 +442,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                 
             }
                 return true
-            }
-            
-        
+            }        
     }
     
 
