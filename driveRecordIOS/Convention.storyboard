@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IfJ-Xs-TJH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -212,7 +211,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qQ-tz-C4G">
                                                                 <rect key="frame" x="0.0" y="150" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第1条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUI-T3-pzf">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第1条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUI-T3-pzf">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -235,9 +234,9 @@
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment>
-                                                                                <string key="content">	1.	</string>
+                                                                                <string key="content">1.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -253,7 +252,7 @@
                                                                             </fragment>
                                                                             <fragment content="本規約は，ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -274,7 +273,7 @@
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -292,9 +291,9 @@
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	2.	</string>
+                                                                                <string key="content">2.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -310,7 +309,7 @@
                                                                             </fragment>
                                                                             <fragment content="当社は本サービスに関し，本規約のほか，ご利用にあたってのルール等，各種の定め（以下，「個別規定」といいます。）をすることがあります。これら個別規定はその名称のいかんに関わらず，本規約の一部を構成するものとします。">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -331,7 +330,7 @@
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -348,10 +347,9 @@
                                                                                     <real key="NSStrokeWidth" value="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>
-                                                                            <fragment>
-                                                                                <string key="content">	3.	</string>
+                                                                            <fragment content="3.">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -365,33 +363,11 @@
                                                                                     </paragraphStyle>
                                                                                 </attributes>
                                                                             </fragment>
-                                                                            <fragment>
-                                                                                <string key="content"> 
-</string>
+                                                                            <fragment content="　">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="13" name="Times-Roman"/>
-                                                                                    <real key="NSKern" value="0.0"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                                                        <tabStops>
-                                                                                            <textTab alignment="left" location="11">
-                                                                                                <options/>
-                                                                                            </textTab>
-                                                                                            <textTab alignment="natural" location="36">
-                                                                                                <options/>
-                                                                                            </textTab>
-                                                                                        </tabStops>
-                                                                                    </paragraphStyle>
-                                                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <real key="NSStrokeWidth" value="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                            <fragment>
-                                                                                <string key="content">	4.	</string>
-                                                                                <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="13" name="Times-Roman"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
                                                                                             <textTab alignment="left" location="11">
                                                                                                 <options/>
@@ -405,31 +381,10 @@
                                                                             </fragment>
                                                                             <fragment content="本規約の規定が前条の個別規定の規定と矛盾する場合には，個別規定において特段の定めなき限り，個別規定の規定が優先されるものとします。">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                                                        <tabStops>
-                                                                                            <textTab alignment="left" location="11">
-                                                                                                <options/>
-                                                                                            </textTab>
-                                                                                            <textTab alignment="natural" location="36">
-                                                                                                <options/>
-                                                                                            </textTab>
-                                                                                        </tabStops>
-                                                                                    </paragraphStyle>
-                                                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <real key="NSStrokeWidth" value="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                            <fragment>
-                                                                                <string key="content"> 
-</string>
-                                                                                <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" size="13" name="Times-Roman"/>
-                                                                                    <real key="NSKern" value="0.0"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
                                                                                             <textTab alignment="left" location="11">
                                                                                                 <options/>
@@ -458,7 +413,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Joz-PA-mNM">
                                                                 <rect key="frame" x="0.0" y="530" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第2条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzo-DJ-NVa">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第2条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzo-DJ-NVa">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -482,7 +437,7 @@
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="ユーザーは，本サービスの利用にあたり，以下の行為をしてはなりません。">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -497,7 +452,7 @@
 Cg
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -508,9 +463,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	1.	</string>
+                                                                                <string key="content">1.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -526,7 +481,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="法令または公序良俗に違反する行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -547,7 +502,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -565,9 +520,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	2.	</string>
+                                                                                <string key="content">2.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -583,7 +538,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="犯罪行為に関連する行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -604,7 +559,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -622,9 +577,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	3.	</string>
+                                                                                <string key="content">3.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -640,7 +595,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="本サービスの内容等，本サービスに含まれる著作権，商標権ほか知的財産権を侵害する行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -661,7 +616,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -679,9 +634,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	4.	</string>
+                                                                                <string key="content">4.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -697,7 +652,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="当社，ほかのユーザー，またはその他第三者のサーバーまたはネットワークの機能を破壊したり，妨害したりする行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -718,7 +673,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -736,9 +691,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	5.	</string>
+                                                                                <string key="content">5.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -754,7 +709,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="本サービスによって得られた情報を商業的に利用する行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -775,7 +730,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -793,9 +748,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	6.	</string>
+                                                                                <string key="content">6.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -811,7 +766,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="当社のサービスの運営を妨害するおそれのある行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -832,7 +787,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -850,9 +805,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	7.	</string>
+                                                                                <string key="content">7.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -868,7 +823,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="不正アクセスをし，またはこれを試みる行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -889,7 +844,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -907,9 +862,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	8.	</string>
+                                                                                <string key="content">8.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -925,7 +880,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="他のユーザーに関する個人情報等を収集または蓄積する行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -946,7 +901,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -964,9 +919,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	9.	</string>
+                                                                                <string key="content">9.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -982,7 +937,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="不正な目的を持って本サービスを利用する行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1003,7 +958,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1021,9 +976,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	10.	</string>
+                                                                                <string key="content">10.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -1039,7 +994,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="本サービスの他のユーザーまたはその他の第三者に不利益，損害，不快感を与える行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1060,7 +1015,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1078,9 +1033,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	11.	</string>
+                                                                                <string key="content">11.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -1096,7 +1051,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="他のユーザーに成りすます行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1117,7 +1072,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1135,9 +1090,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	12.	</string>
+                                                                                <string key="content">12.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -1153,7 +1108,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="当社が許諾しない本サービス上での宣伝，広告，勧誘，または営業行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1174,7 +1129,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1192,9 +1147,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	13.	</string>
+                                                                                <string key="content">13.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -1210,7 +1165,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="当社のサービスに関連して，反社会的勢力に対して直接または間接に利益を供与する行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1231,7 +1186,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1249,9 +1204,9 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	14.	</string>
+                                                                                <string key="content">14.	</string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                                         <tabStops>
@@ -1267,7 +1222,7 @@ Cg
                                                                             </fragment>
                                                                             <fragment content="その他，当社が不適切と判断する行為">
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="HiraMinProN-W3"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1288,7 +1243,7 @@ Cg
                                                                                 <string key="content"> 
 </string>
                                                                                 <attributes>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
                                                                                     <real key="NSKern" value="0.0"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1320,7 +1275,7 @@ Cg
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xH4-nn-AwN">
                                                                 <rect key="frame" x="0.0" y="1360" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第3条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnZ-7S-wb2">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第3条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnZ-7S-wb2">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -1343,7 +1298,7 @@ Cg
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment>
-                                                                                <string key="content">	1.	</string>
+                                                                                <string key="content">1.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
@@ -1628,7 +1583,7 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	2.	</string>
+                                                                                <string key="content">2.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
@@ -1699,7 +1654,7 @@ Cg
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgK-fg-BwD">
                                                                 <rect key="frame" x="0.0" y="1820" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第4条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KW-od-3Nm">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第4条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KW-od-3Nm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -1722,7 +1677,7 @@ Cg
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment>
-                                                                                <string key="content">	1.	</string>
+                                                                                <string key="content">1.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
@@ -2007,7 +1962,7 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	2.	</string>
+                                                                                <string key="content">2.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
@@ -2078,7 +2033,7 @@ Cg
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLV-Jn-ncS">
                                                                 <rect key="frame" x="0.0" y="2200" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第5条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBR-yU-Nk6">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第5条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBR-yU-Nk6">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -2101,7 +2056,7 @@ Cg
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment>
-                                                                                <string key="content">	1.	</string>
+                                                                                <string key="content">1.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
@@ -2158,7 +2113,7 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	2.	</string>
+                                                                                <string key="content">2.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
@@ -2215,7 +2170,7 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	3.	</string>
+                                                                                <string key="content">3.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
@@ -2273,7 +2228,7 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	4.	</string>
+                                                                                <string key="content">4.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
@@ -2344,7 +2299,7 @@ Cg
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j61-ja-g27">
                                                                 <rect key="frame" x="0.0" y="2830" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第6条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzl-0K-wNz">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第6条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzl-0K-wNz">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -2393,7 +2348,7 @@ Cg
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9v-kP-zLI">
                                                                 <rect key="frame" x="0.0" y="2980" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第7条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-df-tso">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第7条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-df-tso">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -2457,7 +2412,7 @@ Cg
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mu1-oF-80Q">
                                                                 <rect key="frame" x="0.0" y="3130" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第8条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQm-Kb-W78">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第8条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQm-Kb-W78">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -2578,7 +2533,7 @@ Cg
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIQ-QK-rqk">
                                                                 <rect key="frame" x="0.0" y="3310" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第9条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovR-F4-gak">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第9条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovR-F4-gak">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -2762,7 +2717,7 @@ Cg
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUp-Ni-32J">
                                                                 <rect key="frame" x="0.0" y="3490" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第10条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEz-hf-Jfz">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第10条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEz-hf-Jfz">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -2811,7 +2766,7 @@ Cg
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WuB-vR-oiR">
                                                                 <rect key="frame" x="0.0" y="3620" width="384" height="30"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第11条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zH3-qK-dAc">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第11条" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zH3-qK-dAc">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <constraints>
@@ -2834,7 +2789,7 @@ Cg
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment>
-                                                                                <string key="content">	1.	</string>
+                                                                                <string key="content">1.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
@@ -2891,7 +2846,7 @@ Cg
                                                                                 </attributes>
                                                                             </fragment>
                                                                             <fragment>
-                                                                                <string key="content">	2.	</string>
+                                                                                <string key="content">2.	</string>
                                                                                 <attributes>
                                                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <font key="NSFont" size="13" name="Times-Roman"/>
