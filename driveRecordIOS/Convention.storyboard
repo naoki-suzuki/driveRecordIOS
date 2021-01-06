@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ho9-5i-yv8">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="giB-1k-Ugc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hdO-yF-j7R">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mo3-LO-012">
-                                <rect key="frame" x="36" y="21" width="248" height="526"/>
+                                <rect key="frame" x="36" y="65" width="342" height="766"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">この利用規約（以下，「本規約」といいます。）は，株式会社シムテック（以下，「当社」といいます。）がこのアプリ上で提供するサービス、「ドラログ」（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。
 
@@ -106,25 +106,25 @@
             </objects>
             <point key="canvasLocation" x="1671" y="-421"/>
         </scene>
-        <!--ドラログ-->
+        <!--利用規約-->
         <scene sceneID="e4g-tm-uMi">
             <objects>
-                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="Ho9-5i-yv8" customClass="ConventionViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="Ho9-5i-yv8" userLabel="利用規約" customClass="ConventionViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QKe-dh-j2F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-BV-oLN">
-                                <rect key="frame" x="0.0" y="88" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pRO-Vf-Kpe">
-                                        <rect key="frame" x="15" y="20" width="290" height="4140"/>
+                                        <rect key="frame" x="15" y="20" width="384" height="4140"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfL-Jd-d48" userLabel="space">
-                                                <rect key="frame" x="0.0" y="0.0" width="290" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eeB-k1-fPO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="150"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <string key="text">この利用規約（以下，「本規約」といいます。）は，株式会社シムテック（以下，「当社」といいます。）がこのアプリ上で提供するサービス、「ドラログ」（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。</string>
                                                         <color key="textColor" systemColor="labelColor"/>
@@ -141,10 +141,10 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hox-7D-8Kp">
-                                                <rect key="frame" x="0.0" y="150" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="150" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第1条（適用）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeA-fk-NmP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="ak9-fR-Kz4"/>
@@ -159,10 +159,10 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ox3-Hf-q2I" userLabel="第一条">
-                                                <rect key="frame" x="0.0" y="180" width="290" height="330"/>
+                                                <rect key="frame" x="0.0" y="180" width="384" height="330"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADE-gZ-sGh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="330"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="330"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
@@ -343,10 +343,10 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lM-LQ-N7H">
-                                                <rect key="frame" x="0.0" y="510" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="510" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第2条（禁止事項）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYs-b3-byx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Cjm-Su-j4Y"/>
@@ -361,10 +361,10 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Hp-nr-KSK" userLabel="第二条">
-                                                <rect key="frame" x="0.0" y="540" width="290" height="850"/>
+                                                <rect key="frame" x="0.0" y="540" width="384" height="850"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5o9-eF-8wy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="850"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="850"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="ユーザーは，本サービスの利用にあたり，以下の行為をしてはなりません。">
@@ -1205,10 +1205,10 @@ Cg
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9O-Om-Whi">
-                                                <rect key="frame" x="0.0" y="1390" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="1390" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第3条（本サービスの提供の停止等）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQX-pz-T1T">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Za5-dP-1tb"/>
@@ -1223,10 +1223,10 @@ Cg
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpy-rO-bJW" userLabel="第三条">
-                                                <rect key="frame" x="0.0" y="1420" width="290" height="490"/>
+                                                <rect key="frame" x="0.0" y="1420" width="384" height="490"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JEg-yG-L6T">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="490"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="490"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
@@ -1584,10 +1584,10 @@ Cg
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2j-9Fs">
-                                                <rect key="frame" x="0.0" y="1910" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="1910" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第4条（利用制限）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW5-fU-pp8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="3Qb-oD-o62"/>
@@ -1602,10 +1602,10 @@ Cg
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIm-AL-He1" userLabel="第四条">
-                                                <rect key="frame" x="0.0" y="1940" width="290" height="450"/>
+                                                <rect key="frame" x="0.0" y="1940" width="384" height="450"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPC-eY-FEM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="450"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="450"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
@@ -1963,10 +1963,10 @@ Cg
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agv-Kl-grt">
-                                                <rect key="frame" x="0.0" y="2390" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="2390" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第5条（保証の否認および免責事項）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="li6-sd-OPK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="ron-tJ-pwf"/>
@@ -1981,10 +1981,10 @@ Cg
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auy-nE-f1m" userLabel="第五条">
-                                                <rect key="frame" x="0.0" y="2420" width="290" height="650"/>
+                                                <rect key="frame" x="0.0" y="2420" width="384" height="650"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCp-pq-8BF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="650"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="650"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
@@ -2229,10 +2229,10 @@ Cg
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkF-03-pqe">
-                                                <rect key="frame" x="0.0" y="3070" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="3070" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第6条（サービス内容の変更等）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYN-6F-sMu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="bxH-lk-RdU"/>
@@ -2247,10 +2247,10 @@ Cg
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Um6-2K-ZMz" userLabel="第六条">
-                                                <rect key="frame" x="0.0" y="3100" width="290" height="120"/>
+                                                <rect key="frame" x="0.0" y="3100" width="384" height="120"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1D-f0-nkR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="当社は，ユーザーに通知することなく，本サービスの内容を変更しまたは本サービスの提供を中止することができるものとし，これによってユーザーに生じた損害について一切の責任を負いません。">
@@ -2278,10 +2278,10 @@ Cg
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crv-mb-dPF">
-                                                <rect key="frame" x="0.0" y="3220" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="3220" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第7条（利用規約の変更）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GS2-ky-q5w">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="PJr-A3-WUD"/>
@@ -2296,10 +2296,10 @@ Cg
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUP-eq-kcc" userLabel="第七条">
-                                                <rect key="frame" x="0.0" y="3250" width="290" height="150"/>
+                                                <rect key="frame" x="0.0" y="3250" width="384" height="150"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DQA-ww-Nby">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="150"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="当社は，必要と判断した場合には，ユーザーに通知することなくいつでも本規約を変更することができるものとします。なお，本規約の変更後，本サービスの利用を開始した場合には，当該ユーザーは変更後の規約に同意したものとみなします。">
@@ -2342,10 +2342,10 @@ Cg
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5E3-2Z-D7D">
-                                                <rect key="frame" x="0.0" y="3400" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="3400" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第8条（個人情報の取扱い）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxh-Iw-jRq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="zVY-yK-KTw"/>
@@ -2360,10 +2360,10 @@ Cg
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hv-rf-d9I" userLabel="第八条">
-                                                <rect key="frame" x="0.0" y="3430" width="290" height="120"/>
+                                                <rect key="frame" x="0.0" y="3430" width="384" height="120"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQh-vm-nSY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="当社は，本サービスの利用によって取得する個人情報については，当社「プライバシーポリシー」に従い適切に取り扱うものとします。">
@@ -2447,7 +2447,7 @@ Cg
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WC6-Ze-9jX" userLabel="URL">
-                                                <rect key="frame" x="0.0" y="3550" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="3550" width="384" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4l-zF-B3q">
                                                         <rect key="frame" x="8" y="-8" width="235" height="30"/>
@@ -2464,10 +2464,10 @@ Cg
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Do-UE-YUQ">
-                                                <rect key="frame" x="0.0" y="3580" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="3580" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第9条（通知または連絡）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVr-wD-c2U">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Fe1-AL-kFv"/>
@@ -2482,10 +2482,10 @@ Cg
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qs0-AA-XXT" userLabel="第九条">
-                                                <rect key="frame" x="0.0" y="3610" width="290" height="170"/>
+                                                <rect key="frame" x="0.0" y="3610" width="384" height="170"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUb-Kt-G0p">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="170"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="170"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="ユーザーと当社との間の通知または連絡は，当社の定める方法によって行うものとします。当社は">
@@ -2648,10 +2648,10 @@ Cg
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3v-2f-pDv">
-                                                <rect key="frame" x="0.0" y="3780" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="3780" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第10条（権利義務の譲渡の禁止）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiB-4o-TN1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="wij-zS-ntz"/>
@@ -2666,10 +2666,10 @@ Cg
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vI3-AY-Pg1" userLabel="第十条">
-                                                <rect key="frame" x="0.0" y="3810" width="290" height="100"/>
+                                                <rect key="frame" x="0.0" y="3810" width="384" height="100"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6i-ao-Ke3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="ユーザーは，当社の書面による事前の承諾なく，利用契約上の地位または本規約に基づく権利もしくは義務を第三者に譲渡し，または担保に供することはできません。">
@@ -2697,10 +2697,10 @@ Cg
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDb-Ly-Zlw">
-                                                <rect key="frame" x="0.0" y="3910" width="290" height="30"/>
+                                                <rect key="frame" x="0.0" y="3910" width="384" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　第11条（準拠法・裁判管轄）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdD-q2-zsW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="bue-j4-obZ"/>
@@ -2715,10 +2715,10 @@ Cg
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fpj-r8-GBa" userLabel="第十一条">
-                                                <rect key="frame" x="0.0" y="3940" width="290" height="180"/>
+                                                <rect key="frame" x="0.0" y="3940" width="384" height="180"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="idS-hM-bDo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="180"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="180"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
@@ -2875,7 +2875,7 @@ Cg
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdU-ci-m4f" userLabel="space">
-                                                <rect key="frame" x="0.0" y="4120" width="290" height="20"/>
+                                                <rect key="frame" x="0.0" y="4120" width="384" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="kZC-df-aKM"/>
                                                 </constraints>
@@ -2903,11 +2903,7 @@ Cg
                             <constraint firstItem="1fW-BV-oLN" firstAttribute="leading" secondItem="Jdd-4U-weF" secondAttribute="leading" id="yd2-BC-jUp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ドラログ" id="Asd-3A-tgX">
-                        <barButtonItem key="rightBarButtonItem" title="サポート" image="gearshape.fill" catalog="system" id="dOo-go-RXV">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="利用規約" id="Asd-3A-tgX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQh-3L-iqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="サポート" image="gearshape.fill" catalog="system" id="Dub-RT-tdN"/>
