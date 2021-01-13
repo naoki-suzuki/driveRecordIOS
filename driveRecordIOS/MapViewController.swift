@@ -18,74 +18,67 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
+// 位置情報取得判定が14.0で廃止になってしまった為、設置
+@available(iOS 14.0, *)
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     // 現在地取得のためのメソッドをインスタンス化
-    var locationManager = CLLocationManager()
-    
+    var manager = CLLocationManager()
+    var marker = GMSMarker()
     // 地図に関するメソッドをインスタンス化
     var mapView = GMSMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        manager.delegate = self
+        // GPSの使用を開始
+        // manager.startUpdatingLocation()
+        // 更新に必要な最小移動距離
+        manager.distanceFilter = 50
+        // 位置情報の利用許可を変更する画面をポップアップ表示する
+        manager.requestWhenInUseAuthorization()
+        // GPSの使用を開始
+        manager.startUpdatingLocation()
+        // 位置情報を許可しているか判定
+        let status = CLLocationManager.authorizationStatus()
+        // 許可しない場合の処理
+        if status == .notDetermined || status == .denied || status == .notDetermined {
+            // 初期値を東京に設定
+            let camera = GMSCameraPosition.camera(withLatitude: 35.6812226, longitude: 139.7670594, zoom: 12.0)
+            mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+            view = mapView
+        }
         
-        // Tabバーの色の指定
-        self.navigationController!.navigationBar.barTintColor = UIColor.systemTeal
-        // Tabバーの文字の色の指定
-        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
-        
-        setupMap()
-        requestLoacion()
     }
-    
-    private func setupMap() {
-        
-        // GoogleMapの初期位置を東京駅付近に設定
-        let camera = GMSCameraPosition.camera(withLatitude: 35.6812226, longitude: 139.7670594, zoom: 12.0)
-        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+    // 位置情報取得した場合、呼び出される
+    func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+         return
+        }
+        // 現在地の取得
+        let coordinate = location.coordinate
+        let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 12.0)
+        mapView = GMSMapView.map(withFrame: view.frame, camera: camera)
         view = mapView
-        
+        // view.addSubview(mapView)
+//        // ピンの設置
+//        marker = GMSMarker()
+//        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+//        marker.map = mapView
+            
         mapView.settings.myLocationButton = true // 右下の現在地ボタン追加する
         mapView.isMyLocationEnabled = true // 現在地表示
-        view = mapView
-    }
-    
-    // 現在地表示の許可をダイアログ表示する関数
-    private func requestLoacion() {
-        // ユーザにアプリ使用中のみ位置情報取得の許可を求めるダイアログを表示
-        locationManager.requestWhenInUseAuthorization()
-        // 常に取得したい場合はこちら↓
-        //locationManager.requestAlwaysAuthorization()
+        
     }
     
     
-    
-    
-    
-    //    func mapView(mapView: GMSMapView!, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
-    //        print("Tapped at coordinate: " + String(coordinate.latitude) + " "
-    //                + String(coordinate.longitude))
-    //}
-    //    /**
-    //     マップにマーカを設置する処理
-    //     - parameter title: マーカのタイトル
-    //     - parameter coordinate: 位置
-    //     - parameter iconName: アイコン名
-    //     - parameter completion: Callback
-    //     */
-    //    private func putMarker(title: String?, coordinate: CLLocationCoordinate2D, iconName: String?, completion: @escaping ((GMSMarker) -> Void)) {
-    //        // マーカの生成
-    //        let marker = GMSMarker()
-    //        marker.title = title
-    //        marker.position = coordinate
-    //        if iconName != nil {
-    //            // アイコン名が指定されている場合は画像を設定
-    //            marker.icon = UIImage.init(named: iconName!)
-    //        }
-    //        marker.map = self.mapView
-    //        completion(marker)
-    //    }
-    //
+    func showMarker(position : CLLocationCoordinate2D) {
+        marker.position = position
+        marker.isDraggable = true
+        
+    }
+   
 }
 
