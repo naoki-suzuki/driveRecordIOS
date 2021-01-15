@@ -30,8 +30,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     // 地図に関するメソッドをインスタンス化
     var mapView = GMSMapView()
     
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Tabバーの色の指定
+        UINavigationBar.appearance().barTintColor = UIColor.systemTeal
+        // Tabバーの文字の色の指定
+        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
+        
         manager.delegate = self
         // GPSの使用を開始
         // manager.startUpdatingLocation()
@@ -52,6 +60,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
+    
     // 位置情報取得した場合、呼び出される
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {
@@ -73,6 +82,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    private func requestLoacion() {
+           // ユーザにアプリ使用中のみ位置情報取得の許可を求めるダイアログを表示
+           locationManager.requestWhenInUseAuthorization()
+           // 常に取得したい場合はこちら↓
+           // locationManager.requestAlwaysAuthorization()
+       }
     
     func showMarker(position : CLLocationCoordinate2D) {
         marker.position = position
