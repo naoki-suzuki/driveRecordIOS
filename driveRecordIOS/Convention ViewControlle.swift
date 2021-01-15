@@ -19,11 +19,31 @@ class ConventionViewController : UIViewController {
     
     }
     @IBAction func safariPrivacy(_ sender: Any) {
+        // 外部ブラウザでURLを開く
+        let webPage = NSURL(string: "https://www.cimtech.co.jp/privacy/")
         
-        let webPage = "https://www.cimtech.co.jp/privacy/"
-                let safariVC = SFSafariViewController(url: NSURL(string: webPage)! as URL)
-                safariVC.modalPresentationStyle = .pageSheet  // フルスクリーンにしたい場合はこの行を削除
-                present(safariVC, animated: true, completion: nil)
+        let alert: UIAlertController = UIAlertController( title: "", message: "外部サイトへリンクしますか？", preferredStyle:  UIAlertController.Style.alert)
+        
+        // OKボタン(ホームに遷移)
+        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+            if UIApplication.shared.canOpenURL(webPage! as URL){
+                UIApplication.shared.open(webPage! as URL, options: [:], completionHandler: nil)
+            }
+                        }
+        )
+        
+        // キャンセルボタン
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
+
+        
+        // UIAlertControllerにActionを追加
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        // Alertを表示
+        present(alert, animated: true, completion: nil)
     }
     
 }
