@@ -485,7 +485,7 @@
                                                         <state key="normal" title="Button" image="homeButton"/>
                                                         <connections>
                                                             <action selector="InsertHome:" destination="D3s-HJ-c9G" eventType="touchUpInside" id="DBw-U0-wgz"/>
-                                                            <segue destination="BQa-bK-wXw" kind="presentation" modalPresentationStyle="fullScreen" id="8Rs-bg-yyK"/>
+                                                            <segue destination="BQa-bK-wXw" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="8Rs-bg-yyK"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -508,7 +508,7 @@
                                                         <state key="normal" title="Button" image="moneyInsertButton"/>
                                                         <connections>
                                                             <action selector="Insert:" destination="D3s-HJ-c9G" eventType="touchUpInside" id="Mvu-mH-mxy"/>
-                                                            <segue destination="SX9-tG-3fQ" kind="presentation" identifier="MoneyView" modalPresentationStyle="fullScreen" id="2ic-rg-1pn"/>
+                                                            <segue destination="SX9-tG-3fQ" kind="presentation" identifier="moneyView" modalPresentationStyle="fullScreen" id="2ic-rg-1pn"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -552,6 +552,9 @@
                     <navigationItem key="navigationItem" title="ドラログ" leftItemsSupplementBackButton="YES" id="Mue-gd-36F" userLabel="ドラログ">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="delete.left.fill" catalog="system" id="a1X-k2-9lT">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="returnHome:" destination="D3s-HJ-c9G" id="LuQ-sp-sKk"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="B7G-hU-tnt">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
