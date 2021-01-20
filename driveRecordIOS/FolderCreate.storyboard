@@ -556,7 +556,7 @@
                                 <action selector="returnHome:" destination="D3s-HJ-c9G" id="LuQ-sp-sKk"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="B7G-hU-tnt">
+                        <barButtonItem key="rightBarButtonItem" title="サポート" image="gearshape.fill" catalog="system" id="B7G-hU-tnt">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="lQi-av-Rtc" kind="show" id="LGI-Gj-bVm"/>
