@@ -899,10 +899,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33FF86FE9B11242FA5B864B9 /* Pods-driveRecordIOS.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.30;
+				CURRENT_PROJECT_VERSION = 1.0.37;
 				DEVELOPMENT_TEAM = 522L38Q54E;
 				INFOPLIST_FILE = driveRecordIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -910,7 +910,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.30;
+				MARKETING_VERSION = 1.0.37;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.cimtech.drivelog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -922,10 +922,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 71BBFD582334773D4E8F0ED1 /* Pods-driveRecordIOS.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.30;
+				CURRENT_PROJECT_VERSION = 1.0.37;
 				DEVELOPMENT_TEAM = 522L38Q54E;
 				INFOPLIST_FILE = driveRecordIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -933,7 +933,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.30;
+				MARKETING_VERSION = 1.0.37;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.cimtech.drivelog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

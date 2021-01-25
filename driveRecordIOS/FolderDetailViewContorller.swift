@@ -7,6 +7,22 @@
 import UIKit
 import GRDB
 
+private let formatter = NumberFormatter()
+
+extension Int64 {
+
+    private func formattedString(style: NumberFormatter.Style, localeIdentifier: String) -> String {
+        formatter.numberStyle = style
+        formatter.locale = Locale(identifier: localeIdentifier)
+        return formatter.string(from: NSNumber(integerLiteral: Int(Int64(self)))) ?? "\(self)"
+    }
+
+    // カンマ区切り
+    var formattedJPString: String {
+        return formattedString(style: .decimal, localeIdentifier: "ja_JP")
+    }
+}
+
 class FolderDetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
@@ -194,8 +210,8 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         print(aveCost)
         
         // ラベルに合計と一人当たりの金額の貼り付け
-        sum.text = "\(sumCost)円"
-        ave.text = "\(aveCost)円"
+        sum.text = "\(sumCost.formattedJPString)円"
+        ave.text = "\(aveCost.formattedJPString)円"
         
         // カウントした人数をラベルに貼り付ける
         people.text = "\(count)人"
@@ -231,7 +247,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         let labelMoney = cell.viewWithTag(3) as! UILabel
         // ラベルに表示する文字列を設定
         // labelMoney.text = "000えん"//(cost[indexPath.row])
-        labelMoney.text = "\(cost[indexPath.row])円"
+        labelMoney.text = "\(cost[indexPath.row].formattedJPString)円"
         
         // 一人当たり金額のラベル
         let labelsyou = cell.viewWithTag(4) as! UILabel
@@ -241,7 +257,9 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         // 一人当たり金額のラベル
         let labelSyou = cell.viewWithTag(5) as! UILabel
         // ラベルに表示する文字列を設定
-        labelSyou.text = "\(cost[indexPath.row]/count)円"
+        
+        let perCost = cost[indexPath.row]/count
+        labelSyou.text = "\(perCost.formattedJPString)円"
         
         // 負担者のラベル
         let labelbuyer = cell.viewWithTag(6) as! UILabel
@@ -293,8 +311,8 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             //　削除後の合計金額と一人当たりの金額を算出してラベルに再度貼り付け
             sumCost = cost.reduce(0) { $0 + $1}
             aveCost = sumCost / count
-            sum.text = "\(sumCost)円"
-            ave.text = "\(aveCost)円"
+            sum.text = "\(sumCost.formattedJPString)円"
+            ave.text = "\(aveCost.formattedJPString)円"
             
         }
     }
@@ -351,7 +369,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             
             
             let lineText = """
-            ドラレコ
+            ドラログ
             日付
             \(shareLabel)\n
             タイトル
@@ -363,9 +381,9 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             使用項目
             \(text)
             合計金額
-            \(sumCost)円\n
+            \(sumCost.formattedJPString)円\n
             1人当たり
-            \(aveCost)円
+            \(aveCost.formattedJPString)円
             """
             //UIActivityに渡す配列を作成
             let shareItems = [lineText]
