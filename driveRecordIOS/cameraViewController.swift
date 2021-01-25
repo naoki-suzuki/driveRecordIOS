@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
-                      UINavigationControllerDelegate{
+                            UINavigationControllerDelegate{
     
     // 撮影した写真の表示
     @IBOutlet weak var cameraPic: UIImageView!
@@ -22,6 +22,8 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
         // cameraPic.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         self.cameraPic.image = self.cameraReceive
         
+        // ナビゲーションバーのアイテムの色　（戻る　＜　とか　読み込みゲージとか）
+        self.navigationController?.navigationBar.tintColor = .white
         
     }
     
