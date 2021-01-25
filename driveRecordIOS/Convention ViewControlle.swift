@@ -16,7 +16,10 @@ class ConventionViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        // ナビゲーションバーのアイテムの色　（戻る　＜　とか　読み込みゲージとか）
+        self.navigationController?.navigationBar.tintColor = .white
+        
+        
     }
     @IBAction func safariPrivacy(_ sender: Any) {
         // 外部ブラウザでURLを開く
@@ -31,12 +34,12 @@ class ConventionViewController : UIViewController {
             if UIApplication.shared.canOpenURL(webPage! as URL){
                 UIApplication.shared.open(webPage! as URL, options: [:], completionHandler: nil)
             }
-                        }
+        }
         )
         
         // キャンセルボタン
         let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
-
+        
         
         // UIAlertControllerにActionを追加
         alert.addAction(cancelAction)
