@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "スクエアグラデ追加アーチドラログ_青薄め40px (1)-2.png",
+      "filename" : "スクエアグラデ追加アーチドラログ_青薄め40px (1)-5.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
@@ -12,7 +12,7 @@
       "size" : "20x20"
     },
     {
-      "filename" : "スクエアグラデ追加アーチドラログ_青薄め58px (1)-2.png",
+      "filename" : "スクエアグラデ追加アーチドラログ_青薄め58px (1)-5.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
@@ -23,7 +23,7 @@
       "size" : "29x29"
     },
     {
-      "filename" : "スクエアグラデ追加アーチドラログ_青薄め80px (1)-2.png",
+      "filename" : "スクエアグラデ追加アーチドラログ_青薄め80px (1)-5.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
@@ -45,7 +45,7 @@
       "size" : "60x60"
     },
     {
-      "filename" : "スクエアグラデ追加アーチドラログ_青薄め20px.png",
+      "filename" : "スクエアグラデ追加アーチドラログ_青薄め20px-1.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
@@ -56,7 +56,7 @@
       "size" : "20x20"
     },
     {
-      "filename" : "スクエアグラデ追加アーチドラログ_青薄め29px.png",
+      "filename" : "スクエアグラデ追加アーチドラログ_青薄め29px-1.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
@@ -84,6 +84,7 @@
       "size" : "76x76"
     },
     {
+      "filename" : "スクエアグラデ追加アーチドラログ_青薄め152px.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
@@ -95,7 +96,7 @@
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "1024_スクエアグラデ追加アーチドラログ_青薄め1024px.png",
+      "filename" : "1024_スクエアグラデ追加アーチドラログ_青薄め1024px-1.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
