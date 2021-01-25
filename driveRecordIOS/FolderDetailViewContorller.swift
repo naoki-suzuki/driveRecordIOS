@@ -10,13 +10,13 @@ import GRDB
 private let formatter = NumberFormatter()
 
 extension Int64 {
-
+    
     private func formattedString(style: NumberFormatter.Style, localeIdentifier: String) -> String {
         formatter.numberStyle = style
         formatter.locale = Locale(identifier: localeIdentifier)
         return formatter.string(from: NSNumber(integerLiteral: Int(Int64(self)))) ?? "\(self)"
     }
-
+    
     // カンマ区切り
     var formattedJPString: String {
         return formattedString(style: .decimal, localeIdentifier: "ja_JP")
@@ -347,10 +347,14 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
                 text = "未登録\n"
             } else {
                 for s in 0..<use.count {
+                    
+                    // カンマ処理を行うため、先に計算
+                    let perCost = cost[s] / count
+                    
                     text += """
                 \(use[s])
-                \(String(describing: cost[s]))円
-                1人当たり：\(cost[s]/count)円
+                \(String(describing: cost[s].formattedJPString))円
+                1人当たり：\(perCost.formattedJPString)円
                 負担者：\(buyer[s])\n\n
                 """
                 }
