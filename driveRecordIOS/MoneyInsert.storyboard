@@ -147,12 +147,12 @@
                                                 <rect key="frame" x="0.0" y="160" width="384" height="45"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgI-1X-rMz" userLabel="カメラ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="204" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="154" height="45"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-L9-fBX">
-                                                        <rect key="frame" x="204" y="0.0" width="150" height="45"/>
+                                                        <rect key="frame" x="154" y="0.0" width="200" height="45"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="vud-5b-6yG"/>
+                                                            <constraint firstAttribute="width" constant="200" id="vud-5b-6yG"/>
                                                         </constraints>
                                                         <state key="normal" image="cameraButton"/>
                                                         <connections>
