@@ -392,12 +392,19 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             //UIActivityに渡す配列を作成
             let shareItems = [lineText]
             //UIACtitivityViewControllerにシェアラベルを渡す
-            let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+            //let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
             //iPadで落ちてしまう対策
-            controller.popoverPresentationController?.sourceView = view
+            //controller.popoverPresentationController?.sourceView = view
+            
+            let uiActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                        let screenSize = UIScreen.main.bounds
+                        uiActivityViewController.popoverPresentationController?.sourceView = uiActivityViewController.view
+                        uiActivityViewController.popoverPresentationController?.sourceRect = CGRect(x:screenSize.size.width/2, y: screenSize.size.height-200, width: 0, height: 0)
+                    }
             
             //UIActivityViewControllerを表示
-            present(controller, animated: true, completion: nil)
+            present(uiActivityViewController, animated: true, completion: nil)
         }
     }
     
