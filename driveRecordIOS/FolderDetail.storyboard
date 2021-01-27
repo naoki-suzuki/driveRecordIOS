@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFC-Hw-4xe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFC-Hw-4xe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -115,10 +115,10 @@
                                                                         <rect key="frame" x="100" y="0.0" width="284" height="20.5"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcf-vs-bNR">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="226.5" height="20.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="254" height="20.5"/>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFe-9D-pP3">
-                                                                                <rect key="frame" x="226.5" y="0.0" width="27.5" height="20.5"/>
+                                                                                <rect key="frame" x="254" y="0.0" width="0.0" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -158,10 +158,10 @@
                                                                         <rect key="frame" x="100" y="0.0" width="284" height="20.5"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-xe-6fp">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="225.5" height="20.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="254" height="20.5"/>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rki-1o-Y3Q">
-                                                                                <rect key="frame" x="225.5" y="0.0" width="28.5" height="20.5"/>
+                                                                                <rect key="frame" x="254" y="0.0" width="0.0" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -572,9 +572,12 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f82-Y7-8Uq">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmI-Ux-iBh" userLabel="金額入力">
-                                                                                <rect key="frame" x="74" y="-12" width="236" height="43"/>
-                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmI-Ux-iBh" userLabel="金額入力">
+                                                                                <rect key="frame" x="70" y="-10" width="244" height="41"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="40" id="G8F-w5-Kee"/>
+                                                                                    <constraint firstAttribute="width" constant="244" id="fwW-Jb-EMP"/>
+                                                                                </constraints>
                                                                                 <state key="normal" title="Button" image="moneyInsertButton"/>
                                                                                 <connections>
                                                                                     <action selector="moenyInsert:" destination="Fkl-iP-Pfm" eventType="touchUpInside" id="SYb-5W-bCO"/>
@@ -582,6 +585,10 @@
                                                                                 </connections>
                                                                             </button>
                                                                         </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="PmI-Ux-iBh" firstAttribute="centerX" secondItem="f82-Y7-8Uq" secondAttribute="centerX" id="IUg-9d-zzr"/>
+                                                                            <constraint firstItem="PmI-Ux-iBh" firstAttribute="centerY" secondItem="f82-Y7-8Uq" secondAttribute="centerY" id="uhj-KY-gmA"/>
+                                                                        </constraints>
                                                                     </view>
                                                                 </subviews>
                                                                 <constraints>
@@ -614,10 +621,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Kf-CY-XrI" userLabel="LINEbottun">
                                                 <rect key="frame" x="0.0" y="1005" width="384" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrw-7h-Exe">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrw-7h-Exe">
                                                         <rect key="frame" x="70" y="8" width="244" height="40"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button" image="share_bthdpi"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="244" id="LDX-ag-EnO"/>
+                                                            <constraint firstAttribute="height" constant="40" id="acM-Rw-3sX"/>
+                                                        </constraints>
+                                                        <state key="normal" image="share_bthdpi"/>
                                                         <connections>
                                                             <action selector="showActivityView:" destination="Fkl-iP-Pfm" eventType="touchUpInside" id="KXP-LN-CtR"/>
                                                         </connections>
@@ -625,6 +635,8 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="AGb-dQ-CPQ"/>
+                                                    <constraint firstItem="nrw-7h-Exe" firstAttribute="centerX" secondItem="3Kf-CY-XrI" secondAttribute="centerX" id="SRz-6a-QkS"/>
+                                                    <constraint firstItem="nrw-7h-Exe" firstAttribute="top" secondItem="3Kf-CY-XrI" secondAttribute="topMargin" id="g4Y-FM-TEk"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUS-Kd-u4e" userLabel="space">
@@ -636,10 +648,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mId-mZ-wBS" userLabel="HOMEbottun">
                                                 <rect key="frame" x="0.0" y="1065" width="384" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E6-Lx-Vfw" userLabel="ホーム画面">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E6-Lx-Vfw" userLabel="ホーム画面">
                                                         <rect key="frame" x="70" y="0.0" width="244" height="40"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button" image="home_back_hdpi"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="244" id="4qB-UA-cbc"/>
+                                                            <constraint firstAttribute="height" constant="40" id="jDo-hR-GW4"/>
+                                                        </constraints>
+                                                        <state key="normal" image="home_back_hdpi"/>
                                                         <connections>
                                                             <segue destination="KWx-1r-YGR" kind="presentation" modalPresentationStyle="fullScreen" id="kLX-i5-kId"/>
                                                         </connections>
@@ -647,6 +662,8 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Lfx-3a-bfw"/>
+                                                    <constraint firstItem="7E6-Lx-Vfw" firstAttribute="centerX" secondItem="mId-mZ-wBS" secondAttribute="centerX" id="kXg-4n-aL8"/>
+                                                    <constraint firstItem="7E6-Lx-Vfw" firstAttribute="centerY" secondItem="mId-mZ-wBS" secondAttribute="centerY" id="sE4-kO-psJ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpM-ty-ryX" userLabel="space">
