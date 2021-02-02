@@ -168,6 +168,38 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             List.text = list[0]
         }
     }
+    // 半角数字の判定
+    func isHalfWidthNumberString(_ numString: String?) -> Bool {
+            guard let numStr = numString else {
+                return false
+            }
+            if numStr.isEmpty {
+                return false
+            }
+            
+            let count = numStr.count
+            
+            // [0-9]を使ったパターン
+            let pattern = "[0-9]{\(count)}"
+            
+            return numStr.range(of: pattern, options: .regularExpression) != nil
+        }
+    // 入力された金額が半角数字かどうかの判定を行う処理
+    @IBAction func moneyCheck(_ sender: Any) {
+        let checkMoney:String! = money.text
+        if !isHalfWidthNumberString(checkMoney){
+            let alert = UIAlertController(title: "エラー",
+                                          message: "半角数字のみで入力してください。",
+                                          preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+            money.text = ""
+                }
+    }
+    
+   
+
     // 負担者選択時に行う処理
     @IBAction func repayerSelectNow(_ sender: Any) {
         // 負担者のTextFieldに入力されているものをString型に格納

@@ -479,9 +479,12 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYP-Kd-Vsc" userLabel="completeButton">
                                                 <rect key="frame" x="0.0" y="510" width="384" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rem-dm-NFS">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rem-dm-NFS">
                                                         <rect key="frame" x="72" y="8" width="240" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="240" id="gyz-EH-apd"/>
+                                                            <constraint firstAttribute="height" constant="44" id="rRb-3Z-GmS"/>
+                                                        </constraints>
                                                         <state key="normal" title="Button" image="homeButton"/>
                                                         <connections>
                                                             <action selector="InsertHome:" destination="D3s-HJ-c9G" eventType="touchUpInside" id="DBw-U0-wgz"/>
@@ -490,6 +493,8 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="rem-dm-NFS" firstAttribute="centerX" secondItem="WYP-Kd-Vsc" secondAttribute="centerX" id="6Lu-vg-0Mm"/>
+                                                    <constraint firstItem="rem-dm-NFS" firstAttribute="top" secondItem="WYP-Kd-Vsc" secondAttribute="topMargin" id="Pun-Ta-OMT"/>
                                                     <constraint firstAttribute="height" constant="50" id="nJ1-xs-aIn"/>
                                                 </constraints>
                                             </view>
@@ -502,9 +507,12 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgW-rS-Oqs" userLabel="moneyButton">
                                                 <rect key="frame" x="0.0" y="590" width="384" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhi-mA-scW">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhi-mA-scW">
                                                         <rect key="frame" x="73" y="0.0" width="240" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="V4J-0f-n1Q"/>
+                                                            <constraint firstAttribute="width" constant="240" id="cgE-3K-e0t"/>
+                                                        </constraints>
                                                         <state key="normal" title="Button" image="moneyInsertButton"/>
                                                         <connections>
                                                             <action selector="Insert:" destination="D3s-HJ-c9G" eventType="touchUpInside" id="Mvu-mH-mxy"/>
@@ -513,6 +521,8 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="Nhi-mA-scW" firstAttribute="leading" secondItem="zgW-rS-Oqs" secondAttribute="leading" constant="73" id="54C-Tc-U3i"/>
+                                                    <constraint firstItem="Nhi-mA-scW" firstAttribute="top" secondItem="zgW-rS-Oqs" secondAttribute="top" id="8EL-MH-kWb"/>
                                                     <constraint firstAttribute="height" constant="40" id="Lla-Kv-dPx"/>
                                                 </constraints>
                                             </view>
