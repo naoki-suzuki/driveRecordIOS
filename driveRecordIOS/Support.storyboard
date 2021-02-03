@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfJ-4Q-Mzl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfJ-4Q-Mzl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQ1-Yf-6e3">
-                                <rect key="frame" x="0.0" y="218" width="414" height="42"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="利用規約"/>
                                 <connections>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOo-Eo-L58">
-                                <rect key="frame" x="0.0" y="290" width="414" height="42"/>
+                                <rect key="frame" x="0.0" y="235" width="414" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="ライセンス"/>
                                 <connections>
@@ -53,29 +53,51 @@
                                     <action selector="license:" destination="e2v-uf-nnE" eventType="touchUpInside" id="eaZ-YT-J45"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1n-9t-WPY" userLabel="利用方法">
+                                <rect key="frame" x="0.0" y="302" width="414" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="利用方法"/>
+                                <connections>
+                                    <action selector="ActivityGuide:" destination="e2v-uf-nnE" eventType="touchUpInside" id="BBs-bT-Gec"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdT-VA-wKx">
+                                <rect key="frame" x="0.0" y="369" width="414" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="バージョン情報"/>
+                                <connections>
+                                    <segue destination="PP4-id-cVq" kind="show" id="y60-aX-gIz"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="homeCar" translatesAutoresizingMaskIntoConstraints="NO" id="X1N-Ov-VYe">
-                                <rect key="frame" x="0.0" y="362" width="414" height="534"/>
+                                <rect key="frame" x="0.0" y="431" width="414" height="465"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2TI-Wt-d0o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YdT-VA-wKx" firstAttribute="top" secondItem="n1n-9t-WPY" secondAttribute="bottom" constant="25" id="1fR-GB-LhA"/>
                             <constraint firstItem="2TI-Wt-d0o" firstAttribute="trailing" secondItem="aOo-Eo-L58" secondAttribute="trailing" id="5nF-iY-GCz"/>
                             <constraint firstItem="X1N-Ov-VYe" firstAttribute="leading" secondItem="2TI-Wt-d0o" secondAttribute="leading" id="IhZ-Yd-F66"/>
-                            <constraint firstItem="CQ1-Yf-6e3" firstAttribute="top" secondItem="2TI-Wt-d0o" secondAttribute="top" constant="130" id="REb-tq-vpO"/>
+                            <constraint firstItem="n1n-9t-WPY" firstAttribute="trailing" secondItem="2TI-Wt-d0o" secondAttribute="trailing" id="NnF-ey-wzP"/>
+                            <constraint firstItem="CQ1-Yf-6e3" firstAttribute="top" secondItem="2TI-Wt-d0o" secondAttribute="top" constant="80" id="REb-tq-vpO"/>
                             <constraint firstItem="aOo-Eo-L58" firstAttribute="leading" secondItem="2TI-Wt-d0o" secondAttribute="leading" id="T3F-VQ-qyG"/>
                             <constraint firstAttribute="bottom" secondItem="X1N-Ov-VYe" secondAttribute="bottom" id="eHy-nV-sla"/>
                             <constraint firstItem="2TI-Wt-d0o" firstAttribute="trailing" secondItem="CQ1-Yf-6e3" secondAttribute="trailing" id="mf3-iY-Wwe"/>
-                            <constraint firstItem="aOo-Eo-L58" firstAttribute="top" secondItem="CQ1-Yf-6e3" secondAttribute="bottom" constant="30" id="qwe-Nm-oDj"/>
+                            <constraint firstItem="n1n-9t-WPY" firstAttribute="leading" secondItem="2TI-Wt-d0o" secondAttribute="leading" id="nQ5-r4-59Y"/>
+                            <constraint firstItem="YdT-VA-wKx" firstAttribute="trailing" secondItem="2TI-Wt-d0o" secondAttribute="trailing" id="pyG-GP-rbt"/>
+                            <constraint firstItem="aOo-Eo-L58" firstAttribute="top" secondItem="CQ1-Yf-6e3" secondAttribute="bottom" constant="25" id="qwe-Nm-oDj"/>
                             <constraint firstItem="X1N-Ov-VYe" firstAttribute="trailing" secondItem="2TI-Wt-d0o" secondAttribute="trailing" id="s0K-hk-wRQ"/>
-                            <constraint firstItem="X1N-Ov-VYe" firstAttribute="top" secondItem="aOo-Eo-L58" secondAttribute="bottom" constant="30" id="vtL-9O-3sG"/>
+                            <constraint firstItem="YdT-VA-wKx" firstAttribute="leading" secondItem="2TI-Wt-d0o" secondAttribute="leading" id="vZ6-iD-EMo"/>
+                            <constraint firstItem="X1N-Ov-VYe" firstAttribute="top" secondItem="YdT-VA-wKx" secondAttribute="bottom" constant="20" id="vtL-9O-3sG"/>
                             <constraint firstItem="CQ1-Yf-6e3" firstAttribute="leading" secondItem="2TI-Wt-d0o" secondAttribute="leading" id="wCx-e0-YfA"/>
+                            <constraint firstItem="n1n-9t-WPY" firstAttribute="top" secondItem="aOo-Eo-L58" secondAttribute="bottom" constant="25" id="zo2-Vj-AgT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="サポート" id="pMI-yJ-4nO">
                         <barButtonItem key="leftBarButtonItem" image="delete.left.fill" catalog="system" style="plain" id="IED-Qs-Ne3">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FU7-0l-3ye" userLabel="back">
-                                <rect key="frame" x="20" y="11" width="22" height="22"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FU7-0l-3ye" userLabel="back">
+                                <rect key="frame" x="20" y="11" width="26.5" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,6 +118,16 @@
             </objects>
             <point key="canvasLocation" x="902.89855072463774" y="77.678571428571431"/>
         </scene>
+        <!--Version-->
+        <scene sceneID="24A-eP-zet">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Version" id="PP4-id-cVq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gjJ-kW-6VJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9e-rL-73W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1549" y="95"/>
+        </scene>
         <!--Convention-->
         <scene sceneID="EzF-ny-E25">
             <objects>
@@ -104,7 +136,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZzA-22-FTM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1549" y="78"/>
+            <point key="canvasLocation" x="1549" y="64"/>
         </scene>
     </scenes>
     <resources>
