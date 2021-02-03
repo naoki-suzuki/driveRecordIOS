@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RIc-gO-Udy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--バージョン情報-->
+        <scene sceneID="mUX-4l-Fsm">
+            <objects>
+                <viewController title="バージョン情報" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="RIc-gO-Udy" customClass="VersionViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="08d-rd-IfJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="バージョン情報" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNp-7R-j4V">
+                                <rect key="frame" x="70" y="100" width="170" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="homeCar" translatesAutoresizingMaskIntoConstraints="NO" id="crT-2x-LLc">
+                                <rect key="frame" x="0.0" y="420" width="414" height="476"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CPm-O2-4PZ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="crT-2x-LLc" firstAttribute="top" secondItem="08d-rd-IfJ" secondAttribute="top" constant="420" id="Fbn-oj-3PA"/>
+                            <constraint firstItem="crT-2x-LLc" firstAttribute="leading" secondItem="CPm-O2-4PZ" secondAttribute="leading" id="O7y-7y-jPb"/>
+                            <constraint firstItem="crT-2x-LLc" firstAttribute="trailing" secondItem="CPm-O2-4PZ" secondAttribute="trailing" id="pVl-4C-0Gp"/>
+                            <constraint firstAttribute="bottom" secondItem="crT-2x-LLc" secondAttribute="bottom" id="qae-ug-8PE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="バージョン情報" id="AMb-Mb-1Oe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvo-ve-fXt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="サポート" image="gearshape.fill" catalog="system" id="rMb-4K-aqQ"/>
+            </objects>
+            <point key="canvasLocation" x="1715.9420289855075" y="-451.33928571428567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="homeCar" width="1500" height="1316"/>
+    </resources>
+</document>
