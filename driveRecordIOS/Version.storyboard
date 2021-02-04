@@ -16,11 +16,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="バージョン情報" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNp-7R-j4V">
-                                <rect key="frame" x="70" y="100" width="170" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNp-7R-j4V">
+                                <rect key="frame" x="20" y="104" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="NBX-1d-vc3"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="ドラログ">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="バージョン">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">1.0
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="©︎">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="LucidaGrande"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="2021  CIMTECH Inc.">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="homeCar" translatesAutoresizingMaskIntoConstraints="NO" id="crT-2x-LLc">
@@ -30,8 +85,11 @@
                         <viewLayoutGuide key="safeArea" id="CPm-O2-4PZ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="mNp-7R-j4V" firstAttribute="leading" secondItem="CPm-O2-4PZ" secondAttribute="leading" constant="20" id="50T-aS-2RR"/>
                             <constraint firstItem="crT-2x-LLc" firstAttribute="top" secondItem="08d-rd-IfJ" secondAttribute="top" constant="420" id="Fbn-oj-3PA"/>
+                            <constraint firstItem="CPm-O2-4PZ" firstAttribute="trailing" secondItem="mNp-7R-j4V" secondAttribute="trailing" constant="20" id="MGz-Nx-fb3"/>
                             <constraint firstItem="crT-2x-LLc" firstAttribute="leading" secondItem="CPm-O2-4PZ" secondAttribute="leading" id="O7y-7y-jPb"/>
+                            <constraint firstItem="mNp-7R-j4V" firstAttribute="top" secondItem="CPm-O2-4PZ" secondAttribute="top" constant="60" id="dey-FX-LS0"/>
                             <constraint firstItem="crT-2x-LLc" firstAttribute="trailing" secondItem="CPm-O2-4PZ" secondAttribute="trailing" id="pVl-4C-0Gp"/>
                             <constraint firstAttribute="bottom" secondItem="crT-2x-LLc" secondAttribute="bottom" id="qae-ug-8PE"/>
                         </constraints>
