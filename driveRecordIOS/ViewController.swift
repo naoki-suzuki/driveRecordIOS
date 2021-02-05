@@ -31,7 +31,6 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
         // Table Viewの背面を透過させる処理
         let tblBackColor: UIColor = UIColor.clear
             tableView.backgroundColor = tblBackColor
-
         
         // ボタンレイアウト
         mapBtn.imageView?.contentMode = .scaleAspectFit
@@ -55,6 +54,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
             folderList.append(it.title)
             date.append(it.date)
         }
+        tableView.reloadData()
     }
     
     // テーブルの行数を指定するメソッド
@@ -178,6 +178,7 @@ class ViewController:UIViewController, UITableViewDelegate, UITableViewDataSourc
             folderList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
         }
+        tableView.reloadData()
     }
     
 }
