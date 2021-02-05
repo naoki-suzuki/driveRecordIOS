@@ -1,3 +1,5 @@
+
+
 //
 //  moneyInsertViewController.swift
 //  driveRecord
@@ -63,7 +65,9 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     private var member4: String?
     private var member5: String?
     private var member6: String?
-        
+    private var sumCost: Int64 = 0     //合計金額
+    private var cost: [Int64] = []        //費用
+    
     // 負担者を格納する変数
     private var repayerList:[String?] = []
     // ID番号を管理する変数
@@ -86,12 +90,15 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         let helper = DatabaseHelper()
         // 前画面で作成したfolderinfoの一列情報を格納するための変数
         var entity: Folderinfo?
+        
+        // 前画面で作成したfolderinfoの一列情報を格納するための変数
+        var entity2: [Paragraphinfo?] = []
         // 前画面のfolderid情報を基に検索を行う
-        let result2 = helper.inDatabase { (db) in
+        let result1 = helper.inDatabase { (db) in
             // 全画面で登録したフォルダ情報を取得
             entity = try Folderinfo.filter(Folderinfo.Columns.folderid == receiveId).fetchOne(db)
         }
-        if(!result2) {
+        if(!result1) {
             print("sippai")
         } else {
             // 負担者のViewPickerを作成するため、検索結果から取り出す
@@ -121,6 +128,31 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             if !(member5!.isEmpty) {
                 repayerList.append(member6)
             }
+        }
+        
+        // 前画面のfolderid情報を基にParagraphinfoに検索を行う
+        let result2 = helper.inDatabase { (db) in
+            // 全画面で登録したフォルダ情報を取得
+            entity2 = try Paragraphinfo.filter(Paragraphinfo.Columns.folderid == receiveId).fetchAll(db)
+            
+        }
+        
+        if(!result2) {
+            print("sippai")
+        } else {
+            // 検索結果から取り出し各変数に代入
+            
+            for it in entity2 {
+                //paragraphId.append(it!.para_num)
+                //use.append(it!.para_name)
+                // cost.append(it?.para_cost)
+                cost.append((it?.para_cost)!)
+                //buyer.append(it!.repayer)
+                
+            }
+            //　合計金額と一人当たりの金額を算出
+            sumCost = cost.reduce(0) { $0 + $1}
+            
         }
         // pickerViewを識別するための数字
         pickerView.tag = 1
@@ -170,23 +202,24 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     }
     // 半角数字の判定
     func isHalfWidthNumberString(_ numString: String?) -> Bool {
-            guard let numStr = numString else {
-                return false
-            }
-            if numStr.isEmpty {
-                return false
-            }
-            
-            let count = numStr.count
-            
-            // [0-9]を使ったパターン
-            let pattern = "[0-9]{\(count)}"
-            
-            return numStr.range(of: pattern, options: .regularExpression) != nil
+        guard let numStr = numString else {
+            return false
         }
+        if numStr.isEmpty {
+            return false
+        }
+        
+        let count = numStr.count
+        
+        // [0-9]を使ったパターン
+        let pattern = "[0-9]{\(count)}"
+        
+        return numStr.range(of: pattern, options: .regularExpression) != nil
+    }
     // 入力された金額が半角数字かどうかの判定を行う処理
     @IBAction func moneyCheck(_ sender: Any) {
         let checkMoney:String! = money.text
+        let intMoney:Int64 = Int64(checkMoney)!
         if !isHalfWidthNumberString(checkMoney){
             let alert = UIAlertController(title: "エラー",
                                           message: "半角数字のみで入力してください。",
@@ -195,11 +228,37 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             present(alert, animated: true, completion: nil)
             
             money.text = ""
-                }
+        }
+        
+        // 100万以下の数字が入力されているかチェック
+        if checkMoney.count >= 7 {
+            let alert = UIAlertController(title: "エラー",
+                                          message: "上限100万円を超えています。再入力してください。",
+                                          preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+            money.text = ""
+        }
+        
+        // 既に登録されている金額との合計が100万円超えているかチェック
+        
+        
+        if (intMoney + sumCost) >= 1000000 {
+            let alert = UIAlertController(title: "エラー",
+                                          message: "上限100万円を超えています。再入力してください。",
+                                          preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+            money.text = ""
+        }
+        
+        
     }
     
-   
-
+    
+    
     // 負担者選択時に行う処理
     @IBAction func repayerSelectNow(_ sender: Any) {
         // 負担者のTextFieldに入力されているものをString型に格納
@@ -295,7 +354,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             self.present(cameraPicker, animated: true, completion: nil)
             
         }
-       
+        
     }
     
     //　撮影が完了時した時に呼ばれる
@@ -346,135 +405,135 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             present(alert, animated: true, completion: nil)
             return false
-        // 金額チェック
+            // 金額チェック
         } else if inputMoney.isEmpty {
             let alert = UIAlertController(title: "エラー", message: "金額を入力してください" ,preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             present(alert, animated: true, completion: nil)
             return false
-        // 負担者チェック
+            // 負担者チェック
         } else if chooseRepayer.isEmpty {
             let alert = UIAlertController(title: "エラー", message: "負担者を選択してください" ,preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             present(alert, animated: true, completion: nil)
             return false
-        // アラート表示し、詳細かホームを選択時に登録処理を行う
+            // アラート表示し、詳細かホームを選択時に登録処理を行う
         } else {
             
-                let alert: UIAlertController = UIAlertController( title: "", message: "どちらに移動しますか？", preferredStyle:  UIAlertController.Style.alert)
-                
-                // Actionの設定
-                // Action初期化時にタイトル, スタイル, 押された時に実行されるハンドラを指定する
-                // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
-                // 詳細ボタン
-                let detailAction: UIAlertAction = UIAlertAction(title: "詳細", style: UIAlertAction.Style.default, handler:{
-                    // ボタンが押された時の処理を書く（クロージャ実装）
-                    (action: UIAlertAction!) -> Void in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
-                        // self.performSegue(withIdentifier: "detail", sender: nil)
-                        let helper2 = DatabaseHelper()
-                        let result2 = helper2.inDatabase{(db) in
-                            //receivedIdは送信されたフォルダ番号
-                            let folder = Paragraphinfo(folderid: self.receiveId, para_name: selectList, para_cost: intMoney, repayer: chooseRepayer)
-                            //登録処理
-                            try folder.insert(db)
-                        }
-                        if (!result2) {
-                            print("失敗")
-                        } else {
-                            print("成功")
-                            //登録済みか確認用コード
-                            var result3 :[Paragraphinfo] = []
-                            let helper4 = DatabaseHelper()
-                            
-                            let str = helper4.inDatabase { (db) in
-                                result3 = try Paragraphinfo.fetchAll(db)
-                            }
-                            // 出力
-                            result3.forEach { (it) in
-                                print("\(String(describing: it.folderid)) - \(String(describing: it.para_name)) - \(String(describing: it.para_cost)) - \(String(describing: it.para_num))")
-                            }
-                            if (!str) {
-                                print("失敗")
-                            }
-                            
-                        }
-                        print(result2)
-                        // storyboardのインスタンス取得
-                        let storyboard1: UIStoryboard = self.storyboard!
-                        
-                        // 遷移先FolderDetailViewControllerのインスタンス取得
-                        let nextView1 = storyboard1.instantiateViewController(withIdentifier: "showDetailSegue")
-                        //　コードでフルスクリーン表示を指定
-                        nextView1.modalPresentationStyle = .fullScreen
-                        // Segueの実行
-                        performSegue(withIdentifier:"showDetailSegue" , sender: nil)
-                        // 画面遷移
-                        self.present(nextView1, animated: true, completion: nil)
+            let alert: UIAlertController = UIAlertController( title: "", message: "どちらに移動しますか？", preferredStyle:  UIAlertController.Style.alert)
+            
+            // Actionの設定
+            // Action初期化時にタイトル, スタイル, 押された時に実行されるハンドラを指定する
+            // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
+            // 詳細ボタン
+            let detailAction: UIAlertAction = UIAlertAction(title: "詳細", style: UIAlertAction.Style.default, handler:{
+                // ボタンが押された時の処理を書く（クロージャ実装）
+                (action: UIAlertAction!) -> Void in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+                    // self.performSegue(withIdentifier: "detail", sender: nil)
+                    let helper2 = DatabaseHelper()
+                    let result2 = helper2.inDatabase{(db) in
+                        //receivedIdは送信されたフォルダ番号
+                        let folder = Paragraphinfo(folderid: self.receiveId, para_name: selectList, para_cost: intMoney, repayer: chooseRepayer)
+                        //登録処理
+                        try folder.insert(db)
                     }
-                    print("詳細")
-                }
-                
-                )
-                // ホームボタン
-                let homeAction: UIAlertAction = UIAlertAction(title: "ホーム", style: UIAlertAction.Style.default, handler:{
-                    // ボタンが押された時の処理を書く（クロージャ実装）
-                    (action: UIAlertAction!) -> Void in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        let helper2 = DatabaseHelper()
-                        let result = helper2.inDatabase{(db) in
-                            //receivedIdは送信されたフォルダ番号
-                            let folder = Paragraphinfo(folderid: self.receiveId, para_name: selectList, para_cost: intMoney, repayer: chooseRepayer)
-                            //登録処理
-                            try folder.insert(db)
-                        }
-                        if (!result) {
-                            print("失敗")
-                        } else {
-                            print("成功")
-                            //登録済みか確認用コード
-                            var result3 :[Paragraphinfo] = []
-                            let helper4 = DatabaseHelper()
-                            
-                            let str = helper4.inDatabase { (db) in
-                                result3 = try Paragraphinfo.fetchAll(db)
-                            }
-                            // 出力
-                            result3.forEach { (it) in
-                                print("\(String(describing: it.folderid)) - \(String(describing: it.para_name)) - \(String(describing: it.para_cost)) - \(String(describing: it.para_num))")
-                            }
-                            if (!str) {
-                                print("失敗")
-                            }
-                            
-                        }
-                        // storyboardのインスタンス取得
-                        let storyboard2: UIStoryboard = self.storyboard!
+                    if (!result2) {
+                        print("失敗")
+                    } else {
+                        print("成功")
+                        //登録済みか確認用コード
+                        var result3 :[Paragraphinfo] = []
+                        let helper4 = DatabaseHelper()
                         
-                        // 遷移先ViewControllerのインスタンス取得
-                        let nextView2 = storyboard2.instantiateViewController(withIdentifier: "home")
-                        //コードでフルスクリーン表示を指定
-                        nextView2.modalPresentationStyle = .fullScreen
-                        // 画面遷移
-                        self.present(nextView2, animated: true, completion: nil)
+                        let str = helper4.inDatabase { (db) in
+                            result3 = try Paragraphinfo.fetchAll(db)
+                        }
+                        // 出力
+                        result3.forEach { (it) in
+                            print("\(String(describing: it.folderid)) - \(String(describing: it.para_name)) - \(String(describing: it.para_cost)) - \(String(describing: it.para_num))")
+                        }
+                        if (!str) {
+                            print("失敗")
+                        }
+                        
                     }
-                    print("ホーム")
+                    print(result2)
+                    // storyboardのインスタンス取得
+                    let storyboard1: UIStoryboard = self.storyboard!
+                    
+                    // 遷移先FolderDetailViewControllerのインスタンス取得
+                    let nextView1 = storyboard1.instantiateViewController(withIdentifier: "showDetailSegue")
+                    //　コードでフルスクリーン表示を指定
+                    nextView1.modalPresentationStyle = .fullScreen
+                    // Segueの実行
+                    performSegue(withIdentifier:"showDetailSegue" , sender: nil)
+                    // 画面遷移
+                    self.present(nextView1, animated: true, completion: nil)
                 }
-                )
-                // キャンセルボタン
-                let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
-                
-                
-                // ③ UIAlertControllerにActionを追加
-                alert.addAction(homeAction)
-                alert.addAction(detailAction)
-                alert.addAction(cancelAction)
-                // ④ Alertを表示
-                present(alert, animated: true, completion: nil)
-                
+                print("詳細")
             }
-                return true
-            }        
+            
+            )
+            // ホームボタン
+            let homeAction: UIAlertAction = UIAlertAction(title: "ホーム", style: UIAlertAction.Style.default, handler:{
+                // ボタンが押された時の処理を書く（クロージャ実装）
+                (action: UIAlertAction!) -> Void in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    let helper2 = DatabaseHelper()
+                    let result = helper2.inDatabase{(db) in
+                        //receivedIdは送信されたフォルダ番号
+                        let folder = Paragraphinfo(folderid: self.receiveId, para_name: selectList, para_cost: intMoney, repayer: chooseRepayer)
+                        //登録処理
+                        try folder.insert(db)
+                    }
+                    if (!result) {
+                        print("失敗")
+                    } else {
+                        print("成功")
+                        //登録済みか確認用コード
+                        var result3 :[Paragraphinfo] = []
+                        let helper4 = DatabaseHelper()
+                        
+                        let str = helper4.inDatabase { (db) in
+                            result3 = try Paragraphinfo.fetchAll(db)
+                        }
+                        // 出力
+                        result3.forEach { (it) in
+                            print("\(String(describing: it.folderid)) - \(String(describing: it.para_name)) - \(String(describing: it.para_cost)) - \(String(describing: it.para_num))")
+                        }
+                        if (!str) {
+                            print("失敗")
+                        }
+                        
+                    }
+                    // storyboardのインスタンス取得
+                    let storyboard2: UIStoryboard = self.storyboard!
+                    
+                    // 遷移先ViewControllerのインスタンス取得
+                    let nextView2 = storyboard2.instantiateViewController(withIdentifier: "home")
+                    //コードでフルスクリーン表示を指定
+                    nextView2.modalPresentationStyle = .fullScreen
+                    // 画面遷移
+                    self.present(nextView2, animated: true, completion: nil)
+                }
+                print("ホーム")
+            }
+            )
+            // キャンセルボタン
+            let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
+            
+            
+            // ③ UIAlertControllerにActionを追加
+            alert.addAction(homeAction)
+            alert.addAction(detailAction)
+            alert.addAction(cancelAction)
+            // ④ Alertを表示
+            present(alert, animated: true, completion: nil)
+            
+        }
+        return true
     }
-    
+}
+
 
