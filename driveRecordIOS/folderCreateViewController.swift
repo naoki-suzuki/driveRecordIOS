@@ -12,7 +12,7 @@ import GRDB
 class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     
     //日付のTextField
-    @IBOutlet private weak var dateTravel: UITextField!
+    @IBOutlet weak var dateTravel: UITextField!
     //タイトル名のTextField
     @IBOutlet private weak var travelTitle: UITextField!
     //メンバー名のTextField
@@ -34,6 +34,8 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     private var sendId:Int64? = 0
     // 遷移先のStoryboardIdを格納する変数
     private let segName = "moneyView"
+    
+    var datePicker: UIDatePicker = UIDatePicker()
     
     // 人数をカウントするメソッド
     func memberCount(member1:UITextField,member2:UITextField,member3:UITextField,member4:UITextField,member5:UITextField,member6:UITextField ) {
@@ -137,7 +139,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     // タップ時の日時を取得する処理
     @IBAction func dateTravelNow(_ sender: Any) {
         let dateSelect: String = dateTravel.text!
-        // 未入力時に起動
+        
         if dateSelect.isEmpty {
             // タップ時の年月日を取得し最初に表示する
             let dt = Date()
@@ -149,10 +151,37 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             dateTravel.text = date
         }
         
+        
+        
     }
     
-        override func viewDidLoad() {
+    // 決定ボタン押下
+    @objc func done() {
+        dateTravel.endEditing(true)
+        
+        // 日付のフォーマット
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        dateTravel.text = "\(formatter.string(from: datePicker.date))"
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
+        // ピッカー設定
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.locale = Locale.current
+        dateTravel.inputView = datePicker
+        
+        // 決定バーの生成
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+        
+        // インプットビュー設定
+        //dateTravel.inputView = datePicker
+        dateTravel.inputAccessoryView = toolbar
+        
         // Tabバーの色の指定
         UINavigationBar.appearance().barTintColor = UIColor.systemTeal
         // Tabバーの文字の色の指定
@@ -165,30 +194,22 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         }
-        dateTravel.inputView = datePicker
+        //dateTravel.inputView = datePicker
         
-        /* 現在時刻を取得する(保留)
-        let dt = Date()
-        let format = DateFormatter()
-        // 日付の書式と日本時間に設定する
-        format.dateFormat = DateFormatter.dateFormat(fromTemplate:"YYYY/MM/dd" , options: 0, locale: Locale(identifier: "ja_JP" ))
-        let date = format.string(from: dt)
-        // 現在の日時フォルダ作成画面遷移時に表示する。
-        dateTravel.text = date*/
         // ツールバー生成 サイズはsizeToFitメソッドで自動で調整される。
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-
+        //let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
         //サイズの自動調整。敢えて手動で実装したい場合はCGRectに記述してsizeToFitは呼び出さない。
-        toolBar.sizeToFit()
-
+        //toolBar.sizeToFit()
+        
         // 左側のBarButtonItemはflexibleSpace。これがないと右に寄らない。
-        let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
+        //let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
         // Doneボタン
-        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(commitButtonTapped))
+        //let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(commitButtonTapped))
         // BarButtonItemの配置
-        toolBar.items = [spacer, commitButton]
+        //toolBar.items = [spacer, commitButton]
         // textViewのキーボードにツールバーを設定
-        dateTravel.inputAccessoryView = toolBar
+        //dateTravel.inputAccessoryView = toolBar
         travelTitle.returnKeyType = UIReturnKeyType.done
         member1.returnKeyType = UIReturnKeyType.done
         member2.returnKeyType = UIReturnKeyType.done
@@ -219,30 +240,10 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // datePickerの作成
-    let datePicker: UIDatePicker = {
-        
-        let dp = UIDatePicker()
-        dp.datePickerMode = UIDatePicker.Mode.date
-        dp.timeZone = NSTimeZone.local
-        dp.locale = Locale.current
-        dp.addTarget(self, action: #selector(dateChange), for: .valueChanged)
-        return dp
-    }()
-    
-    // 日付の表示方法の変換
-    @objc func dateChange(){
-        
-        let formatter = DateFormatter()
-        // 年月日を表示する様に設定
-        formatter.dateFormat = "YYYY/MM/dd"
-        dateTravel.text = "\(formatter.string(from: datePicker.date))"
-    }
-    
     // 戻るボタン押下時の処理
     @IBAction func returnHome(_ sender: Any) {
         let alert: UIAlertController = UIAlertController( title: "", message: "登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
-       
+        
         // OKボタン(ホームに遷移)
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
             // ボタンが押された時の処理を書く（クロージャ実装）
@@ -250,17 +251,17 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.performSegue(withIdentifier: "home", sender: nil)
                 // storyboardのインスタンス取得
-                 let storyboard3: UIStoryboard = self.storyboard!
-                 
-                 // 遷移先ViewControllerのインスタンス取得
-                 let nextView3 = storyboard3.instantiateViewController(withIdentifier: "home")
+                let storyboard3: UIStoryboard = self.storyboard!
+                
+                // 遷移先ViewControllerのインスタンス取得
+                let nextView3 = storyboard3.instantiateViewController(withIdentifier: "home")
                 //コードでフルスクリーン表示を指定
-                 nextView3.modalPresentationStyle = .fullScreen
-                 
-                 // 画面遷移
-                 self.present(nextView3, animated: true, completion: nil)
-                 }
+                nextView3.modalPresentationStyle = .fullScreen
+                
+                // 画面遷移
+                self.present(nextView3, animated: true, completion: nil)
             }
+        }
         
         )
         // キャンセルボタン
@@ -271,7 +272,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         alert.addAction(okAction)
         // ④ Alertを表示
         present(alert, animated: true, completion: nil)
-    
+        
     }
     
     //　金額入力ボタン押下後
@@ -282,11 +283,11 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         //メソッド呼び出し
         let result = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
         if result {
-           print("成功")
+            print("成功")
         } else {
-         print("エラー取得")
+            print("エラー取得")
         }
-       
+        
     }
     //　Segue実行前の処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -308,9 +309,9 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         //メソッド呼び出し
         let result = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
         if result {
-           print("成功")
+            print("成功")
         } else {
-         print("エラー取得")
+            print("エラー取得")
         }
     }
     
@@ -336,7 +337,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             return false
-        // タイトル名未入力チェック
+            // タイトル名未入力チェック
         } else if travelName.isEmpty {
             let alert = UIAlertController(title: "エラー",
                                           message: "タイトルを入力してください",
