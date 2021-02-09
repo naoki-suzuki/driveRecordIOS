@@ -233,7 +233,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         // 100万以下の数字が入力されているかチェック
         if checkMoney.count >= 7 {
             let alert = UIAlertController(title: "エラー",
-                                          message: "上限100万円を超えています。再入力してください。",
+                                          message: "合計額が100万円を超えています。再入力してください。",
                                           preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
@@ -246,7 +246,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
         
         if (intMoney + sumCost) >= 1000000 {
             let alert = UIAlertController(title: "エラー",
-                                          message: "上限100万円を超えています。再入力してください。",
+                                          message: "合計額が100万円を超えています。再入力してください。",
                                           preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
