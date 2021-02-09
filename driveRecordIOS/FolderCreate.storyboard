@@ -508,10 +508,10 @@
                                                 <rect key="frame" x="0.0" y="590" width="384" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhi-mA-scW">
-                                                        <rect key="frame" x="73" y="0.0" width="240" height="44"/>
+                                                        <rect key="frame" x="72" y="0.0" width="240" height="44"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="V4J-0f-n1Q"/>
-                                                            <constraint firstAttribute="width" constant="240" id="cgE-3K-e0t"/>
+                                                            <constraint firstAttribute="width" constant="240" id="Zc2-Xh-qBL"/>
+                                                            <constraint firstAttribute="height" constant="44" id="qae-vb-zgF"/>
                                                         </constraints>
                                                         <state key="normal" title="Button" image="moneyInsertButton"/>
                                                         <connections>
@@ -521,9 +521,9 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="Nhi-mA-scW" firstAttribute="leading" secondItem="zgW-rS-Oqs" secondAttribute="leading" constant="73" id="54C-Tc-U3i"/>
-                                                    <constraint firstItem="Nhi-mA-scW" firstAttribute="top" secondItem="zgW-rS-Oqs" secondAttribute="top" id="8EL-MH-kWb"/>
+                                                    <constraint firstItem="Nhi-mA-scW" firstAttribute="top" secondItem="zgW-rS-Oqs" secondAttribute="top" id="1k5-o9-bWr"/>
                                                     <constraint firstAttribute="height" constant="40" id="Lla-Kv-dPx"/>
+                                                    <constraint firstItem="Nhi-mA-scW" firstAttribute="centerX" secondItem="zgW-rS-Oqs" secondAttribute="centerX" id="sPd-AF-lfK"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tth-hk-8DZ" userLabel="space">
@@ -588,7 +588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9g-ie-zje" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="171"/>
+            <point key="canvasLocation" x="1089.8550724637682" y="170.75892857142856"/>
         </scene>
     </scenes>
     <resources>
