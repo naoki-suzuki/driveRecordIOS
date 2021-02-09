@@ -219,42 +219,47 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     // 入力された金額が半角数字かどうかの判定を行う処理
     @IBAction func moneyCheck(_ sender: Any) {
         let checkMoney:String! = money.text
-        let intMoney:Int64 = Int64(checkMoney)!
-        if !isHalfWidthNumberString(checkMoney){
-            let alert = UIAlertController(title: "エラー",
-                                          message: "半角数字のみで入力してください。",
-                                          preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+        
+        // 金額のテキストに入力があった場合、エラーチェックの処理に入る
+        if checkMoney != "" {
             
-            money.text = ""
-        }
-        
-        // 100万以下の数字が入力されているかチェック
-        if checkMoney.count >= 7 {
-            let alert = UIAlertController(title: "エラー",
-                                          message: "上限100万円を超えています。再入力してください。",
-                                          preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+            let intMoney:Int64 = Int64(checkMoney)!
             
-            money.text = ""
-        }
-        
-        // 既に登録されている金額との合計が100万円超えているかチェック
-        
-        
-        if (intMoney + sumCost) >= 1000000 {
-            let alert = UIAlertController(title: "エラー",
-                                          message: "上限100万円を超えています。再入力してください。",
-                                          preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
             
-            money.text = ""
+            if !isHalfWidthNumberString(checkMoney){
+                let alert = UIAlertController(title: "エラー",
+                                              message: "半角数字のみで入力してください。",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                
+                money.text = ""
+            }
+            
+            // 100万以下の数字が入力されているかチェック
+            if checkMoney.count >= 7 {
+                let alert = UIAlertController(title: "エラー",
+                                              message: "合計額が100万円を超えています。再入力してください。",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                
+                money.text = ""
+            }
+            
+            // 既に登録されている金額との合計が100万円超えているかチェック
+            
+            
+            if (intMoney + sumCost) >= 1000000 {
+                let alert = UIAlertController(title: "エラー",
+                                              message: "合計額が100万円を超えています。再入力してください。",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                
+                money.text = ""
+            }
         }
-        
-        
     }
     
     
