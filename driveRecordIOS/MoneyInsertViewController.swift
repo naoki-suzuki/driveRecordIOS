@@ -290,7 +290,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     // 戻るボタン押下時の処理
     @IBAction func returnHome(_ sender: Any) {
         // アラート表示内容
-        let alert: UIAlertController = UIAlertController( title: "", message: "登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
+        let alert: UIAlertController = UIAlertController( title: "", message: "金額を登録せずにホーム画面に戻りますか？", preferredStyle:  UIAlertController.Style.alert)
         
         // OKボタン(ホームに遷移)
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
