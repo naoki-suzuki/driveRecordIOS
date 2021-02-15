@@ -3,7 +3,7 @@
 //  driveRecord
 //
 //  Created by 大越悠司 on 2020/10/12.
-//  Update by 大越悠司　on 2020/11/4
+//  Update by 長阪智哉　on 2021/2/15
 //
 
 import UIKit
@@ -280,12 +280,13 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         
         //どちらのボタンからの処理かを識別するための数字
         let num = 1
-        //メソッド呼び出し
-        let result = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
+        // checkmemberメソッド呼び出し
+        let result = checkmember(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
+        
+        // チェックでエラーがなければinsertメソッドを呼び出す
         if result {
-            print("成功")
-        } else {
-            print("エラー取得")
+            //メソッド呼び出し
+            _ = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
         }
         
     }
@@ -306,13 +307,97 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     @IBAction func InsertHome(_ sender: UIButton) {
         //どちらのボタンからの処理かを識別するための数字
         let num = 0
-        //メソッド呼び出し
-        let result = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
+        // checkmemberメソッド呼び出し
+        let result = checkmember(member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6)
+        // チェックでエラーがなければinsertメソッドを呼び出す
         if result {
-            print("成功")
-        } else {
-            print("エラー取得")
+            //メソッド呼び出し
+            _ = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
         }
+    }
+    
+    // メンバーが2〜5人の際のテキストフィールドの上から入力されているかチェックするメソッド
+    func checkmember(member1:UITextField!,member2:UITextField!,member3:UITextField!,member4:UITextField!,member5:UITextField!,member6:UITextField!) -> Bool  {
+        
+        // それぞれのテキストフィールド情報を変数に格納
+        let checkMember1: String! = member1.text!
+        let checkMember2: String! = member2.text!
+        let checkMember3: String! = member3.text!
+        let checkMember4: String! = member4.text!
+        let checkMember5: String! = member5.text!
+        let checkMember6: String! = member6.text!
+        var countMember: Int = 0     // 判定の結果を管理する変数
+        
+        //人数のカウントを行う
+        if checkMember1 != "" {
+            countMember += 1
+        }
+        if checkMember2 != "" {
+            countMember += 1
+        }
+        if checkMember3 != "" {
+            countMember += 1
+        }
+        if checkMember4 != "" {
+            countMember += 1
+        }
+        if checkMember5 != "" {
+            countMember += 1
+        }
+        if checkMember6 != "" {
+            countMember += 1
+        }
+        
+        // countの数字によって空欄の確認を行う
+        if countMember == 2 {
+            if checkMember2.isEmpty {
+                let alert = UIAlertController(title: "エラー",
+                                              message: "上から順にメンバー名を入力してください",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return false
+            } else {
+                return true
+            }
+        } else if countMember == 3 {
+            if checkMember2.isEmpty || checkMember3.isEmpty {
+                let alert = UIAlertController(title: "エラー",
+                                              message: "上から順にメンバー名を入力してください",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return false
+                
+            } else {
+                return true
+            }
+        } else if countMember == 4 {
+            if !checkMember5.isEmpty && !checkMember6.isEmpty {
+                let alert = UIAlertController(title: "エラー",
+                                              message: "上から順にメンバー名を入力してください",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return false
+            } else {
+                return true
+            }
+        } else if countMember == 5 {
+            if !checkMember6.isEmpty {
+                let alert = UIAlertController(title: "エラー",
+                                              message: "上から順にメンバー名を入力してください",
+                                              preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return false
+            } else {
+                return true
+            }
+        } else {
+            return true
+        }
+        
     }
     
     // TextFieldの値を受け取り、入力チェック及び、フォルダ作成処理を行うメソッド
