@@ -373,7 +373,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
                 return true
             }
         } else if countMember == 4 {
-            if !checkMember5.isEmpty && !checkMember6.isEmpty {
+            if !checkMember5.isEmpty || !checkMember6.isEmpty {
                 let alert = UIAlertController(title: "エラー",
                                               message: "上から順にメンバー名を入力してください",
                                               preferredStyle: UIAlertController.Style.alert)
