@@ -36,7 +36,7 @@ class SupportViewController : UIViewController {
     @IBAction func ActivityGuide(_ sender: Any) {
         
         // 外部ブラウザでURLを開く
-        let webPage = NSURL(string: "https://www.cimtech.co.jp/privacy/")
+        let webPage = NSURL(string: "http://www.cimtech.co.jp/apl/dlog/guide.pdf")
         
         let alert: UIAlertController = UIAlertController( title: "", message: "外部サイトへリンクしますか？", preferredStyle:  UIAlertController.Style.alert)
         
