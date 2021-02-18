@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfJ-4Q-Mzl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wfJ-4Q-Mzl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="77.678571428571431"/>
         </scene>
-        <!--サポート-->
+        <!--お客様サポート-->
         <scene sceneID="qcE-nA-EkF">
             <objects>
                 <viewController id="e2v-uf-nnE" customClass="SupportViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,9 +94,9 @@
                             <constraint firstItem="n1n-9t-WPY" firstAttribute="top" secondItem="aOo-Eo-L58" secondAttribute="bottom" constant="25" id="zo2-Vj-AgT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="サポート" id="pMI-yJ-4nO">
+                    <navigationItem key="navigationItem" title="お客様サポート" id="pMI-yJ-4nO">
                         <barButtonItem key="leftBarButtonItem" image="delete.left.fill" catalog="system" style="plain" id="IED-Qs-Ne3">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FU7-0l-3ye" userLabel="back">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FU7-0l-3ye" userLabel="back">
                                 <rect key="frame" x="20" y="11" width="26.5" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
