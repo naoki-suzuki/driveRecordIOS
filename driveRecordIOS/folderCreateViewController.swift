@@ -352,7 +352,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         if countMember == 2 {
             if checkMember2.isEmpty {
                 let alert = UIAlertController(title: "エラー",
-                                              message: "上から順にメンバー名を入力してください",
+                                              message: "上からメンバー名を入力してください",
                                               preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
@@ -363,7 +363,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         } else if countMember == 3 {
             if checkMember2.isEmpty || checkMember3.isEmpty {
                 let alert = UIAlertController(title: "エラー",
-                                              message: "上から順にメンバー名を入力してください",
+                                              message: "上からメンバー名を入力してください",
                                               preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
@@ -375,7 +375,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         } else if countMember == 4 {
             if !checkMember5.isEmpty || !checkMember6.isEmpty {
                 let alert = UIAlertController(title: "エラー",
-                                              message: "上から順にメンバー名を入力してください",
+                                              message: "上からメンバー名を入力してください",
                                               preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
@@ -386,7 +386,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         } else if countMember == 5 {
             if !checkMember6.isEmpty {
                 let alert = UIAlertController(title: "エラー",
-                                              message: "上から順にメンバー名を入力してください",
+                                              message: "上からメンバー名を入力してください",
                                               preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)

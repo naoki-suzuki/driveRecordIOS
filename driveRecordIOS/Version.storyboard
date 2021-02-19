@@ -50,7 +50,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">1.0
+                                        <string key="content">1.0.0
 </string>
                                         <attributes>
                                             <font key="NSFont" size="20" name="HelveticaNeue"/>
