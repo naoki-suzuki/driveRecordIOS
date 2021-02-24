@@ -219,13 +219,9 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
     // 入力された金額が半角数字かどうかの判定を行う処理
     @IBAction func moneyCheck(_ sender: Any) {
         let checkMoney:String! = money.text
-        
+        var intMoney:Int64! = 0
         // 金額のテキストに入力があった場合、エラーチェックの処理に入る
         if checkMoney != "" {
-            
-            let intMoney:Int64 = Int64(checkMoney)!
-            
-            
             if !isHalfWidthNumberString(checkMoney){
                 let alert = UIAlertController(title: "エラー",
                                               message: "半角数字のみで入力してください。",
@@ -234,8 +230,12 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                 present(alert, animated: true, completion: nil)
                 
                 money.text = ""
+            } else {
+                intMoney = Int64(checkMoney)!
             }
-            
+        }
+        
+        if intMoney != 0 {
             // 100万以下の数字が入力されているかチェック
             if checkMoney.count >= 7 {
                 let alert = UIAlertController(title: "エラー",
@@ -246,6 +246,7 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
                 
                 money.text = ""
             }
+        
             
             // 既に登録されている金額との合計が100万円超えているかチェック
             
