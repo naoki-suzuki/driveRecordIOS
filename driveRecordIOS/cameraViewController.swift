@@ -4,7 +4,7 @@
 //
 //  Created by 大越悠司 on 2020/10/26.
 //
-
+/*
 import Foundation
 import UIKit
 
@@ -88,3 +88,4 @@ class cameraViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
 }
+*/
