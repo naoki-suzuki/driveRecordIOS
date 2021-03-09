@@ -337,10 +337,11 @@ class MoneyInsertViewController : UIViewController, UIPickerViewDelegate, UIPick
             secondView.receiveId = receiveId
             
         } else if segue.identifier == "photoConfirm" {
-            let nc = segue.destination as! cameraViewController
+            /*let nc = segue.destination as! cameraViewController
             // let photoConfirm = nc.topViewController as! cameraViewController
             // let photoConfirm = segue.destination as! cameraViewController
             nc.cameraReceive = self.setImage
+             */
             
         }
     }
