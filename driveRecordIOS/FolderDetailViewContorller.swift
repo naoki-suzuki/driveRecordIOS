@@ -252,7 +252,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         // 一人当たり金額のラベル
         let labelsyou = cell.viewWithTag(4) as! UILabel
         // ラベルに表示する文字列を設定
-        labelsyou.text = "一人当たり"
+        labelsyou.text = "1人当たり"
         
         // 一人当たり金額のラベル
         let labelSyou = cell.viewWithTag(5) as! UILabel
