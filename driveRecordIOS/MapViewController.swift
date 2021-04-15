@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2020 Google Inc. All rights reserved.
  *
@@ -13,87 +14,123 @@
  * permissions and limitations under the License.
  */
 
-// Created by 鈴木 on 2020/11/9
-// Updated by 鈴木 on 2020/11/17
+// Created by　長阪　2021/4/15
 
 import UIKit
-import GoogleMaps
-import CoreLocation
+import MapKit
 
-// 位置情報取得判定が14.0で廃止になってしまった為、設置
-@available(iOS 14.0, *)
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    // 現在地取得のためのメソッドをインスタンス化
-    var manager = CLLocationManager()
-    var marker = GMSMarker()
-    // 地図に関するメソッドをインスタンス化
-    var mapView = GMSMapView()
-    
-    var locationManager = CLLocationManager()
+    // キーボード以外を触るとキーボードが閉じるようにする
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            //outputText.text = inputText.text
+            self.view.endEditing(true)
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Tabバーの色の指定
-        UINavigationBar.appearance().barTintColor = UIColor.systemTeal
-        // Tabバーの文字の色の指定
-        self.navigationController?.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
         
-        manager.delegate = self
-        // GPSの使用を開始
-        // manager.startUpdatingLocation()
-        // 更新に必要な最小移動距離
-        manager.distanceFilter = 50
-        // 位置情報の利用許可を変更する画面をポップアップ表示する
-        manager.requestWhenInUseAuthorization()
-        // GPSの使用を開始
-        manager.startUpdatingLocation()
-        // 位置情報を許可しているか判定
-        let status = CLLocationManager.authorizationStatus()
-        // 許可しない場合の処理
-        if status == .notDetermined || status == .denied || status == .notDetermined {
-            // 初期値を東京に設定
-            let camera = GMSCameraPosition.camera(withLatitude: 35.6812226, longitude: 139.7670594, zoom: 12.0)
-            mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-            view = mapView
-        }
+        locationManger.delegate = self
+        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+        locationManger.requestAlwaysAuthorization()
+        locationManger.requestWhenInUseAuthorization()
+        locationManger.startUpdatingLocation()
+        //位置情報の取得を要求する。
+       // locationManger.requestLocation()
+        
+        map.delegate = self
+        
+        
+        // 現在地のトラッキングボタン配備
+               let trakingBtn = MKUserTrackingButton(mapView: map)
+               trakingBtn.layer.backgroundColor = UIColor(white: 1, alpha: 0.7).cgColor
+               trakingBtn.frame = CGRect(x:40, y:740, width:40, height:40)
+               self.view.addSubview(trakingBtn)
         
     }
     
-    // 位置情報取得した場合、呼び出される
-    func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else {
-         return
+    @IBOutlet weak var text: UITextField!
+    @IBOutlet weak var getDirection: UIButton!
+    @IBOutlet weak var map: MKMapView!
+    var locationManger = CLLocationManager()
+    
+    
+    
+    @IBAction func getDirection(_ sender: Any) {
+        getAddress()
+    }
+    
+    
+    func getAddress() {
+        let geoCooder = CLGeocoder()
+        geoCooder.geocodeAddressString(text.text!) { (placemarks, Error)
+            in
+            guard let placemarks = placemarks, let location = placemarks.first?.location
+            else {
+                return
+            }
+            self.mapThis(destinationCord: location.coordinate)
         }
-        // 現在地の取得
-        let coordinate = location.coordinate
-        let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 12.0)
-        mapView = GMSMapView.map(withFrame: view.frame, camera: camera)
-        view = mapView
-        // view.addSubview(mapView)
-//        // ピンの設置
-//        marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-//        marker.map = mapView
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations: [CLLocation]){
+        //print(CLLocation)
+    }
+    
+    //マップビュー長押し時の呼び出しメソッド
+        @IBAction func pressMap(sender: UILongPressGestureRecognizer) {
+            //マップビュー内のタップした位置を取得する。
+            let location:CGPoint = sender.location(in: map)
             
-        mapView.settings.myLocationButton = true // 右下の現在地ボタン追加する
-        mapView.isMyLocationEnabled = true // 現在地表示
+            if (sender.state == UIGestureRecognizer.State.ended){
+                
+                //タップした位置を緯度、経度の座標に変換する。
+                let mapPoint:CLLocationCoordinate2D = map.convert(location, toCoordinateFrom: map)
+                
+                //ピンを作成してマップビューに登録する。
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2DMake(mapPoint.latitude, mapPoint.longitude)
+                annotation.title = "目的地候補"
+                annotation.subtitle = "ボタンタップで経路を表示"
+                map.addAnnotation(annotation)
+                
+            }
+        }
+     
+    func mapThis(destinationCord : CLLocationCoordinate2D){
+        let souceCordinate = (locationManger.location?.coordinate)!
         
+        let soucePlaceMark = MKPlacemark(coordinate: souceCordinate)
+        let destPlaceMark = MKPlacemark(coordinate: destinationCord)
+        
+        let sourceItem = MKMapItem(placemark: soucePlaceMark)
+        let destItem = MKMapItem(placemark: destPlaceMark)
+        
+        let destinationRequest = MKDirections.Request()
+        destinationRequest.source = sourceItem
+        destinationRequest.destination = destItem
+        destinationRequest.transportType = .automobile
+        destinationRequest.requestsAlternateRoutes = true
+        
+        let directions = MKDirections(request: destinationRequest)
+        directions.calculate { (responce, error) in
+            guard let response = responce else {
+                if error != nil {
+                    print("somthing")
+                }
+                return
+            }
+            
+            let route = response.routes[0]
+            self.map.addOverlay(route.polyline)
+            self.map.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+        }
     }
     
-    private func requestLoacion() {
-           // ユーザにアプリ使用中のみ位置情報取得の許可を求めるダイアログを表示
-           locationManager.requestWhenInUseAuthorization()
-           // 常に取得したい場合はこちら↓
-           // locationManager.requestAlwaysAuthorization()
-       }
-    
-    func showMarker(position : CLLocationCoordinate2D) {
-        marker.position = position
-        marker.isDraggable = true
-        
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        render.strokeColor = .blue
+        return render
     }
-   
 }
-
