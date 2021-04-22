@@ -21,8 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // スプラッシュを3秒表示する
         sleep(3)
         
+        // ナビゲージョンアイテムの文字色
+        UINavigationBar.appearance().tintColor = UIColor.white
+        // ナビゲーションバーのタイトルの文字色
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        
         // Override point for customization after application launch.
         return true
+        
+        
     }
 
     // MARK: UISceneSession Lifecycle
