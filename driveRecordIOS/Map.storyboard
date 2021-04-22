@@ -12,36 +12,71 @@
         <!--地図-->
         <scene sceneID="n4c-1V-Bn1">
             <objects>
-                <viewController id="iqn-WU-loN" customClass="MapViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="iqn-WU-loN" customClass="MapViewController" customModule="driveRecordIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TcO-fc-Nfn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dly-MB-4D3">
-                                <rect key="frame" x="0.0" y="153" width="414" height="743"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtb-TM-dmT">
+                                <rect key="frame" x="0.0" y="98" width="414" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QnK-2l-geY">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="R0n-bK-bu4"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="目的地を入力していください。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SyF-uE-or1">
+                                        <rect key="frame" x="15" y="0.0" width="313" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0KC-S8-MOl">
+                                        <rect key="frame" x="328" y="0.0" width="30" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="xlM-ka-PPD"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEC-ay-QxA">
+                                        <rect key="frame" x="358" y="0.0" width="31" height="40"/>
+                                        <state key="normal" title="検索"/>
+                                        <connections>
+                                            <action selector="getDirection:" destination="iqn-WU-loN" eventType="touchUpInside" id="jOf-Gi-Egs"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="den-tA-R01">
+                                        <rect key="frame" x="389" y="0.0" width="25" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="nbI-Aj-tZL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Oic-Az-dFn"/>
+                                </constraints>
+                            </stackView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dly-MB-4D3">
+                                <rect key="frame" x="0.0" y="143" width="414" height="753"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="DeV-YN-VjO" appends="YES" id="6l9-f5-Qzt"/>
                                 </connections>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SyF-uE-or1">
-                                <rect key="frame" x="34" y="111" width="281" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEC-ay-QxA">
-                                <rect key="frame" x="339" y="115" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="検索"/>
-                                <connections>
-                                    <action selector="getDirection:" destination="iqn-WU-loN" eventType="touchUpInside" id="jOf-Gi-Egs"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YZX-bS-Atg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YZX-bS-Atg" firstAttribute="trailing" secondItem="rtb-TM-dmT" secondAttribute="trailing" id="BIL-nS-j04"/>
+                            <constraint firstItem="dly-MB-4D3" firstAttribute="leading" secondItem="rtb-TM-dmT" secondAttribute="leading" id="F7c-OZ-s48"/>
+                            <constraint firstItem="rtb-TM-dmT" firstAttribute="leading" secondItem="YZX-bS-Atg" secondAttribute="leading" id="U8v-c9-jaf"/>
+                            <constraint firstItem="dly-MB-4D3" firstAttribute="top" secondItem="rtb-TM-dmT" secondAttribute="bottom" constant="5" id="XWn-PD-lV7"/>
+                            <constraint firstAttribute="bottom" secondItem="dly-MB-4D3" secondAttribute="bottom" id="fGz-Co-7WL"/>
+                            <constraint firstItem="rtb-TM-dmT" firstAttribute="top" secondItem="YZX-bS-Atg" secondAttribute="top" constant="10" id="tAb-oK-k1K"/>
+                            <constraint firstItem="dly-MB-4D3" firstAttribute="trailing" secondItem="rtb-TM-dmT" secondAttribute="trailing" id="wq7-b7-1yI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="地図" id="0K6-fv-orI">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="vdV-cs-Vfq">
@@ -72,7 +107,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1346.376811594203" y="112.5"/>
+            <point key="canvasLocation" x="1402.8985507246377" y="112.5"/>
         </scene>
         <!--Main-->
         <scene sceneID="EJp-eW-q2m">
