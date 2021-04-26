@@ -133,7 +133,7 @@
                                     <outlet property="delegate" destination="XNo-rQ-rQV" id="wB4-jW-M9r"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-D7-GHa">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akG-D7-GHa">
                                 <rect key="frame" x="107.66666666666669" y="691" width="175" height="50"/>
                                 <rect key="contentStretch" x="0.5" y="0.29999999999999999" width="1" height="1"/>
                                 <constraints>

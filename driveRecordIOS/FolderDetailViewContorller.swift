@@ -217,6 +217,42 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         people.text = "\(count)人"
         
     }
+    // mapボタンタップ時の処理
+    @IBAction func map(_ sender: Any) {
+        
+        // 外部ブラウザでURLを開く
+        // let webPage = NSURL(string: "http://www.cimtech.co.jp/apl/dlog/guide.pdf")
+        let url = URL(string: "http://maps.apple.com/?saddr=%E6%A8%AA%E6%B5%9C%E9%A7%85&daddr=%E6%9D%B1%E4%BA%AC%E9%A7%85&dirflg=r")
+        // http://maps.apple.com/?q=Mexican+Restaurantにすると検索した状態でマップを開くことができる
+        // %E6%9D%B1%E4%BA%AC%E9%A7%85 ⇦これは"東京駅"をUTF-８にエンコードしたもの
+        // %E6%A8%AA%E6%B5%9C%E9%A7%85 ⇦これは"横浜駅"をUTF -8にエンコードしたもの
+        
+        let alert: UIAlertController = UIAlertController( title: "", message: "地図アプリを起動しますか？", preferredStyle:  UIAlertController.Style.alert)
+        
+        // OKボタン(ホームに遷移)
+        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+            if UIApplication.shared.canOpenURL(url!) {
+                //UIApplication.shared.openURL(url!)
+                UIApplication.shared.open(url!)
+            }
+        }
+        )
+        
+        // キャンセルボタン
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
+        
+        
+        // UIAlertControllerにActionを追加
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        // Alertを表示
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return use.count
