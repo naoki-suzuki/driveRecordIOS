@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFC-Hw-4xe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFC-Hw-4xe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -67,7 +67,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JJN-jI-l5y">
-                                        <rect key="frame" x="15" y="20" width="384" height="1205"/>
+                                        <rect key="frame" x="15" y="20" width="384" height="1265"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIW-h2-Mt1">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="548"/>
@@ -659,8 +659,35 @@
                                                     <constraint firstAttribute="height" constant="20" id="nH1-W5-NY4"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mId-mZ-wBS" userLabel="HOMEbottun">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wx5-Vs-sry" userLabel="Mapbottun">
                                                 <rect key="frame" x="0.0" y="1065" width="384" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frt-Mh-D1F">
+                                                        <rect key="frame" x="70" y="8" width="244" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="244" id="Nzb-9a-G4x"/>
+                                                            <constraint firstAttribute="height" constant="40" id="jBi-NF-dv5"/>
+                                                        </constraints>
+                                                        <state key="normal" image="mapBtn"/>
+                                                        <connections>
+                                                            <action selector="map:" destination="Fkl-iP-Pfm" eventType="touchUpInside" id="VBs-Xf-90e"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Frt-Mh-D1F" firstAttribute="top" secondItem="wx5-Vs-sry" secondAttribute="topMargin" id="63n-5M-xu3"/>
+                                                    <constraint firstItem="Frt-Mh-D1F" firstAttribute="centerX" secondItem="wx5-Vs-sry" secondAttribute="centerX" id="8vv-FX-Ync"/>
+                                                    <constraint firstAttribute="height" constant="40" id="MXE-HW-8U0"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSd-g8-sRl" userLabel="space">
+                                                <rect key="frame" x="0.0" y="1105" width="384" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Rtb-Uh-Asb"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mId-mZ-wBS" userLabel="HOMEbottun">
+                                                <rect key="frame" x="0.0" y="1125" width="384" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E6-Lx-Vfw" userLabel="ホーム画面">
                                                         <rect key="frame" x="70" y="0.0" width="244" height="40"/>
@@ -681,7 +708,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpM-ty-ryX" userLabel="space">
-                                                <rect key="frame" x="0.0" y="1105" width="384" height="100"/>
+                                                <rect key="frame" x="0.0" y="1165" width="384" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="4XH-rW-yV3"/>
                                                 </constraints>
@@ -744,6 +771,7 @@
         <image name="car_linexxxhdpi" width="1420" height="100"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="home_back_hdpi" width="524" height="104"/>
+        <image name="mapBtn" width="1048" height="208"/>
         <image name="moneyInsertButton" width="524" height="105"/>
         <image name="road_bgimghdpi" width="563" height="507"/>
         <image name="share_bthdpi" width="393" height="79"/>
