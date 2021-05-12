@@ -3,7 +3,7 @@
 //  driveRecord
 //
 //  Created by 大越悠司 on 2020/10/15.
-//
+//  Updated by 長阪智哉
 
 import Foundation
 import GRDB
@@ -23,6 +23,8 @@ class Folderinfo : Record {
         var member4:String!
         var member5:String!
         var member6:String!
+        var Destination:String!
+        var Departure:String!
     
 
         static func create(_ db: Database) throws {
@@ -36,6 +38,8 @@ class Folderinfo : Record {
                 makeTable.column("member4", .text) // Nullを許す
                 makeTable.column("member5", .text) // Nullを許す
                 makeTable.column("member6", .text) // Nullを許す
+                makeTable.column("Destination", .text) // Nullを許す
+                makeTable.column("Departure", .text)    // Nullを許す
             })
         }
 
@@ -49,9 +53,11 @@ class Folderinfo : Record {
             static let member4 = Column("member4")
             static let member5 = Column("member5")
             static let member6 = Column("member6")
+            static let Destination = Column("Destination")
+            static let Departure = Column("Departure")
         }
 
-    init(title: String!, date: String!,member1: String!,member2: String!,member3: String!,member4: String!,member5: String!,member6: String!) {
+    init(title: String!, date: String!,member1: String!,member2: String!,member3: String!,member4: String!,member5: String!,member6: String!,Destination: String!,Departure :String!) {
             self.title = title
             self.date = date
             self.member1 = member1
@@ -60,6 +66,8 @@ class Folderinfo : Record {
             self.member4 = member4
             self.member5 = member5
             self.member6 = member6
+            self.Destination = Destination
+            self.Departure = Departure
             super.init()
         }
 
@@ -73,6 +81,8 @@ class Folderinfo : Record {
             self.member4 = row["member4"]
             self.member5 = row["member5"]
             self.member6 = row["member6"]
+            self.Destination = row["Destination"]
+            self.Departure = row["Departure"]
             super.init(row: row)
         }
 
@@ -86,6 +96,8 @@ class Folderinfo : Record {
             container["member4"] = self.member4
             container["member5"] = self.member5
             container["member6"] = self.member6
+            container["Destination"] = self.Destination
+            container["Departure"] = self.Departure
         }
 
         override func didInsert(with rowID: Int64, for column: String?) {

@@ -8,12 +8,14 @@ PODS:
   - GooglePlaces (4.0.0):
     - GoogleMaps/Base (= 4.0.0)
   - LicensePlist (3.0.5)
+  - Siren (5.7.1)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
   - GoogleMaps (~> 4.0.0)
   - GooglePlaces
   - LicensePlist
+  - Siren
 
 SPEC REPOS:
   trunk:
@@ -21,13 +23,15 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - LicensePlist
+    - Siren
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
   GooglePlaces: ca8d4aba09ba79e0a829cf1dca03a41de6a09016
   LicensePlist: 11c638fa9dc22ddb5771cdf910242ae1ba2684da
+  Siren: 76ac728f4f2f4a3576c322272e94a0e37955664f
 
-PODFILE CHECKSUM: 57684c22af214fd2381fcbaf8c25b520d89d5f6b
+PODFILE CHECKSUM: 5ba94f80b2ee199eac13cb1abdebaeb16611aa90
 
 COCOAPODS: 1.10.0

@@ -34,6 +34,14 @@ body: MIT License
 Copyrig…
 version: 3.0.5
 
+name: Siren, nameSpecified: 
+body: The MIT License (MIT…
+version: 5.7.1
+
+name: Siren, nameSpecified: 
+body: The MIT License (MIT…
+version: 5.7.1
+
 add-version-numbers: false
 
 LicensePlist Version: 3.0.5

@@ -3,7 +3,7 @@
 //  driveRecord
 //
 //  Created by 大越悠司 on 2020/10/12.
-//  Update by 長阪智哉　on 2021/2/15
+//  Update by 長阪智哉　on 2021/4/28
 //
 
 import UIKit
@@ -22,6 +22,10 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var member4: UITextField!
     @IBOutlet private weak var member5: UITextField!
     @IBOutlet private weak var member6: UITextField!
+    // 目的地と出発地のTextField
+    @IBOutlet weak var Destination: UITextField!
+    @IBOutlet weak var Departure: UITextField!
+    
     
     // 枠線表示のためのView
     @IBOutlet private weak var folderBox: UIView!
@@ -68,6 +72,23 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+    // 文字数をカウントするメソッド 上限30文字
+    func letterCount30(nameString:UITextField) -> Bool {
+        let name = nameString.text!
+        // 入力された文字が10字以上か判定し、trueの場合アラート表示
+        if name.count > 30 {
+            let alert = UIAlertController(title: "エラー",
+                                          message: "30文字以内で入力してください",
+                                          preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+            return false
+        }
+        return true
+    }
+    
     //入力時の処理
     @IBAction func checkTitle(_ sender: Any) {
         // if文を満たすと、入力された中身が削除される
@@ -150,10 +171,24 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             // 現在の日時フォルダ作成画面遷移時に表示する。
             dateTravel.text = date
         }
-        
-        
-        
     }
+    
+    // 目的地入力時に文字数チェック処理
+    @IBAction func checkDestination(_ sender: Any) {
+        // if文を満たすと、入力された中身が削除される
+        if !letterCount30(nameString: Destination) {
+            Destination.text = ""
+        }
+    }
+    
+    // 出発地入力時に文字数チェック処理
+    @IBAction func checkDeparture(_ sender: Any) {
+        // if文を満たすと、入力された中身が削除される
+        if !letterCount30(nameString: Departure) {
+            Departure.text = ""
+        }
+    }
+    
     
     // 決定ボタン押下
     @objc func done() {
@@ -217,6 +252,9 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         member4.returnKeyType = UIReturnKeyType.done
         member5.returnKeyType = UIReturnKeyType.done
         member6.returnKeyType = UIReturnKeyType.done
+        Destination.returnKeyType = UIReturnKeyType.done
+        Departure.returnKeyType = UIReturnKeyType.done
+        
         
         //キーボード処理を終了するための処理
         travelTitle.delegate = self
@@ -226,6 +264,8 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         member4.delegate = self
         member5.delegate = self
         member6.delegate = self
+        Destination.delegate = self
+        Departure.delegate = self
         
     }
     // 完了ボタン押下後の処理
@@ -286,7 +326,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         // チェックでエラーがなければinsertメソッドを呼び出す
         if result {
             //メソッド呼び出し
-            _ = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
+            _ = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,Destination: Destination,Departure: Departure,num: num)
         }
         
     }
@@ -312,7 +352,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         // チェックでエラーがなければinsertメソッドを呼び出す
         if result {
             //メソッド呼び出し
-            _ = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,num: num)
+            _ = insert(dateTravel: dateTravel, travelName: travelTitle, member1: member1, member2: member2, member3: member3, member4: member4, member5: member5, member6: member6,Destination: Destination,Departure: Departure,num: num)
         }
     }
     
@@ -401,7 +441,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
     }
     
     // TextFieldの値を受け取り、入力チェック及び、フォルダ作成処理を行うメソッド
-    func insert (dateTravel:UITextField!,travelName:UITextField!,member1:UITextField!,member2:UITextField!,member3:UITextField!,member4:UITextField!,member5:UITextField!,member6:UITextField!,num:Int!) -> Bool {
+    func insert (dateTravel:UITextField!,travelName:UITextField!,member1:UITextField!,member2:UITextField!,member3:UITextField!,member4:UITextField!,member5:UITextField!,member6:UITextField!,Destination:UITextField,Departure:UITextField,num:Int!) -> Bool {
         //引数の値を格納
         let dateTravelName: String = dateTravel.text!
         let travelName: String = travelName.text!
@@ -411,7 +451,9 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
         let travelMember4: String! = member4.text!
         let travelMember5: String! = member5.text!
         let travelMember6: String! = member6.text!
-        
+        let travelDestination: String = Destination.text!
+        let travelDeparture: String = Departure.text!
+
         
         // 未入力チェック
         // 日付判定
@@ -453,7 +495,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             let helper = DatabaseHelper()
             let result = helper.inDatabase{(db) in
                 // 登録内容を格納
-                let folder = Folderinfo(title: travelName, date: dateTravelName, member1: travelMember1, member2: travelMember2, member3: travelMember3, member4: travelMember4, member5: travelMember5, member6: travelMember6)
+                let folder = Folderinfo(title: travelName, date: dateTravelName, member1: travelMember1, member2: travelMember2, member3: travelMember3, member4: travelMember4, member5: travelMember5, member6: travelMember6, Destination: travelDestination, Departure: travelDeparture)
                 // 登録処理
                 try folder.insert(db)
                 
@@ -466,7 +508,7 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
                     // 登録した情報を取得
                     // 登録名が重複すると若い番号が取得される
                     // entity = try Folderinfo.filter(Folderinfo.Columns.title == travelNameString).fetchOne(db)
-                    entity = try Folderinfo.filter(Folderinfo.Columns.title == travelName).filter(Folderinfo.Columns.date == dateTravelName).filter(Folderinfo.Columns.member1 == travelMember1).filter(Folderinfo.Columns.membet2 == travelMember2).filter(Folderinfo.Columns.member3 == travelMember3).filter(Folderinfo.Columns.member4 == travelMember4).filter(Folderinfo.Columns.member5 == travelMember5).filter(Folderinfo.Columns.member6 == travelMember6).fetchOne(db)
+                    entity = try Folderinfo.filter(Folderinfo.Columns.title == travelName).filter(Folderinfo.Columns.date == dateTravelName).filter(Folderinfo.Columns.member1 == travelMember1).filter(Folderinfo.Columns.membet2 == travelMember2).filter(Folderinfo.Columns.member3 == travelMember3).filter(Folderinfo.Columns.member4 == travelMember4).filter(Folderinfo.Columns.member5 == travelMember5).filter(Folderinfo.Columns.member6 == travelMember6).filter(Folderinfo.Columns.Destination == travelDestination).filter(Folderinfo.Columns.Departure == travelDeparture).fetchOne(db)
                 }
                 
                 if result2 {

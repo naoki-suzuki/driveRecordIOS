@@ -7,6 +7,7 @@ target 'driveRecordIOS' do
 
   # Pods for driveRecordIOS
 
+pod 'Siren'
 pod 'GoogleMaps', '~>4.0.0'
 pod 'GooglePlaces'
 pod 'LicensePlist'
