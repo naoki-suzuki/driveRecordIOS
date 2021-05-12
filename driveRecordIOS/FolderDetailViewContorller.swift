@@ -39,6 +39,9 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var sum: UILabel!
     @IBOutlet private weak var ave: UILabel!
+    @IBOutlet weak var departure: UILabel!
+    @IBOutlet weak var destinaiton: UILabel!
+    
     
     
     /* @IBAction func showActivityView(_ sender: UIBarButtonItem) {
@@ -57,6 +60,8 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     private var member4: String?    // メンバー
     private var member5: String?    // メンバー
     private var member6: String?     // メンバー
+    private var Destination: String? // 目的地
+    private var Departure: String?   // 出発地
     private var use: [String] = []        // 使用用途
     private var cost: [Int64] = []        //費用
     private var buyer: [String] = []      // 負担者
@@ -66,6 +71,9 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     var receiveId:Int64 = 0
     private var sumCost: Int64 = 0     //合計金額
     private var aveCost: Int64 = 0     //一人当たりの金額
+    // UTF-8に変換した文字コードを格納する変数
+    private var UtfDestination: Data?  // 目的地
+    private var UtfDeparture: Data?    // 出発地
     
     // 枠線用のviewbox
     @IBOutlet weak var box1: UIView!
@@ -123,6 +131,8 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             member4 = entity1?.member4
             member5 = entity1?.member5
             member6 = entity1?.member6
+            Destination = entity1?.Destination
+            Departure = entity1?.Departure
             
         }
         
@@ -153,6 +163,19 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         day.text = date
         folderTitle.text = folderList
         mem1.text = member1
+        
+        // 出発地・目的地が入力されているかいないか判断
+        if Departure == "" {
+            departure.text = "未登録"
+        } else {
+            departure.text = Departure
+        }
+        
+        if Destination == "" {
+            destinaiton.text = "未登録"
+        } else {
+            destinaiton.text = Destination
+        }
         
         // member2-6はいない可能性もあるためnilであれば空文字にする
         if member2 == "" {
@@ -220,9 +243,13 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     // mapボタンタップ時の処理
     @IBAction func map(_ sender: Any) {
         
-        // 外部ブラウザでURLを開く
-        // let webPage = NSURL(string: "http://www.cimtech.co.jp/apl/dlog/guide.pdf")
-        let url = URL(string: "http://maps.apple.com/?saddr=%E6%A8%AA%E6%B5%9C%E9%A7%85&daddr=%E6%9D%B1%E4%BA%AC%E9%A7%85&dirflg=r")
+        
+        // saddr：出発地　daddr：目的地
+        let urlString: String = "http://maps.apple.com/?saddr=\(Departure!)&daddr=\(Destination!)&dirflg=d"
+        let encodeUrlString: String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        //let url = URL(string: encodeUrlString)
+        // 外部地図アプリでURLを開く
+        let url = URL(string: encodeUrlString)
         // http://maps.apple.com/?q=Mexican+Restaurantにすると検索した状態でマップを開くことができる
         // %E6%9D%B1%E4%BA%AC%E9%A7%85 ⇦これは"東京駅"をUTF-８にエンコードしたもの
         // %E6%A8%AA%E6%B5%9C%E9%A7%85 ⇦これは"横浜駅"をUTF -8にエンコードしたもの
@@ -377,6 +404,8 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             let shareLabel4:[String] = [mem1.text!,mem2.text!,mem3.text!,mem4.text!,mem5.text!,mem6.text!]
             var memberText:String = ""
             var text = ""
+            let shareDestination = Destination!
+            let shareDeparture = Departure!
             
             // 使用項目がある場合と無い場合でtextを変更
             if use.count == 0 {
@@ -418,6 +447,10 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             \(shareLabel3)\n
             メンバー
             \(memberText)
+            目的地
+            \(shareDestination)\n
+            出発地
+            \(shareDeparture)\n
             使用項目
             \(text)
             合計金額

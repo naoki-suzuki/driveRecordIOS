@@ -9,7 +9,7 @@ import Foundation
 import GRDB
 
 class DatabaseHelper {
-
+    
     private struct Const {
             static let dbFileName = NSTemporaryDirectory() + "drive.db"
         }
@@ -20,6 +20,7 @@ class DatabaseHelper {
 
         func inDatabase(_ block: (Database) throws -> Void) -> Bool {
             do {
+                // 初回実行時にデータベースファイルを生成する
                 let dbQueue = try DatabaseQueue(path: Const.dbFileName)
                 try dbQueue.inDatabase(block)
             }catch _ {
@@ -27,9 +28,10 @@ class DatabaseHelper {
             }
             return true
         }
-
+    // データベースの生成処理
         private func creatDatabase() {
             if FileManager.default.fileExists(atPath: Const.dbFileName) {
+                // 既にDBが作成されている場合
                 return
             }
             let result = inDatabase {(db) in
@@ -43,4 +45,7 @@ class DatabaseHelper {
                 do {try FileManager.default.removeItem(atPath: Const.dbFileName)} catch {}
             }
         }
+    
+    
+    
 }
