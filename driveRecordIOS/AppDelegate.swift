@@ -33,10 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // sirenの強制アップデート設定用関数
         forceUpdate()
         
-        // DBのアップデート処理
-        // settingJustAfterUpdating()
-        
-        
         // Override point for customization after application launch.
         return true
         
@@ -58,20 +54,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    func settingJustAfterUpdating() {
+    // 初回起動かチェックを行い2回目以降の場合は
+    /*func settingJustAfterUpdating() {
         let dicKey = "CFBundleShortVersionString"
         guard let version = Bundle.main.object(forInfoDictionaryKey: dicKey) else { return }
         let newVersionKey = "ver\(version as! String)"
         // 初回起動時のみ処理が呼ばれるようにフラグを立てる
         userDefaults.register(defaults: [newVersionKey : true])
         // もしも最新バージョンでのアプリ起動が初めてならば
-        if userDefaults.bool(forKey: newVersionKey) {
+        if !userDefaults.bool(forKey: newVersionKey) {
             // 次回起動以降は処理が呼ばれなくなるようにフラグを折る
-            userDefaults.set(false, forKey: newVersionKey)
+            userDefaults.set(true, forKey: newVersionKey)
 
-            // DB接続を行う
-            let queue = DatabaseQueue()
+            // let queue = DatabaseQueue()
             // ここでアップデート直後のみ行なわせたい処理を呼び出す
+            // Folderinfoのtableにcolumnを追加
             migrator.registerMigration("v2") { (db) in
                 
                 try db.alter(table: Folderinfo.databaseTableName) { (t) in
@@ -84,12 +81,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             }
             //  マイグレーション
-            do {
+            /*do {
                 try migrator.migrate(queue)
                 }
                 catch {
                     print("error")
-                }
+                }*/
             
             // 不要となった過去バージョンにおけるフラグをUserDefaultsから削除する
             // verから始まる名前のキーが他の用途向けに無いよう設計に注意!
@@ -101,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
+    */
 
     
     

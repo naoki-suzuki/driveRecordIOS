@@ -493,6 +493,26 @@ class FolderCreateViewController : UIViewController, UITextFieldDelegate {
             
             // データベース接続
             let helper = DatabaseHelper()
+           /*
+            var migrator = DatabaseMigrator()
+            // DB接続を行う
+            let queue = DatabaseQueue()
+            // ここでアップデート直後のみ行なわせたい処理を呼び出す
+            let a = helper.inDatabase{(db) in
+                
+                try db.alter(table: Folderinfo.databaseTableName) { (t) in
+                    t.add(column: "Destination", .text)
+                }
+                
+                try db.alter(table: Folderinfo.databaseTableName) { (t) in
+                    t.add(column: "Departure", .text)
+                }
+
+            }
+            //  マイグレーション
+            
+                //try migrator.migrate(db)
+                */
             let result = helper.inDatabase{(db) in
                 // 登録内容を格納
                 let folder = Folderinfo(title: travelName, date: dateTravelName, member1: travelMember1, member2: travelMember2, member3: travelMember3, member4: travelMember4, member5: travelMember5, member6: travelMember6, Destination: travelDestination, Departure: travelDeparture)
