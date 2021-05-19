@@ -3,7 +3,8 @@
 //  driveRecord
 //
 //  Created by 長阪智哉 on 2020/11/20
-//
+//  Updated by 長阪智哉 on 2021/5/17
+
 import UIKit
 import GRDB
 
@@ -40,9 +41,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     @IBOutlet private weak var sum: UILabel!
     @IBOutlet private weak var ave: UILabel!
     @IBOutlet weak var departure: UILabel!
-    @IBOutlet weak var destinaiton: UILabel!
-    
-    
+    @IBOutlet weak var destination: UILabel!
     
     /* @IBAction func showActivityView(_ sender: UIBarButtonItem) {
      
@@ -61,7 +60,15 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     private var member5: String?    // メンバー
     private var member6: String?     // メンバー
     private var Destination: String? // 目的地
+    // 目的地の文字列を３等分にした際に格納する変数
+    private var Destination1: String?
+    private var Destination2: String?
+    private var Destination3: String?
     private var Departure: String?   // 出発地
+    // 出発地の文字列を３等分にした際に格納する変数
+    private var Deparutre1: String?
+    private var Deparutre2: String?
+    private var Deparutre3: String?
     private var use: [String] = []        // 使用用途
     private var cost: [Int64] = []        //費用
     private var buyer: [String] = []      // 負担者
@@ -162,19 +169,26 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         // ラベルテキストを使って角ラベルに貼り付け
         day.text = date
         folderTitle.text = folderList
-        mem1.text = member1
+        mem1.text = "• \(member1!)"
         
         // 出発地・目的地が入力されているかいないか判断
         if Departure == "" {
             departure.text = "未登録"
+        // 出発地の文字列が0〜10の場合
         } else {
             departure.text = Departure
+            
+        // 出発地の文字列が11〜20の場合
         }
         
+        
         if Destination == "" {
-            destinaiton.text = "未登録"
+            destination.text = "未登録"
+            // 出発地の文字列が0〜10の場合
         } else {
-            destinaiton.text = Destination
+                destination.text = Destination
+            
+            // 出発地の文字列が11〜20の場合
         }
         
         // member2-6はいない可能性もあるためnilであれば空文字にする
@@ -184,7 +198,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
         } else {
             
             // nilでなければラベルに代入して人数を1増やす
-            mem2.text = member2
+            mem2.text = "• \(member2!)"
             count += 1
         }
         
@@ -193,7 +207,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             mem3.text = ""
             
         } else {
-            mem3.text = member3
+            mem3.text = "• \(member3!)"
             count += 1
             
         }
@@ -202,7 +216,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             mem4.text = ""
             
         } else {
-            mem4.text = member4
+            mem4.text = "• \(member4!)"
             count += 1
             
         }
@@ -211,7 +225,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             mem5.text = ""
             
         } else {
-            mem5.text = member5
+            mem5.text = "• \(member5!)"
             count += 1
             
         }
@@ -220,7 +234,7 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             mem6.text = ""
             
         } else {
-            mem6.text = member6
+            mem6.text = "• \(member6!)"
             count += 1
             
         }
@@ -243,41 +257,76 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
     // mapボタンタップ時の処理
     @IBAction func map(_ sender: Any) {
         
-        
-        // saddr：出発地　daddr：目的地
-        let urlString: String = "http://maps.apple.com/?saddr=\(Departure!)&daddr=\(Destination!)&dirflg=d"
-        let encodeUrlString: String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        //let url = URL(string: encodeUrlString)
-        // 外部地図アプリでURLを開く
-        let url = URL(string: encodeUrlString)
-        // http://maps.apple.com/?q=Mexican+Restaurantにすると検索した状態でマップを開くことができる
-        // %E6%9D%B1%E4%BA%AC%E9%A7%85 ⇦これは"東京駅"をUTF-８にエンコードしたもの
-        // %E6%A8%AA%E6%B5%9C%E9%A7%85 ⇦これは"横浜駅"をUTF -8にエンコードしたもの
-        
-        let alert: UIAlertController = UIAlertController( title: "", message: "地図アプリを起動しますか？", preferredStyle:  UIAlertController.Style.alert)
-        
-        // OKボタン(ホームに遷移)
-        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
-            // ボタンが押された時の処理を書く（クロージャ実装）
-            (action: UIAlertAction!) -> Void in
-            if UIApplication.shared.canOpenURL(url!) {
-                //UIApplication.shared.openURL(url!)
-                UIApplication.shared.open(url!)
+        if Departure != nil && Destination != nil {
+            // saddr：出発地　daddr：目的地
+            let urlString: String = "http://maps.apple.com/?saddr=\(Departure!)&daddr=\(Destination!)&dirflg=d"
+            let encodeUrlString: String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            //let url = URL(string: encodeUrlString)
+            // 外部地図アプリでURLを開く
+            let url = URL(string: encodeUrlString)
+            // http://maps.apple.com/?q=Mexican+Restaurantにすると検索した状態でマップを開くことができる
+            // %E6%9D%B1%E4%BA%AC%E9%A7%85 ⇦これは"東京駅"をUTF-８にエンコードしたもの
+            // %E6%A8%AA%E6%B5%9C%E9%A7%85 ⇦これは"横浜駅"をUTF -8にエンコードしたもの
+            
+            let alert: UIAlertController = UIAlertController( title: "", message: "地図アプリを起動しますか？", preferredStyle:  UIAlertController.Style.alert)
+            
+            // OKボタン(ホームに遷移)
+            let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+                // ボタンが押された時の処理を書く（クロージャ実装）
+                (action: UIAlertAction!) -> Void in
+                if UIApplication.shared.canOpenURL(url!) {
+                    //UIApplication.shared.openURL(url!)
+                    UIApplication.shared.open(url!)
+                }
             }
+            )
+            
+            // キャンセルボタン
+            let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
+            
+            
+            // UIAlertControllerにActionを追加
+            alert.addAction(cancelAction)
+            alert.addAction(okAction)
+            
+            // Alertを表示
+            present(alert, animated: true, completion: nil)
+            
+        } else {
+            // saddr：出発地　daddr：目的地
+            let urlString: String = "http://maps.apple.com/?dirflg=d"
+            let encodeUrlString: String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            //let url = URL(string: encodeUrlString)
+            // 外部地図アプリでURLを開く
+            let url = URL(string: encodeUrlString)
+            // http://maps.apple.com/?q=Mexican+Restaurantにすると検索した状態でマップを開くことができる
+            // %E6%9D%B1%E4%BA%AC%E9%A7%85 ⇦これは"東京駅"をUTF-８にエンコードしたもの
+            // %E6%A8%AA%E6%B5%9C%E9%A7%85 ⇦これは"横浜駅"をUTF -8にエンコードしたもの
+            
+            let alert: UIAlertController = UIAlertController( title: "", message: "地図アプリを起動しますか？", preferredStyle:  UIAlertController.Style.alert)
+            
+            // OKボタン(ホームに遷移)
+            let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+                // ボタンが押された時の処理を書く（クロージャ実装）
+                (action: UIAlertAction!) -> Void in
+                if UIApplication.shared.canOpenURL(url!) {
+                    //UIApplication.shared.openURL(url!)
+                    UIApplication.shared.open(url!)
+                }
+            }
+            )
+            
+            // キャンセルボタン
+            let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
+            
+            
+            // UIAlertControllerにActionを追加
+            alert.addAction(cancelAction)
+            alert.addAction(okAction)
+            
+            // Alertを表示
+            present(alert, animated: true, completion: nil)
         }
-        )
-        
-        // キャンセルボタン
-        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.default)
-        
-        
-        // UIAlertControllerにActionを追加
-        alert.addAction(cancelAction)
-        alert.addAction(okAction)
-        
-        // Alertを表示
-        present(alert, animated: true, completion: nil)
-        
         
     }
     
@@ -466,11 +515,11 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             //controller.popoverPresentationController?.sourceView = view
             
             let uiActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
-                    if UIDevice.current.userInterfaceIdiom == .pad {
-                        let screenSize = UIScreen.main.bounds
-                        uiActivityViewController.popoverPresentationController?.sourceView = uiActivityViewController.view
-                        uiActivityViewController.popoverPresentationController?.sourceRect = CGRect(x:screenSize.size.width/2, y: screenSize.size.height-200, width: 0, height: 0)
-                    }
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                let screenSize = UIScreen.main.bounds
+                uiActivityViewController.popoverPresentationController?.sourceView = uiActivityViewController.view
+                uiActivityViewController.popoverPresentationController?.sourceRect = CGRect(x:screenSize.size.width/2, y: screenSize.size.height-200, width: 0, height: 0)
+            }
             
             //UIActivityViewControllerを表示
             present(uiActivityViewController, animated: true, completion: nil)
