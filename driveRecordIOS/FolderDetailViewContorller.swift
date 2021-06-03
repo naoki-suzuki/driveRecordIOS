@@ -496,10 +496,10 @@ class FolderDetailViewController : UIViewController, UITableViewDelegate, UITabl
             \(shareLabel3)\n
             メンバー
             \(memberText)
-            目的地
-            \(shareDestination)\n
             出発地
             \(shareDeparture)\n
+            目的地
+            \(shareDestination)\n
             使用項目
             \(text)
             合計金額
